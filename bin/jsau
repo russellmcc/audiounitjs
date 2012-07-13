@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+var optimist = require('optimist').usage('Create audio unit template with html ui. $0 [project-name]')
+    .check(function(arg){
+        if(!(arg._.length === 1))
+            throw "You must provide the project name";
+    });
+    
+require('iced-coffee-script');
+require('../lib/jsau')(optimist.argv._[0]);

@@ -1,0 +1,14 @@
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
+
+#if !defined(__COREAUDIO_USE_FLAT_INCLUDES__)
+#include <CoreAudio/CoreAudioTypes.h>
+#include <CoreFoundation/CoreFoundation.h>
+#else
+#include <CoreAudioTypes.h>
+#include <CoreFoundation.h>
+#endif
+
+#include "AUEffectBase.h"
+#include <AudioToolbox/AudioUnitUtilities.h>
