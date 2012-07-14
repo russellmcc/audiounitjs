@@ -119,7 +119,7 @@ protected:
     CefRefPtr<CefApp> app(new ClientApp());
 
     
-    mBundle = [NSBundle bundleWithIdentifier:@"ghostfact.CocoaUI0"];
+    mBundle = [NSBundle bundleWithIdentifier:@"#COMPANY.#PROJNAME.CocoaUI"];
     CefOverrideNSBundle(mBundle);
     
     // now, perform sketchy objc-runtime magic to ensure

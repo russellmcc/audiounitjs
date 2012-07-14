@@ -26,7 +26,7 @@
 		<object class="NSMutableArray" key="IBDocument.RootObjects" id="1000">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<object class="NSCustomObject" id="1001">
-				<string key="NSClassName">JSScope_ViewFactory</string>
+				<string key="NSClassName">#PROJNAME_ViewFactory</string>
 			</object>
 			<object class="NSCustomObject" id="1003">
 				<string key="NSClassName">FirstResponder</string>
@@ -41,7 +41,7 @@
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView"/>
-				<string key="NSClassName">JSScope_CefView</string>
+				<string key="NSClassName">#PROJNAME_CefView</string>
 			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -127,30 +127,30 @@
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<object class="IBPartialClassDescription">
-					<string key="className">JSScope_CefView</string>
+					<string key="className">#PROJNAME_CefView</string>
 					<string key="superclassName">NSView</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/JSScope_CefView.h</string>
+						<string key="minorKey">./Classes/#PROJNAME_CefView.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">JSScope_ViewFactory</string>
+					<string key="className">#PROJNAME_ViewFactory</string>
 					<string key="superclassName">NSObject</string>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">uiViewInstance</string>
-						<string key="NS.object.0">JSScope_CefView</string>
+						<string key="NS.object.0">#PROJNAME_CefView</string>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<string key="NS.key.0">uiViewInstance</string>
 						<object class="IBToOneOutletInfo" key="NS.object.0">
 							<string key="name">uiViewInstance</string>
-							<string key="candidateClassName">JSScope_CefView</string>
+							<string key="candidateClassName">#PROJNAME_CefView</string>
 						</object>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/JSScope_ViewFactory.h</string>
+						<string key="minorKey">./Classes/#PROJNAME_ViewFactory.h</string>
 					</object>
 				</object>
 			</object>

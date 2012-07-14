@@ -630,7 +630,6 @@
 				FFDB859B15141D9D004BA672 /* CAStreamBasicDescription.cpp in Sources */,
 				FFDB859D15141DDE004BA672 /* CAXException.cpp in Sources */,
 				FF7644681579538A00E41F35 /* #PROJNAME.exp in Sources */,
-				FF76446A1579538A00E41F35 /* audio.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
