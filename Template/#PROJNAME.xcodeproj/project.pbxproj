@@ -567,8 +567,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFC1A2BF1515302800D447CC /* InfoPlist.strings in Resources */,
 				FFC1A2C91515345900D447CC /* cefview.xib in Resources */,
+				FFC1A2BF1515302800D447CC /* InfoPlist.strings in Resources */,
 				FF6A97FA152F8C1400C8ED05 /* ui in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
