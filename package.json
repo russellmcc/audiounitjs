@@ -1,7 +1,8 @@
 {
   "name": "js-ui-au",
   "version": "0.0.1",
-  "main": "",
+  "main": "lib/jsau",
+  "bin": { "jsau": "./bin/jsau" },
   "author": {
     "name": "Russell McClellan",
     "email": "russell.mcclellan@gmail.com",
@@ -13,11 +14,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/russellmcc/js-ui-au.git"
+    "url": "git://github.com/russellmcc/js-au.git"
   },
   "dependencies": {
     "iced-coffee-script": "*",
-    "optimist" : "*"
+    "optimist" : "*",
+    "shelljs" : "*"
   },
   "devDependencies": {},
   "directories": {
@@ -25,19 +27,5 @@
   },
   "engines": {
     "node": ">=0.7.0"
-  },
-  "_npmUser": {
-    "name": "ghostfact",
-    "email": "russell.mcclellan@gmail.com"
-  },
-  "_id": "js-ui-au@0.0.1",
-  "optionalDependencies": {},
-  "_engineSupported": true,
-  "_npmVersion": "1.1.16",
-  "_nodeVersion": "v0.6.15",
-  "_defaultsLoaded": true,
-  "dist": {
-    "shasum": "a1a8273dd5d5a633cd0bcd6b6fee31c9e781ce9a"
-  },
-  "_from": "../js-au-script/"
+  }
 }

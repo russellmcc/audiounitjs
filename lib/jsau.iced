@@ -2,22 +2,49 @@ fs = require 'fs'
 path = require 'path'
 child_process = require 'child_process'
 
-key = '#PROJNAME'
+# array of replacements strings
+keys =
+  '#PROJNAME' : 'project'
+  '#AUTYPE' : 'type'
+  '#TYPECODE' : 'plugin_id'
+  '#MANUCODE' : 'manufacturer_id'
+  '#NAME' : 'name'
+  '#DESCRIPTION' : 'description'
+  '#COMPANY' : 'company'
+  '#COMPANY_UNDERSCORED' : 'company_underscore'
 
-transform_file = (src, name, target) ->
-  await fs.open target, 'w', defer err, target_fd
-  throw err if err?
+# help for each required key (keep synced with
+key_help =
+  'project' : "the name of the project file - users won't see this, but you will.  Must not contain spaces."
+  'type' : "the AU type.  must be aufx for now."
+  'plugin_id' : "the four-character plugin id."
+  'manufacturer_id' : "the four-character manufacturer id."
+  'name' : "the user-visible name of the plug in"
+  'description' : "the user-visible description"
+  'company' : "the user-visible company."
 
-  proc = child_process.spawn 'sed', ['-e', "s/#{key}/#{name}/g", src], {'stdio' : ['ignore', target_fd, 2]}
+transform_file = (src, project, target) ->
 
+  srcStream = fs.createReadStream src
+  targetStream = fs.createWriteStream target
+  srcStream.pipe targetStream
+
+  await srcStream.on 'end', defer err
+
+  srcStream.destroy()
+  targetStream.destroy()
+
+  # replace each key with each replacement using sed
+  args = ['-i']
+  for key, rep of keys
+    args += ['-e', "s/#{key}/#{project[rep]}/g"]
+  args += [target]
+
+  proc = child_process.spawn 'sed', args, {'stdio' : ['ignore', 'ignore', 2]}
   await proc.on 'exit', defer code
 
-  throw code if code
 
-  await fs.close target_fd, defer err
-  throw err if err?
-
-transform_dir = (dir, name, target) ->
+transform_dir = (dir, project, target) ->
 
   # create the destination
   await fs.mkdir target, defer err
@@ -30,20 +57,34 @@ transform_dir = (dir, name, target) ->
   # now tranform each file and subdirectory.
   for file in files
     src_path = path.join dir, file
-    target_path = path.join target, file.replace key, name
+    target_path = target
+
+    # replace all keys
+    for key, rep of keys
+      target_path.replace key, project[rep]
 
     await fs.stat src_path, defer err, stats
     throw err if err?
 
     # if it's a file, transform the file
     if stats.isFile()
-      transform_file src_path, name, target_path
+      transform_file src_path, project, target_path
     else if stats.isDirectory()
-      transform_dir src_path, name, target_path
+      transform_dir src_path, project, target_path
 
-module.exports = (name) ->
+module.exports = (json_file) ->
+
+  project = JSON.parse cat json_file
+
+  throw "Couldn't parse project file #{json_file}" if not project?
+
+  project.company_underscore = project.company?.replace /\s/g, '_'
+
+  for own key, proj_key of keys
+    throw "missing project property #{proj_key}.  This should be set to #{key_help[proj_key]}" if not project[proj_key]?
+
   await fs.realpath (path.join __dirname, '..', 'Template'), defer err, fullpath
   throw err if err?
-  target = (path.join process.cwd(), name)
+  target = (path.join process.cwd(), project.project)
 
-  transform_dir fullpath, name, target
+  transform_dir fullpath, project, target
