@@ -35,16 +35,20 @@ transform_file = (src, project, target) ->
   targetStream.destroy()
 
   # replace each key with each replacement using sed
-  args = ['-i']
+  args = ['-i', '']
   for key, rep of keys
-    args += ['-e', "s/#{key}/#{project[rep]}/g"]
-  args += [target]
+    args = args.concat ['-e', "s/#{key}/#{project[rep]}/g"]
+  args = args.concat [target]
+
+  console.log args
 
   proc = child_process.spawn 'sed', args, {'stdio' : ['ignore', 'ignore', 2]}
   await proc.on 'exit', defer code
 
 
 transform_dir = (dir, project, target) ->
+
+  console.log target
 
   # create the destination
   await fs.mkdir target, defer err
@@ -57,11 +61,11 @@ transform_dir = (dir, project, target) ->
   # now tranform each file and subdirectory.
   for file in files
     src_path = path.join dir, file
-    target_path = target
+    target_path = path.join target, file
 
     # replace all keys
     for key, rep of keys
-      target_path.replace key, project[rep]
+      target_path = target_path.replace key, project[rep]
 
     await fs.stat src_path, defer err, stats
     throw err if err?
@@ -74,7 +78,7 @@ transform_dir = (dir, project, target) ->
 
 module.exports = (json_file) ->
 
-  project = JSON.parse cat json_file
+  project = JSON.parse fs.readFileSync json_file
 
   throw "Couldn't parse project file #{json_file}" if not project?
 
@@ -87,4 +91,5 @@ module.exports = (json_file) ->
   throw err if err?
   target = (path.join process.cwd(), project.project)
 
+  console.log target
   transform_dir fullpath, project, target
