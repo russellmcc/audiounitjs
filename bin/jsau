@@ -7,4 +7,9 @@ var optimist = require('optimist').usage('Create audio unit template with html u
     });
     
 require('iced-coffee-script');
-require('../lib/jsau')(optimist.argv._[0]);
+
+try {
+  require('../lib/jsau')(optimist.argv._[0]);
+} catch (err) {
+  console.error(err.toString());
+}
