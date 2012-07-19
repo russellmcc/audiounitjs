@@ -1,0 +1,14 @@
+{
+  "notes" : "this is an example project JSON to get you started.  Please change each field to match your project.",
+  "project" : "example",
+  "type" : "aufx",
+
+  "plugin_id" : "exam",
+  "manufacturer_id": "test",
+
+  "name" : "example plug in",
+  "description" : "Description goes here",
+
+  "company" : "Russell McClellan"
+  
+}

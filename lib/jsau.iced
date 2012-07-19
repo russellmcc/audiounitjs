@@ -81,8 +81,8 @@ module.exports = (json_file) ->
 
   project.company_underscore = project.company?.replace /\s/g, '_'
 
-  for own key, proj_key of keys
-    throw "missing project property '#{proj_key}'.  This should be set to #{key_help[proj_key]}" if not project[proj_key]?
+  for own key, help of key_help
+    throw "missing project property '#{key}'.  This should be set to #{help}" if not project[key]?
 
   await fs.realpath (path.join __dirname, '..', 'Template'), defer err, fullpath
   throw err if err?
