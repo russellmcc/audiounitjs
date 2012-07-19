@@ -79,7 +79,7 @@ module.exports = (json_file) ->
 
   throw "Couldn't parse project file #{json_file}" if not project?
 
-  project.company_underscore = project.company?.replace /\s/g, '_'
+  project.company_underscore = project.company?.replace /\s/g, '-'
 
   for own key, help of key_help
     throw "missing project property '#{key}'.  This should be set to #{help}" if not project[key]?
