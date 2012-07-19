@@ -10,8 +10,9 @@ keys =
   '#MANUCODE' : 'manufacturer_id'
   '#NAME' : 'name'
   '#DESCRIPTION' : 'description'
-  '#COMPANY' : 'company'
   '#COMPANY_UNDERSCORED' : 'company_underscore'
+  '#COMPANY' : 'company'
+
 
 # help for each required key (keep synced with
 key_help =
@@ -40,15 +41,11 @@ transform_file = (src, project, target) ->
     args = args.concat ['-e', "s/#{key}/#{project[rep]}/g"]
   args = args.concat [target]
 
-  console.log args
-
   proc = child_process.spawn 'sed', args, {'stdio' : ['ignore', 'ignore', 2]}
   await proc.on 'exit', defer code
 
 
 transform_dir = (dir, project, target) ->
-
-  console.log target
 
   # create the destination
   await fs.mkdir target, defer err
