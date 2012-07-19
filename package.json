@@ -18,8 +18,7 @@
   },
   "dependencies": {
     "iced-coffee-script": "*",
-    "optimist" : "*",
-    "shelljs" : "*"
+    "optimist" : "*"
   },
   "devDependencies": {},
   "directories": {
