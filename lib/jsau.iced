@@ -88,5 +88,4 @@ module.exports = (json_file) ->
   throw err if err?
   target = (path.join process.cwd(), project.project)
 
-  console.log target
   transform_dir fullpath, project, target
