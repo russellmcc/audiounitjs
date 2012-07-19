@@ -7,6 +7,6 @@
 }
 
 - (void)setAU:(AudioUnit)inAU;
-- (void)awakFromNib;
+- (void)awakeFromNib;
 
 @end
