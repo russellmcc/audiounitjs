@@ -452,9 +452,9 @@
 			buildPhases = (
 				FFC1A2B41515302800D447CC /* Sources */,
 				FFC1A2B51515302800D447CC /* Frameworks */,
-				FFC1A2B61515302800D447CC /* Resources */,
 				FF17E0071516EBFD00A85EB4 /* CopyFiles */,
 				FFECCC70151BDE37003D3564 /* CopyFiles */,
+				FFC1A2B61515302800D447CC /* Resources */,
 			);
 			buildRules = (
 			);
