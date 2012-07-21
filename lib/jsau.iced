@@ -26,14 +26,9 @@ key_help =
 
 transform_file = (src, project, target) ->
 
-  srcStream = fs.createReadStream src
-  targetStream = fs.createWriteStream target
-  srcStream.pipe targetStream
-
-  await srcStream.on 'end', defer err
-
-  srcStream.destroy()
-  targetStream.destroy()
+  # copy the file.
+  proc = child_process.spawn 'cp', [src, target], {'stdio' : 'ignore'}
+  await proc.on 'exit', defer code
 
   # replace each key with each replacement using sed
   args = ['-i', '']
