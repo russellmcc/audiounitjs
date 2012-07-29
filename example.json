@@ -3,8 +3,8 @@
   "project" : "example",
   "type" : "aufx",
 
-  "plugin_id" : "exam",
-  "manufacturer_id": "test",
+  "plugin_id" : "Exam",
+  "manufacturer_id": "Test",
 
   "name" : "example plug in",
   "description" : "Description goes here",
