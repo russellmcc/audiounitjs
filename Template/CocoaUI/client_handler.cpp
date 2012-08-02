@@ -5,6 +5,7 @@
 #include "cef.h"
 #include "client_handler.h"
 #include "CppV8Handler.h"
+#include "audioprops.h"
 
 ClientHandler::ClientHandler(AudioUnit au) :
     mAU(au)
@@ -299,6 +300,62 @@ void ClientHandler::SetupAUParams()
         // for convenience, put this param right on the AudioUnit object.
         mV8Value->SetValue(info.name, paramInfo, V8_PROPERTY_ATTRIBUTE_NONE);
     }
+    
+    // now, do similar stuff for the JS properties.
+    status = AudioUnitGetPropertyInfo(mAU, kAudioProp_JSPropList, kAudioUnitScope_Global, 0, &dataSize, 0);
+    if(status != noErr) return;
+    
+    numElems = dataSize / sizeof(JSPropDesc);
+    JSPropDesc propInfoData[numElems];
+    status = AudioUnitGetProperty(mAU, kAudioProp_JSPropList, kAudioUnitScope_Global, 0, propInfoData, &dataSize);
+    if(status != noErr) return;
+        
+    // propInfos is a name-indexed map of info for the parameters.
+    CefRefPtr<CefV8Value> propInfos = CefV8Value::CreateObject(NULL);
+    mV8Value->SetValue("Properties", propInfos, V8_PROPERTY_ATTRIBUTE_NONE);
+    
+        
+    for(int i = 0; i < numElems; ++i)
+    {
+        // calculate the au-side id.
+        int auPropID = i + kFirstAudioProp;
+        
+        // register for "property changed" callbacks.
+        AudioUnitEvent auEvent;
+        AudioUnitProperty auProp = {mAU, auPropID, kAudioUnitScope_Global, 0};
+        auEvent.mArgument.mProperty = auProp;
+        auEvent.mEventType = kAudioUnitEvent_PropertyChange;
+        AUEventListenerAddEventType(mAUEventListener, this, &auEvent);
+        
+        // remember the type of this ID.
+        mJSPropTypes.push_back(propInfoData[i].type);
+        
+        // create an info structure
+        CefRefPtr<CefV8Value> propInfo = CefV8Value::CreateObject(NULL);
+        propInfos->SetValue(propInfoData[i].name, propInfo, V8_PROPERTY_ATTRIBUTE_NONE);
+        propInfo->SetValue("id", CefV8Value::CreateInt(i), V8_PROPERTY_ATTRIBUTE_READONLY);
+        
+        // make a "get" pass-through
+        propInfo->SetValue("Get", CefV8Value::CreateFunction("Get", new CppV8Handler("Get", ^
+                (
+                CefRefPtr<CefV8Value> obj,
+                const CefV8ValueList& args,
+                CefRefPtr<CefV8Value>& ret,
+                CefString& except) {
+                  CefV8ValueList allArgs;
+                  // first argument is my id.
+                  allArgs.push_back(CefV8Value::CreateInt(i));
+                  
+                  CefRefPtr<CefV8Exception> exception;
+                  
+                  mV8Value->GetValue("GetProperty")->ExecuteFunction(mV8Value, allArgs, ret, exception, true);
+                  return true;
+              }
+            )), V8_PROPERTY_ATTRIBUTE_NONE);   
+        
+        // for convenience, put this param right on the AudioUnit object.
+        mV8Value->SetValue(propInfoData[i].name, propInfo, V8_PROPERTY_ATTRIBUTE_NONE);
+    }
 }
 
 void ClientHandler::OnContextCreated(CefRefPtr<CefBrowser> browser,
@@ -389,7 +446,69 @@ void ClientHandler::OnContextCreated(CefRefPtr<CefBrowser> browser,
         return true;
     }
     )), V8_PROPERTY_ATTRIBUTE_NONE);                                                                                                                                            
+    mV8Value->SetValue("GetProperty", CefV8Value::CreateFunction("GetProperty", new CppV8Handler("GetProperty", ^
+         (
+        CefRefPtr<CefV8Value> obj,
+        const CefV8ValueList& args,
+        CefRefPtr<CefV8Value>& ret,
+        CefString& except) {
+        // first argument is the parameter to set
+        if(args.size() < 1)
+        {
+            except = "Incorrect number of arguments to GetParameter: 1 expected.";
+            return true;
+        }
+        
+        int propID = args[0]->GetIntValue();
+        
+        // if it
+        if((propID < 0) or (propID > mJSPropTypes.size()))
+        {
+            except = "Unrecognized property ID";
+            return true;
+        }
+        
+        int auPropID = propID + kFirstAudioProp; // the AU has the ids shifted by kFirstAudioProp
 
+        UInt32 propSize;
+        OSStatus status = AudioUnitGetPropertyInfo(mAU, auPropID, kAudioUnitScope_Global, 0, &propSize, 0);
+        if(status != noErr)
+        {
+            except = "Property not found";
+            return true;
+        }
+        
+        // what we return depends on what type of value it is.
+        switch(mJSPropTypes[propID])
+        {
+            case JSPropDesc::kJSNumber: {
+                if(propSize != sizeof(double))
+                {
+                    except = "property size mismatch";
+                    return true;
+                }
+                double retAsDouble;
+                AudioUnitGetProperty(mAU, auPropID, kAudioUnitScope_Global, 0, &retAsDouble, &propSize);
+                ret = CefV8Value::CreateDouble(retAsDouble);
+            } break;
+            case JSPropDesc::kJSString: {
+                char propString[propSize];
+                AudioUnitGetProperty(mAU, auPropID, kAudioUnitScope_Global, 0, propString, &propSize);
+                ret = CefV8Value::CreateString(propString);
+            } break;
+            case JSPropDesc::kJSNumberArray: {
+                int numDoubles = propSize / sizeof(double);
+                double retAsDoubles[numDoubles + 1];
+                AudioUnitGetProperty(mAU, auPropID, kAudioUnitScope_Global, 0, retAsDoubles, &propSize);
+                ret = CefV8Value::CreateArray();
+                for(int i = 0; i < numDoubles; ++i)
+                    ret->SetValue(i, CefV8Value::CreateDouble(retAsDoubles[i]));
+            } break;
+        }
+
+        return true;
+    }
+    )), V8_PROPERTY_ATTRIBUTE_NONE);
     
     context->GetGlobal()->SetValue("AudioUnit", mV8Value, V8_PROPERTY_ATTRIBUTE_NONE);
     

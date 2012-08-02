@@ -1,7 +1,15 @@
+#include "audioprops.h"
+
 // PARAMETERS GO HERE
 enum
 {
 	kParam_Gain
+};
+
+// PROPERTIES GO HERE
+enum
+{
+    kProp_ScopeData = kFirstAudioProp
 };
 
 class AudioKernel : public AUKernelBase {
@@ -32,14 +40,19 @@ public:
 	virtual OSStatus GetParameterInfo(	AudioUnitScope			inScope,
                                         AudioUnitParameterID	inParameterID,
                                         AudioUnitParameterInfo	&outParameterInfo );
+private:
+    double scopeData[400];
+    int currScopeInd;
 };
 
 COMPONENT_ENTRY(Audio)
 
 AudioKernel::AudioKernel(AUEffectBase * inAudioUnit ) : AUKernelBase(inAudioUnit) {}
 
-Audio::Audio(AudioUnit component) : AUEffectBase(component) 
+Audio::Audio(AudioUnit component) : AUEffectBase(component),
+    currScopeInd(0)
 {
+    memset(scopeData, 0, sizeof(scopeData));
     SetParameter(kParam_Gain, 0.0);
 }
 
@@ -64,6 +77,14 @@ OSStatus Audio::GetPropertyInfo (AudioUnitPropertyID	id,
 			case kAudioUnitProperty_CocoaUI:
                 writable = false;
                 size = sizeof(AudioUnitCocoaViewInfo);
+                return noErr;
+            case kAudioProp_JSPropList:
+                writable = false;
+                size = sizeof(JSPropDesc);
+                return noErr;
+            case kProp_ScopeData:
+                writable = false;
+                size = sizeof(scopeData);
                 return noErr;
         }
     }
@@ -154,8 +175,21 @@ OSStatus Audio::GetProperty(AudioUnitPropertyID id, AudioUnitScope scope,
                 
                 *(reinterpret_cast<AudioUnitCocoaViewInfo*>(data)) = info;
                 return noErr;
-            }   
+            }
             break;
+            case kAudioProp_JSPropList:
+            {
+                JSPropDesc desc;
+                desc.type = JSPropDesc::kJSNumberArray;
+                memcpy(desc.name, "ScopeData", sizeof(desc.name));
+                *(reinterpret_cast<JSPropDesc*>(data)) = desc;
+                return noErr;
+            }
+            break;
+            case kProp_ScopeData:
+                memcpy(data, scopeData, sizeof(scopeData));
+                return noErr;
+                break;
         }
     }
     return AUEffectBase::GetProperty(id, scope, elem, data);
