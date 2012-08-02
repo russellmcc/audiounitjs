@@ -168,26 +168,32 @@ void ClientHandler::ReceiveAUEvent(void *object, const AudioUnitEvent *event, UI
     // set-up arguments.
     CefString callbackStr;
     
+    bool paramEvent = false;
+    
     AudioUnitParameterID currId = event->mArgument.mParameter.mParameterID;
     switch (event->mEventType)
     {
         case kAudioUnitEvent_ParameterValueChange:
             callbackStr = "OnParameterChange";
+            paramEvent = true;
             args.push_back(CefV8Value::CreateInt(currId));
             args.push_back(CefV8Value::CreateDouble(value));
             break;
         case kAudioUnitEvent_BeginParameterChangeGesture:
             callbackStr = "OnBeginParameterGesture";
+            paramEvent = true;
             args.push_back(CefV8Value::CreateInt(currId));
             args.push_back(CefV8Value::CreateDouble(value));
             break;
         case kAudioUnitEvent_EndParameterChangeGesture:
             callbackStr = "OnEndParameterGesture";
+            paramEvent = true;
             args.push_back(CefV8Value::CreateInt(currId));
             args.push_back(CefV8Value::CreateDouble(value));
             break;
         case kAudioUnitEvent_PropertyChange:
             callbackStr = "OnPropertyChange";
+            paramEvent = false;
             args.push_back(CefV8Value::CreateInt(currId));
             args.push_back(CefV8Value::CreateDouble(value));
             break;
@@ -198,30 +204,62 @@ void ClientHandler::ReceiveAUEvent(void *object, const AudioUnitEvent *event, UI
     if(mV8Value->HasValue(callbackStr))
         mV8Value->GetValue(callbackStr)->ExecuteFunction(mV8Value, args, retVal, exception, true);
         
-    // now, check if any parameter has a parameter-specific callback.
-    CefRefPtr<CefV8Value> params = mV8Value->GetValue("Params");
-    if(not params)
-        return;
-        
-    std::vector<CefString> keys;
-    if(not params->GetKeys(keys))
-        return;
-    
-    for(std::vector<CefString>::iterator i = keys.begin(); i != keys.end(); ++i)
+    if(paramEvent)
     {
-        CefRefPtr<CefV8Value> curr = params->GetValue(*i);
-        if(not curr)
+        // now, check if any parameter has a parameter-specific callback.
+        CefRefPtr<CefV8Value> params = mV8Value->GetValue("Params");
+        if(not params)
             return;
             
-        if(curr->GetValue("id")->GetIntValue() != currId)
-            continue;
-            
-        if(curr->HasValue(callbackStr))
+        std::vector<CefString> keys;
+        if(not params->GetKeys(keys))
+            return;
+        
+        for(std::vector<CefString>::iterator i = keys.begin(); i != keys.end(); ++i)
         {
-            CefV8ValueList args;
-            args.push_back(CefV8Value::CreateDouble(value));
-            curr->GetValue(callbackStr)->ExecuteFunction(curr, args, retVal, exception, true);
+            CefRefPtr<CefV8Value> curr = params->GetValue(*i);
+            if(not curr)
+                return;
+                
+            if(curr->GetValue("id")->GetIntValue() != currId)
+                continue;
+                
+            if(curr->HasValue(callbackStr))
+            {
+                CefV8ValueList args;
+                args.push_back(CefV8Value::CreateDouble(value));
+                curr->GetValue(callbackStr)->ExecuteFunction(curr, args, retVal, exception, true);
+                return;
+            }
+        }
+    }
+    else
+    {
+        // ditto for the properties
+        CefRefPtr<CefV8Value> props = mV8Value->GetValue("Properties");
+        if(not props)
             return;
+            
+        std::vector<CefString> keys;
+        if(not props->GetKeys(keys))
+            return;
+        
+        for(std::vector<CefString>::iterator i = keys.begin(); i != keys.end(); ++i)
+        {
+            CefRefPtr<CefV8Value> curr = props->GetValue(*i);
+            if(not curr)
+                return;
+                
+            if(curr->GetValue("id")->GetIntValue() != currId)
+                continue;
+                
+            if(curr->HasValue(callbackStr))
+            {
+                CefV8ValueList args;
+                args.push_back(CefV8Value::CreateDouble(value));
+                curr->GetValue(callbackStr)->ExecuteFunction(curr, args, retVal, exception, true);
+                return;
+            }
         }
     }
 }    
