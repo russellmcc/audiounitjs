@@ -10,6 +10,8 @@ keys =
   '#MANUCODE' : 'manufacturer_id'
   '#NAME' : 'name'
   '#DESCRIPTION' : 'description'
+  '#UIHEIGHT' : 'height'
+  '#UIWIDTH' : 'width'
   '#COMPANY_UNDERSCORED' : 'company_underscore'
   '#COMPANY' : 'company'
 
@@ -23,7 +25,9 @@ key_help =
   'name' : "the user-visible name of the plug in"
   'description' : "the user-visible description"
   'company' : "the user-visible company."
-
+  'width' : 'the height of the user interface'
+  'height' : 'the width of the user interface'
+  
 transform_file = (src, project, target) ->
 
   # copy the file.

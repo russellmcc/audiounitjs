@@ -9,6 +9,8 @@
   "name" : "example plug in",
   "description" : "Description goes here",
 
-  "company" : "Russell McClellan"
+  "company" : "Russell McClellan",
   
+  "height" : "500",
+  "width" : "500"
 }
