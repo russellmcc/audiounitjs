@@ -9,6 +9,7 @@
 #include "util.h"
 #import <AudioUnit/AudioUnit.h>
 #import <AudioToolbox/AudioToolbox.h>
+#include "audioprops.h"
 
 // Define this value to redirect all popup URLs to the main application browser
 // window.
@@ -161,6 +162,9 @@ protected:
     
     // helper subroutine to setup per-Parameter stuff
     void SetupAUParams();
+    
+    // This is a list of what the types of each JS property is supposed to be
+    std::vector<JSPropDesc::JSType> mJSPropTypes;
 };
 
 #endif // _CLIENT_HANDLER_H
