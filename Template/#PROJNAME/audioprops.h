@@ -11,6 +11,7 @@ enum
 
 struct JSPropDesc
 {
+
     // allowable types
     enum JSType
     {
@@ -18,9 +19,10 @@ struct JSPropDesc
         kJSString, // passed as a char array
         kJSNumberArray // passed as an array of doubles.
     };
-    
+
     JSType type;
-    char name[52];
+    const char* name;
 };
+
 
 #endif

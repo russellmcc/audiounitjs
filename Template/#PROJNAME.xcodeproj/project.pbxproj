@@ -10,12 +10,12 @@
 		FF17DFDF1516D05E00A85EB4 /* CocoaUI.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = FFC1A2B81515302800D447CC /* CocoaUI.bundle */; };
 		FF17E0061516EAE300A85EB4 /* libcef.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FF17E0051516EAE300A85EB4 /* libcef.dylib */; };
 		FF17E0081516EC0E00A85EB4 /* libcef.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF17E0051516EAE300A85EB4 /* libcef.dylib */; };
+		FF234F2715CC6EB8003C97AA /* jsaubase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF234F2615CC6EB8003C97AA /* jsaubase.cpp */; };
 		FF6A97FA152F8C1400C8ED05 /* ui in Resources */ = {isa = PBXBuildFile; fileRef = FF6A97F8152F8BF700C8ED05 /* ui */; };
 		FF6A97FC152F9AAF00C8ED05 /* CppV8Handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF6A97FB152F9AAF00C8ED05 /* CppV8Handler.cpp */; };
 		FF7644671579538A00E41F35 /* #PROJNAME-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF7644601579538A00E41F35 /* #PROJNAME-Info.plist */; };
 		FF7644681579538A00E41F35 /* #PROJNAME.exp in Sources */ = {isa = PBXBuildFile; fileRef = FF7644621579538A00E41F35 /* #PROJNAME.exp */; };
 		FF7644691579538A00E41F35 /* #PROJNAME.r in Rez */ = {isa = PBXBuildFile; fileRef = FF7644631579538A00E41F35 /* #PROJNAME.r */; };
-		FF76446A1579538A00E41F35 /* audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF7644641579538A00E41F35 /* audio.cpp */; };
 		FF76446B1579538A00E41F35 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF7644651579538A00E41F35 /* InfoPlist.strings */; };
 		FFB5DFC5152E18AF00E975D2 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDB8556151419A3004BA672 /* AudioUnit.framework */; };
 		FFB5DFC7152E18B500E975D2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDB855215141990004BA672 /* AudioToolbox.framework */; };
@@ -121,26 +121,29 @@
 		FF17DFF71516E97B00A85EB4 /* cef_types_mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cef_types_mac.h; sourceTree = "<group>"; };
 		FF17DFF81516E97B00A85EB4 /* cef_types_wrappers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cef_types_wrappers.h; sourceTree = "<group>"; };
 		FF17E0051516EAE300A85EB4 /* libcef.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcef.dylib; path = libcef/lib/libcef.dylib; sourceTree = "<group>"; };
+		FF234F2615CC6EB8003C97AA /* jsaubase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jsaubase.cpp; sourceTree = "<group>"; };
+		FF234F2915CC6EC9003C97AA /* jsaubase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jsaubase.h; sourceTree = "<group>"; };
 		FF6A97F8152F8BF700C8ED05 /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ui; sourceTree = "<group>"; };
 		FF6A97FB152F9AAF00C8ED05 /* CppV8Handler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CppV8Handler.cpp; sourceTree = "<group>"; };
 		FF6A97FD152F9AC300C8ED05 /* CppV8Handler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CppV8Handler.h; sourceTree = "<group>"; };
 		FF7644601579538A00E41F35 /* #PROJNAME-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "#PROJNAME-Info.plist"; sourceTree = "<group>"; };
 		FF7644611579538A00E41F35 /* #PROJNAME-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "#PROJNAME-Prefix.pch"; sourceTree = "<group>"; };
-		FF7644621579538A00E41F35 /* #PROJNAME.exp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.exports; path = "#PROJNAME.exp"; sourceTree = "<group>"; };
-		FF7644631579538A00E41F35 /* #PROJNAME.r */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.rez; path = "#PROJNAME.r"; sourceTree = "<group>"; };
+		FF7644621579538A00E41F35 /* #PROJNAME.exp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.exports; path = #PROJNAME.exp; sourceTree = "<group>"; };
+		FF7644631579538A00E41F35 /* #PROJNAME.r */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.rez; path = #PROJNAME.r; sourceTree = "<group>"; };
 		FF7644641579538A00E41F35 /* audio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = audio.cpp; sourceTree = "<group>"; };
 		FF7644661579538A00E41F35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FF857DE815CA1E03005D0614 /* audioprops.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = audioprops.h; sourceTree = "<group>"; };
 		FFC1A2B81515302800D447CC /* CocoaUI.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaUI.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC1A2BC1515302800D447CC /* CocoaUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaUI-Info.plist"; sourceTree = "<group>"; };
 		FFC1A2BE1515302800D447CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FFC1A2C01515302800D447CC /* CocoaUI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CocoaUI-Prefix.pch"; sourceTree = "<group>"; };
 		FFC1A2C81515345900D447CC /* cefview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cefview.xib; sourceTree = "<group>"; };
 		FFC1A2CA151534AD00D447CC /* libcef_dll_wrapper.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcef_dll_wrapper.a; path = libcef/lib/libcef_dll_wrapper.a; sourceTree = "<group>"; };
-		FFC1A2CE151535C100D447CC /* #PROJNAME_ViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "#PROJNAME_ViewFactory.h"; sourceTree = "<group>"; };
-		FFC1A2CF151535C100D447CC /* #PROJNAME_ViewFactory.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "#PROJNAME_ViewFactory.mm"; sourceTree = "<group>"; };
-		FFC1A2D11515404A00D447CC /* #PROJNAME_CefView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "#PROJNAME_CefView.h"; sourceTree = "<group>"; };
-		FFC1A2D21515404A00D447CC /* #PROJNAME_CefView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "#PROJNAME_CefView.mm"; sourceTree = "<group>"; };
-		FFDB853B15141284004BA672 /* #PROJNAME.component */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = #PROJNAME.component; path = "#PROJNAME.component"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFC1A2CE151535C100D447CC /* #PROJNAME_ViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = #PROJNAME_ViewFactory.h; sourceTree = "<group>"; };
+		FFC1A2CF151535C100D447CC /* #PROJNAME_ViewFactory.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = #PROJNAME_ViewFactory.mm; sourceTree = "<group>"; };
+		FFC1A2D11515404A00D447CC /* #PROJNAME_CefView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = #PROJNAME_CefView.h; sourceTree = "<group>"; };
+		FFC1A2D21515404A00D447CC /* #PROJNAME_CefView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = #PROJNAME_CefView.mm; sourceTree = "<group>"; };
+		FFDB853B15141284004BA672 /* #PROJNAME.component */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = #PROJNAME.component; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDB853E15141284004BA672 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		FFDB854115141284004BA672 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		FFDB854215141284004BA672 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -256,6 +259,9 @@
 				FF7644631579538A00E41F35 /* #PROJNAME.r */,
 				FF7644641579538A00E41F35 /* audio.cpp */,
 				FF7644651579538A00E41F35 /* InfoPlist.strings */,
+				FF857DE815CA1E03005D0614 /* audioprops.h */,
+				FF234F2615CC6EB8003C97AA /* jsaubase.cpp */,
+				FF234F2915CC6EC9003C97AA /* jsaubase.h */,
 			);
 			name = "Supporting Files";
 			path = "#PROJNAME";
@@ -630,6 +636,7 @@
 				FFDB859B15141D9D004BA672 /* CAStreamBasicDescription.cpp in Sources */,
 				FFDB859D15141DDE004BA672 /* CAXException.cpp in Sources */,
 				FF7644681579538A00E41F35 /* #PROJNAME.exp in Sources */,
+				FF234F2715CC6EB8003C97AA /* jsaubase.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
