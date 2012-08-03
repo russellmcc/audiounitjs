@@ -9,29 +9,38 @@
 				// Slider
 				$('#slider').slider({
                   start: function(event, ui) {
-                     AudioUnit.Gain.BeginGesture();
+                     AudioUnit.Trigger.BeginGesture();
                   },
                   stop: function(event, ui) {
-                     AudioUnit.Gain.EndGesture();
+                     AudioUnit.Trigger.EndGesture();
                   },
                   slide: function(event, ui) {
-                     AudioUnit.Gain.Set(ui.value / 100);
+                     AudioUnit.Trigger.Set(ui.value / 100);
                   }
                 });
-
+                
+                AudioUnit.ScopeData.OnPropertyChange = function() {
+                    var scopeData = AudioUnit.ScopeData.Get();
+                    var canvas = $('#canvas')[0];
+                    var ctx = canvas.getContext('2d');
+                    ctx.fillStyle = "white";
+                    ctx.fillRect(0,0,400,200);
+                    
+                    ctx.strokeStyle = "black";
+                    
+                    ctx.moveTo(0, 200 * scopeData[0]);
+                    ctx.beginPath();
+                    for(var i = 1; i < 400; ++i) {
+                        ctx.lineTo(i, 100 - 100 * scopeData[i]);
+                    }
+                    ctx.stroke();
+                }
 			});
 		</script>
   </head>
   <body>
     <H1> AUDIO UNIT </H1>
     <div width="50%" id="slider"></div>    
-    <script type="text/javascript">
-        AudioUnit.Gain.OnParameterChange = function() {
-            document.write(AudioUnit.Params.Gain.id + "<br>");
-            document.write(AudioUnit.Gain.Get() + "<br>");
-            document.write(AudioUnit.Gain.id + "<br>");
-        }
-        AudioUnit.Gain.Set(.3);
-    </script>
+    <canvas id="canvas" width="400" height="200"></canvas>
   </body>
 </html>
