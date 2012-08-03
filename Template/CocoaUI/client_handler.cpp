@@ -250,7 +250,7 @@ void ClientHandler::ReceiveAUEvent(void *object, const AudioUnitEvent *event, UI
             if(not curr)
                 return;
                 
-            if(curr->GetValue("id")->GetIntValue() != currId)
+            if(curr->GetValue("id")->GetIntValue() + kFirstAudioProp != currId )
                 continue;
                 
             if(curr->HasValue(callbackStr))
