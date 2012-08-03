@@ -159,6 +159,10 @@ namespace
 
 void ClientHandler::ReceiveAUEvent(void *object, const AudioUnitEvent *event, UInt64 hostTime, Float32 value)
 {
+    // don't do anything if we're in a bad state.
+    if(!mV8Context.get())
+        return;
+
     WithV8Context withContext(mV8Context);
     
     CefRefPtr<CefV8Exception> exception;
@@ -551,6 +555,16 @@ void ClientHandler::OnContextCreated(CefRefPtr<CefBrowser> browser,
     context->GetGlobal()->SetValue("AudioUnit", mV8Value, V8_PROPERTY_ATTRIBUTE_NONE);
     
 }
+
+    
+void ClientHandler::OnContextReleased(CefRefPtr<CefBrowser> browser,
+                                 CefRefPtr<CefFrame> frame,
+                                 CefRefPtr<CefV8Context> context)
+{
+    CefRefPtr<CefV8Context> foo;
+    mV8Context.swap(foo);
+}
+    
 
 bool ClientHandler::OnDragStart(CefRefPtr<CefBrowser> browser,
                                 CefRefPtr<CefDragData> dragData,
