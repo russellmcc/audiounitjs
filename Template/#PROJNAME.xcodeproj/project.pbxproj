@@ -123,7 +123,7 @@
 		FF17E0051516EAE300A85EB4 /* libcef.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcef.dylib; path = "JSAU source/libcef/lib/libcef.dylib"; sourceTree = "<group>"; };
 		FF234F2615CC6EB8003C97AA /* jsaubase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jsaubase.cpp; sourceTree = "<group>"; };
 		FF234F2915CC6EC9003C97AA /* jsaubase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jsaubase.h; sourceTree = "<group>"; };
-		FF6A97F8152F8BF700C8ED05 /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ui; path = ../../ui; sourceTree = "<group>"; };
+		FF6A97F8152F8BF700C8ED05 /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ui; sourceTree = "<group>"; };
 		FF6A97FB152F9AAF00C8ED05 /* CppV8Handler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CppV8Handler.cpp; sourceTree = "<group>"; };
 		FF6A97FD152F9AC300C8ED05 /* CppV8Handler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CppV8Handler.h; sourceTree = "<group>"; };
 		FF7644601579538A00E41F35 /* #PROJNAME-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "#PROJNAME-Info.plist"; sourceTree = "<group>"; };
@@ -265,13 +265,41 @@
 			path = "JSAU source/#PROJNAME";
 			sourceTree = SOURCE_ROOT;
 		};
-		FFC1A2BA1515302800D447CC /* CocoaUI */ = {
+		FF9E2D9C15CCBB15009026AE /* Framework Sources */ = {
 			isa = PBXGroup;
 			children = (
+				FF17E0051516EAE300A85EB4 /* libcef.dylib */,
+				FFC1A2CA151534AD00D447CC /* libcef_dll_wrapper.a */,
+				FFDB8556151419A3004BA672 /* AudioUnit.framework */,
+				FFDB85541514199A004BA672 /* CoreServices.framework */,
+				FFDB855215141990004BA672 /* AudioToolbox.framework */,
+				FFDB854415141284004BA672 /* Audio */,
+				FF76445F1579538A00E41F35 /* Supporting Files */,
+				FFDB85511514136D004BA672 /* AU SDK */,
+				FFDB85501514135C004BA672 /* AU Source */,
+				FFC1A2BA1515302800D447CC /* CocoaUI */,
 				FF6A97F8152F8BF700C8ED05 /* ui */,
 				FFC1A2CD1515358900D447CC /* CEFSDK */,
 				FFC1A2CC1515357B00D447CC /* Source */,
 				FFC1A2BB1515302800D447CC /* Supporting Files */,
+				FFDB853D15141284004BA672 /* Frameworks */,
+				FFDB853E15141284004BA672 /* Cocoa.framework */,
+				FFDB854015141284004BA672 /* Other Frameworks */,
+			);
+			name = "Framework Sources";
+			sourceTree = "<group>";
+		};
+		FF9E2D9D15CCBB37009026AE /* Audio Processing Source */ = {
+			isa = PBXGroup;
+			children = (
+				FFDB859715141D23004BA672 /* audio.cpp */,
+			);
+			name = "Audio Processing Source";
+			sourceTree = "<group>";
+		};
+		FFC1A2BA1515302800D447CC /* CocoaUI */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			name = CocoaUI;
 			path = "JSAU source/CocoaUI";
@@ -286,6 +314,7 @@
 				FFC1A2C81515345900D447CC /* cefview.xib */,
 			);
 			name = "Supporting Files";
+			path = "JSAU source/CocoaUI";
 			sourceTree = "<group>";
 		};
 		FFC1A2CC1515357B00D447CC /* Source */ = {
@@ -301,6 +330,7 @@
 				FF6A97FD152F9AC300C8ED05 /* CppV8Handler.h */,
 			);
 			name = Source;
+			path = "JSAU source/CocoaUI";
 			sourceTree = "<group>";
 		};
 		FFC1A2CD1515358900D447CC /* CEFSDK */ = {
@@ -318,21 +348,15 @@
 				FF17DFE81516E97B00A85EB4 /* internal */,
 			);
 			name = CEFSDK;
-			path = ..;
+			path = "JSAU source";
 			sourceTree = "<group>";
 		};
 		FFDB853015141283004BA672 = {
 			isa = PBXGroup;
 			children = (
-				FF17E0051516EAE300A85EB4 /* libcef.dylib */,
-				FFC1A2CA151534AD00D447CC /* libcef_dll_wrapper.a */,
-				FFDB8556151419A3004BA672 /* AudioUnit.framework */,
-				FFDB85541514199A004BA672 /* CoreServices.framework */,
-				FFDB855215141990004BA672 /* AudioToolbox.framework */,
-				FFDB854415141284004BA672 /* Audio */,
-				FFC1A2BA1515302800D447CC /* CocoaUI */,
-				FFDB853D15141284004BA672 /* Frameworks */,
 				FFDB853C15141284004BA672 /* Products */,
+				FF9E2D9D15CCBB37009026AE /* Audio Processing Source */,
+				FF9E2D9C15CCBB15009026AE /* Framework Sources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -348,8 +372,6 @@
 		FFDB853D15141284004BA672 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FFDB853E15141284004BA672 /* Cocoa.framework */,
-				FFDB854015141284004BA672 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -367,9 +389,6 @@
 		FFDB854415141284004BA672 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				FF76445F1579538A00E41F35 /* Supporting Files */,
-				FFDB85511514136D004BA672 /* AU SDK */,
-				FFDB85501514135C004BA672 /* AU Source */,
 			);
 			name = Audio;
 			path = #PROJNAME;
@@ -378,7 +397,6 @@
 		FFDB85501514135C004BA672 /* AU Source */ = {
 			isa = PBXGroup;
 			children = (
-				FFDB859715141D23004BA672 /* audio.cpp */,
 			);
 			name = "AU Source";
 			sourceTree = SOURCE_ROOT;
@@ -408,6 +426,7 @@
 				FFDB855D15141B6E004BA672 /* AUBase */,
 			);
 			name = "AU SDK";
+			path = #PROJNAME;
 			sourceTree = "<group>";
 		};
 		FFDB855D15141B6E004BA672 /* AUBase */ = {
