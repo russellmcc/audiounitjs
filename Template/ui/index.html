@@ -1,0 +1,46 @@
+<html>
+  <head>
+		<link type="text/css" href="css/dark-hive/jquery-ui-1.8.19.custom.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.8.19.custom.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+
+				// Slider
+				$('#slider').slider({
+                  start: function(event, ui) {
+                     AudioUnit.Trigger.BeginGesture();
+                  },
+                  stop: function(event, ui) {
+                     AudioUnit.Trigger.EndGesture();
+                  },
+                  slide: function(event, ui) {
+                     AudioUnit.Trigger.Set(ui.value / 100);
+                  }
+                });
+                
+                AudioUnit.ScopeData.OnPropertyChange = function() {
+                    var scopeData = AudioUnit.ScopeData.Get();
+                    var canvas = $('#canvas')[0];
+                    var ctx = canvas.getContext('2d');
+                    ctx.fillStyle = "white";
+                    ctx.fillRect(0,0,400,200);
+                    
+                    ctx.strokeStyle = "black";
+                    
+                    ctx.moveTo(0, 200 * scopeData[0]);
+                    ctx.beginPath();
+                    for(var i = 1; i < 400; ++i) {
+                        ctx.lineTo(i, 100 - 100 * scopeData[i]);
+                    }
+                    ctx.stroke();
+                }
+			});
+		</script>
+  </head>
+  <body>
+    <H1> AUDIO UNIT </H1>
+    <div width="50%" id="slider"></div>    
+    <canvas id="canvas" width="400" height="200"></canvas>
+  </body>
+</html>
