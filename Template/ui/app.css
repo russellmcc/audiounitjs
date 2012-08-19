@@ -1,25 +1,7 @@
-body {
-    background-image: url('soft_wallpaper.png');
-}
-
-#scope {
-    margin: 0px auto;
-    width:450px;
-}
-
-#params {
-    width: 450px;
-    margin: 0px auto;
-}
-
 .dialdiv{
     float: left;
     width: 60px;
     height: 80px;
-}
-
-#gridDial {
-    float:right;
 }
 
 .label {

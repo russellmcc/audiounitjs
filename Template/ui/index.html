@@ -7,18 +7,26 @@
     <script src="app.js"></script>
 </head>
 <body>
-<div id=scope>
-  <canvas id="scopeData" height=450 width=450></canvas>
-</div>
 <div id=params>
-  <div class="dialdiv">
-    <input class="dial" id="trigger" data-width="60" data-height="60" data-min=0 data-max=100 data-angleOffset="-125" data-angleArc="250" data-flatMouse="1" value="0"/>
-    <div class="label">  Trigger </div>
-  </div>
-  <div class="dialdiv" id="gridDial">
-    <input class="dial" id="grid" data-width="60" data-height="60" data-min=0 data-max=100 data-angleOffset="-125" data-angleArc="250" data-flatMouse="1" value="10"/>
-    <div class="label">  Grid </div>    
+  <div class="dialdiv" id="volumeDial">
+    <input class="dial" id="volume" data-width="60" data-height="60" data-min=0 data-max=100 data-angleOffset="-125" data-angleArc="250" data-flatMouse="1" value="10"/>
+    <div class="label">  Volume </div>    
   </div>
 </div>
+<script>
+$(function(){
+  $('#volume').dial({
+    start: function() {AudioUnit.Volume.BeginGesture();},
+    stop: function() {AudioUnit.Volume.EndGesture();},
+    change: function(v) {AudioUnit.Volume.Set(v/100);},
+    flatMouse: true
+  });
+  var syncDial = function() {
+    $("#volume").val(~~(AudioUnit.Volume.Get() * 100)).trigger("change");
+  };
+  AudioUnit.Volume.OnParameterChange = syncDial;
+  syncDial();
+});
+</script>
 </body>
 </html>
