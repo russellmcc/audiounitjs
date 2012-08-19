@@ -3,41 +3,34 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
+	<string>en</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
 	<string>#PROJNAME.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.#COMPANY_UNDERSCORED.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>ghostfact.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundlePackageType</key>
-	<string>BNDL</string>
+	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
-	<string>GFgf</string>
+	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>NSPrincipalClass</key>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.music</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
+	<key>NSHumanReadableCopyright</key>
 	<string></string>
-	<key>AudioComponent</key>
-	<dict>
-		<key>manufacturer</key>
-		<string>#MANUCODE</string>
-		<key>factoryFunction</key>
-		<string>#PROJNAMEFactory</string>
-		<key>subtype</key>
-		<string>#TYPECODE</string>
-		<key>description</key>
-		<string>#DESCRIPTION</string>
-		<key>name</key>
-		<string>#COMPANY_UNDERSCORED: #NAME</string>
-		<key>version</key>
-		<string>0x00000001</string>
-	</dict>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
 </dict>
 </plist>

@@ -118,9 +118,13 @@ protected:
     CefSettings settings;
     CefRefPtr<CefApp> app(new ClientApp());
 
-    
+#ifdef STANDALONE
+    mBundle = [NSBundle mainBundle];
+#else
     mBundle = [NSBundle bundleWithIdentifier:@"com.#COMPANY_UNDERSCORED.#PROJNAME.CocoaUI"];
     CefOverrideNSBundle(mBundle);
+#endif
+
     
     // now, perform sketchy objc-runtime magic to ensure
     // the current app is CEF-compatible.

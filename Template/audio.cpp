@@ -55,6 +55,11 @@ private:
 };
 
 COMPONENT_ENTRY(Audio)
+void DoRegister(OSType Type, OSType Subtype, OSType Manufacturer)
+{
+    ComponentEntryPoint<Audio>::Register(Type, Subtype, Manufacturer);
+}
+
 
 AudioKernel::AudioKernel(Audio * inAudioUnit ) : AUKernelBase(inAudioUnit), mAudio(inAudioUnit) {}
 
@@ -100,7 +105,12 @@ void AudioKernel::Process(Float32 const* sourceP, Float32 * destP, UInt32 frames
             }
         }
         
-        *destP = *sourceP;
+        #ifdef STANDALONE
+            // don't feed back in standalone.
+            *destP = 0;
+        #else
+            *destP = *sourceP;
+        #endif
         destP++;
         sourceP++;
     }

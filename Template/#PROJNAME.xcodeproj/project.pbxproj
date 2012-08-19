@@ -7,10 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF08F68515D4348600A8A646 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF08F68415D4348600A8A646 /* Cocoa.framework */; };
+		FF08F68F15D4348600A8A646 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF08F68D15D4348600A8A646 /* InfoPlist.strings */; };
+		FF08F69115D4348600A8A646 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF08F69015D4348600A8A646 /* main.mm */; };
+		FF08F69815D4348600A8A646 /* #PROJNAMEAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF08F69715D4348600A8A646 /* #PROJNAMEAppDelegate.mm */; };
+		FF08F69B15D4348700A8A646 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF08F69915D4348700A8A646 /* MainMenu.xib */; };
+		FF08F6CF15D441AF00A8A646 /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB859C15141DDE004BA672 /* CAXException.cpp */; };
+		FF08F6D015D441F600A8A646 /* AUBaseHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB857615141B92004BA672 /* AUBaseHelper.cpp */; };
+		FF08F6D115D441F600A8A646 /* AUBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB857815141B92004BA672 /* AUBuffer.cpp */; };
+		FF08F6D215D441F600A8A646 /* AUDebugDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB857A15141B92004BA672 /* AUDebugDispatcher.cpp */; };
+		FF08F6D315D441F600A8A646 /* AUTimestampGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB857E15141B92004BA672 /* AUTimestampGenerator.cpp */; };
+		FF08F6D415D441F600A8A646 /* AUBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB855E15141B6E004BA672 /* AUBase.cpp */; };
+		FF08F6D515D441F600A8A646 /* AUDispatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB856015141B6E004BA672 /* AUDispatch.cpp */; };
+		FF08F6D615D4423300A8A646 /* AUInputElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB856215141B6E004BA672 /* AUInputElement.cpp */; };
+		FF08F6D715D4423300A8A646 /* AUOutputElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB856415141B6E004BA672 /* AUOutputElement.cpp */; };
+		FF08F6D815D4423300A8A646 /* AUScopeElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB856715141B6E004BA672 /* AUScopeElement.cpp */; };
+		FF08F6D915D4423300A8A646 /* ComponentBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB856915141B6E004BA672 /* ComponentBase.cpp */; };
+		FF08F6DA15D4425900A8A646 /* audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB859715141D23004BA672 /* audio.cpp */; };
+		FF08F6DB15D4428B00A8A646 /* CAAudioChannelLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB858415141D04004BA672 /* CAAudioChannelLayout.cpp */; };
+		FF08F6DC15D442A700A8A646 /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB859915141D9D004BA672 /* CAStreamBasicDescription.cpp */; };
+		FF08F6DD15D442A700A8A646 /* CADebugMacros.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB858715141D04004BA672 /* CADebugMacros.cpp */; };
+		FF08F6DE15D442A700A8A646 /* CAHostTimeBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB858A15141D04004BA672 /* CAHostTimeBase.cpp */; };
+		FF08F6DF15D442A700A8A646 /* CAVectorUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB859015141D05004BA672 /* CAVectorUnit.cpp */; };
+		FF08F6E015D442C000A8A646 /* AUEffectBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB857215141B83004BA672 /* AUEffectBase.cpp */; };
+		FF08F6E115D4432D00A8A646 /* jsaubase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF234F2615CC6EB8003C97AA /* jsaubase.cpp */; };
+		FF08F6E215D4434400A8A646 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDB8556151419A3004BA672 /* AudioUnit.framework */; };
+		FF08F6E315D459B000A8A646 /* client_handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFECCC6B151BBF2F003D3564 /* client_handler.cpp */; };
+		FF08F6E415D459BA00A8A646 /* #PROJNAME_CefView.mm in Sources */ = {isa = PBXBuildFile; fileRef = FFC1A2D21515404A00D447CC /* #PROJNAME_CefView.mm */; };
+		FF08F6E515D459BA00A8A646 /* CppV8Handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF6A97FB152F9AAF00C8ED05 /* CppV8Handler.cpp */; };
+		FF08F6E715D459EA00A8A646 /* libcef.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FF08F6E615D459EA00A8A646 /* libcef.dylib */; };
+		FF08F6E915D45A0E00A8A646 /* libcef_dll_wrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF08F6E815D45A0E00A8A646 /* libcef_dll_wrapper.a */; };
+		FF08F6EA15D45A2900A8A646 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDB855215141990004BA672 /* AudioToolbox.framework */; };
+		FF08F6EC15D45A7C00A8A646 /* libcef.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF08F6E615D459EA00A8A646 /* libcef.dylib */; };
+		FF08F6EE15D45C3E00A8A646 /* Resources in CopyFiles */ = {isa = PBXBuildFile; fileRef = FFECCCD7151BDF09003D3564 /* Resources */; };
+		FF08F6F015D45C5500A8A646 /* ui in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF6A97F8152F8BF700C8ED05 /* ui */; };
+		FF08F6F215D474B500A8A646 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF08F6F115D474B500A8A646 /* CoreAudio.framework */; };
 		FF17DFDF1516D05E00A85EB4 /* CocoaUI.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = FFC1A2B81515302800D447CC /* CocoaUI.bundle */; };
 		FF17E0061516EAE300A85EB4 /* libcef.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FF17E0051516EAE300A85EB4 /* libcef.dylib */; };
 		FF17E0081516EC0E00A85EB4 /* libcef.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF17E0051516EAE300A85EB4 /* libcef.dylib */; };
 		FF234F2715CC6EB8003C97AA /* jsaubase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF234F2615CC6EB8003C97AA /* jsaubase.cpp */; };
+		FF567EE315DE9BC5005090B3 /* #PROJNAME.icns in Resources */ = {isa = PBXBuildFile; fileRef = FF567EE215DE9BC5005090B3 /* #PROJNAME.icns */; };
+		FF567EE415DE9BC5005090B3 /* #PROJNAME.icns in Resources */ = {isa = PBXBuildFile; fileRef = FF567EE215DE9BC5005090B3 /* #PROJNAME.icns */; };
 		FF6A97FC152F9AAF00C8ED05 /* CppV8Handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF6A97FB152F9AAF00C8ED05 /* CppV8Handler.cpp */; };
 		FF7644671579538A00E41F35 /* #PROJNAME-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF7644601579538A00E41F35 /* #PROJNAME-Info.plist */; };
 		FF7644681579538A00E41F35 /* #PROJNAME.exp in Sources */ = {isa = PBXBuildFile; fileRef = FF7644621579538A00E41F35 /* #PROJNAME.exp */; };
@@ -50,6 +87,9 @@
 		FFDB859D15141DDE004BA672 /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB859C15141DDE004BA672 /* CAXException.cpp */; };
 		FFECCC6F151BBF5D003D3564 /* client_handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFECCC6B151BBF2F003D3564 /* client_handler.cpp */; };
 		FFECCCD9151BDF13003D3564 /* Resources in CopyFiles */ = {isa = PBXBuildFile; fileRef = FFECCCD7151BDF09003D3564 /* Resources */; };
+		FFF2F56F15D5C28200CEA715 /* CARingBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFF2F56D15D5C28100CEA715 /* CARingBuffer.cpp */; };
+		FFF2F57015D5C2D500CEA715 /* CAPlayThrough.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFF2F56915D5BE2B00CEA715 /* CAPlayThrough.cpp */; };
+		FFF2F57315D5C34100CEA715 /* AudioDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFF2F57115D5C34000CEA715 /* AudioDevice.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +103,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		FF08F6EB15D45A7400A8A646 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				FF08F6EC15D45A7C00A8A646 /* libcef.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF08F6ED15D45C0900A8A646 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "#NAME.app/Contents";
+			dstSubfolderSpec = 16;
+			files = (
+				FF08F6EE15D45C3E00A8A646 /* Resources in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF08F6EF15D45C4600A8A646 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				FF08F6F015D45C5500A8A646 /* ui in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF17DFDE1516D05300A85EB4 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -96,6 +166,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FF08F68115D4348600A8A646 /* #NAME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "#NAME.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF08F68415D4348600A8A646 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		FF08F68715D4348600A8A646 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		FF08F68815D4348600A8A646 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FF08F68915D4348600A8A646 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FF08F68C15D4348600A8A646 /* #PROJNAMEstandalone-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "#PROJNAMEstandalone-Info.plist"; sourceTree = "<group>"; };
+		FF08F68E15D4348600A8A646 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FF08F69015D4348600A8A646 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		FF08F69215D4348600A8A646 /* #PROJNAMEstandalone-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "#PROJNAMEstandalone-Prefix.pch"; sourceTree = "<group>"; };
+		FF08F69615D4348600A8A646 /* #PROJNAMEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = #PROJNAMEAppDelegate.h; sourceTree = "<group>"; };
+		FF08F69715D4348600A8A646 /* #PROJNAMEAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = #PROJNAMEAppDelegate.mm; sourceTree = "<group>"; };
+		FF08F69A15D4348700A8A646 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		FF08F6E615D459EA00A8A646 /* libcef.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcef.dylib; path = "JSAU Source/libcef/lib/libcef.dylib"; sourceTree = "<group>"; };
+		FF08F6E815D45A0E00A8A646 /* libcef_dll_wrapper.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcef_dll_wrapper.a; path = "JSAU Source/libcef/lib/libcef_dll_wrapper.a"; sourceTree = "<group>"; };
+		FF08F6F115D474B500A8A646 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		FF17DFE01516E97B00A85EB4 /* cef_application_mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cef_application_mac.h; path = "JSAU source/libcef/include/cef_application_mac.h"; sourceTree = SOURCE_ROOT; };
 		FF17DFE11516E97B00A85EB4 /* cef_capi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cef_capi.h; path = "JSAU source/libcef/include/cef_capi.h"; sourceTree = SOURCE_ROOT; };
 		FF17DFE21516E97B00A85EB4 /* cef_nplugin_capi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cef_nplugin_capi.h; path = "JSAU source/libcef/include/cef_nplugin_capi.h"; sourceTree = SOURCE_ROOT; };
@@ -123,6 +208,7 @@
 		FF17E0051516EAE300A85EB4 /* libcef.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcef.dylib; path = "JSAU source/libcef/lib/libcef.dylib"; sourceTree = "<group>"; };
 		FF234F2615CC6EB8003C97AA /* jsaubase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jsaubase.cpp; sourceTree = "<group>"; };
 		FF234F2915CC6EC9003C97AA /* jsaubase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jsaubase.h; sourceTree = "<group>"; };
+		FF567EE215DE9BC5005090B3 /* #PROJNAME.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = #PROJNAME.icns; sourceTree = SOURCE_ROOT; };
 		FF6A97F8152F8BF700C8ED05 /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ui; sourceTree = "<group>"; };
 		FF6A97FB152F9AAF00C8ED05 /* CppV8Handler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CppV8Handler.cpp; sourceTree = "<group>"; };
 		FF6A97FD152F9AC300C8ED05 /* CppV8Handler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CppV8Handler.h; sourceTree = "<group>"; };
@@ -195,9 +281,28 @@
 		FFECCC6B151BBF2F003D3564 /* client_handler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = client_handler.cpp; sourceTree = "<group>"; };
 		FFECCC6E151BBF49003D3564 /* client_handler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = client_handler.h; sourceTree = "<group>"; };
 		FFECCCD7151BDF09003D3564 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Resources; path = libcef/Resources; sourceTree = "<group>"; };
+		FFF2F56915D5BE2B00CEA715 /* CAPlayThrough.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAPlayThrough.cpp; sourceTree = "<group>"; };
+		FFF2F56A15D5BE2B00CEA715 /* CAPlayThrough.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAPlayThrough.h; sourceTree = "<group>"; };
+		FFF2F56D15D5C28100CEA715 /* CARingBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CARingBuffer.cpp; path = Extras/CoreAudio/PublicUtility/CARingBuffer.cpp; sourceTree = DEVELOPER_DIR; };
+		FFF2F56E15D5C28200CEA715 /* CARingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CARingBuffer.h; path = Extras/CoreAudio/PublicUtility/CARingBuffer.h; sourceTree = DEVELOPER_DIR; };
+		FFF2F57115D5C34000CEA715 /* AudioDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioDevice.cpp; sourceTree = "<group>"; };
+		FFF2F57215D5C34100CEA715 /* AudioDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioDevice.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FF08F67E15D4348600A8A646 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF08F6F215D474B500A8A646 /* CoreAudio.framework in Frameworks */,
+				FF08F6EA15D45A2900A8A646 /* AudioToolbox.framework in Frameworks */,
+				FF08F6E915D45A0E00A8A646 /* libcef_dll_wrapper.a in Frameworks */,
+				FF08F6E715D459EA00A8A646 /* libcef.dylib in Frameworks */,
+				FF08F6E215D4434400A8A646 /* AudioUnit.framework in Frameworks */,
+				FF08F68515D4348600A8A646 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFC1A2B51515302800D447CC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -225,6 +330,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF08F68315D4348600A8A646 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF08F68415D4348600A8A646 /* Cocoa.framework */,
+				FF08F68615D4348600A8A646 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FF08F68615D4348600A8A646 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF08F68715D4348600A8A646 /* AppKit.framework */,
+				FF08F68815D4348600A8A646 /* CoreData.framework */,
+				FF08F68915D4348600A8A646 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		FF08F68A15D4348600A8A646 /* #PROJNAMEstandalone */ = {
+			isa = PBXGroup;
+			children = (
+				FFF2F57115D5C34000CEA715 /* AudioDevice.cpp */,
+				FFF2F57215D5C34100CEA715 /* AudioDevice.h */,
+				FFF2F56915D5BE2B00CEA715 /* CAPlayThrough.cpp */,
+				FFF2F56A15D5BE2B00CEA715 /* CAPlayThrough.h */,
+				FF08F69615D4348600A8A646 /* #PROJNAMEAppDelegate.h */,
+				FF08F69715D4348600A8A646 /* #PROJNAMEAppDelegate.mm */,
+				FF08F69915D4348700A8A646 /* MainMenu.xib */,
+				FF08F68B15D4348600A8A646 /* Supporting Files */,
+			);
+			name = #PROJNAMEstandalone;
+			path = "JSAU Source/#PROJNAMEstandalone";
+			sourceTree = "<group>";
+		};
+		FF08F68B15D4348600A8A646 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FF08F68C15D4348600A8A646 /* #PROJNAMEstandalone-Info.plist */,
+				FF08F68D15D4348600A8A646 /* InfoPlist.strings */,
+				FF08F69015D4348600A8A646 /* main.mm */,
+				FF08F69215D4348600A8A646 /* #PROJNAMEstandalone-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		FF17DFE81516E97B00A85EB4 /* internal */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +403,7 @@
 		FF76445F1579538A00E41F35 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FF567EE215DE9BC5005090B3 /* #PROJNAME.icns */,
 				FF7644601579538A00E41F35 /* #PROJNAME-Info.plist */,
 				FF7644611579538A00E41F35 /* #PROJNAME-Prefix.pch */,
 				FF7644621579538A00E41F35 /* #PROJNAME.exp */,
@@ -268,6 +420,7 @@
 		FF9E2D9C15CCBB15009026AE /* Framework Sources */ = {
 			isa = PBXGroup;
 			children = (
+				FF08F68A15D4348600A8A646 /* #PROJNAMEstandalone */,
 				FF17E0051516EAE300A85EB4 /* libcef.dylib */,
 				FFC1A2CA151534AD00D447CC /* libcef_dll_wrapper.a */,
 				FFDB8556151419A3004BA672 /* AudioUnit.framework */,
@@ -354,6 +507,10 @@
 		FFDB853015141283004BA672 = {
 			isa = PBXGroup;
 			children = (
+				FF08F6F115D474B500A8A646 /* CoreAudio.framework */,
+				FF08F6E815D45A0E00A8A646 /* libcef_dll_wrapper.a */,
+				FF08F6E615D459EA00A8A646 /* libcef.dylib */,
+				FF08F68315D4348600A8A646 /* Frameworks */,
 				FFDB853C15141284004BA672 /* Products */,
 				FF9E2D9D15CCBB37009026AE /* Audio Processing Source */,
 				FF9E2D9C15CCBB15009026AE /* Framework Sources */,
@@ -365,6 +522,7 @@
 			children = (
 				FFDB853B15141284004BA672 /* #PROJNAME.component */,
 				FFC1A2B81515302800D447CC /* CocoaUI.bundle */,
+				FF08F68115D4348600A8A646 /* #NAME.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -404,6 +562,8 @@
 		FFDB85511514136D004BA672 /* AU SDK */ = {
 			isa = PBXGroup;
 			children = (
+				FFF2F56D15D5C28100CEA715 /* CARingBuffer.cpp */,
+				FFF2F56E15D5C28200CEA715 /* CARingBuffer.h */,
 				FFDB859E15141DFF004BA672 /* CAXException.h */,
 				FFDB859C15141DDE004BA672 /* CAXException.cpp */,
 				FFDB859915141D9D004BA672 /* CAStreamBasicDescription.cpp */,
@@ -471,6 +631,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FF08F68015D4348600A8A646 /* #PROJNAMEstandalone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF08F69E15D4348700A8A646 /* Build configuration list for PBXNativeTarget "#PROJNAMEstandalone" */;
+			buildPhases = (
+				FF08F67D15D4348600A8A646 /* Sources */,
+				FF08F67E15D4348600A8A646 /* Frameworks */,
+				FF08F6EB15D45A7400A8A646 /* CopyFiles */,
+				FF08F6ED15D45C0900A8A646 /* CopyFiles */,
+				FF08F67F15D4348600A8A646 /* Resources */,
+				FF08F6EF15D45C4600A8A646 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = #PROJNAMEstandalone;
+			productName = #PROJNAMEstandalone;
+			productReference = FF08F68115D4348600A8A646 /* #NAME.app */;
+			productType = "com.apple.product-type.application";
+		};
 		FFC1A2B71515302800D447CC /* CocoaUI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFC1A2C11515302800D447CC /* Build configuration list for PBXNativeTarget "CocoaUI" */;
@@ -583,11 +763,22 @@
 			targets = (
 				FFDB853A15141284004BA672 /* #PROJNAME */,
 				FFC1A2B71515302800D447CC /* CocoaUI */,
+				FF08F68015D4348600A8A646 /* #PROJNAMEstandalone */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FF08F67F15D4348600A8A646 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF08F68F15D4348600A8A646 /* InfoPlist.strings in Resources */,
+				FF08F69B15D4348700A8A646 /* MainMenu.xib in Resources */,
+				FF567EE415DE9BC5005090B3 /* #PROJNAME.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFC1A2B61515302800D447CC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -604,6 +795,7 @@
 			files = (
 				FF7644671579538A00E41F35 /* #PROJNAME-Info.plist in Resources */,
 				FF76446B1579538A00E41F35 /* InfoPlist.strings in Resources */,
+				FF567EE315DE9BC5005090B3 /* #PROJNAME.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,6 +813,40 @@
 /* End PBXRezBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FF08F67D15D4348600A8A646 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF08F6E415D459BA00A8A646 /* #PROJNAME_CefView.mm in Sources */,
+				FF08F6E515D459BA00A8A646 /* CppV8Handler.cpp in Sources */,
+				FF08F6E315D459B000A8A646 /* client_handler.cpp in Sources */,
+				FF08F6E115D4432D00A8A646 /* jsaubase.cpp in Sources */,
+				FF08F6E015D442C000A8A646 /* AUEffectBase.cpp in Sources */,
+				FF08F6DC15D442A700A8A646 /* CAStreamBasicDescription.cpp in Sources */,
+				FF08F6DD15D442A700A8A646 /* CADebugMacros.cpp in Sources */,
+				FF08F6DE15D442A700A8A646 /* CAHostTimeBase.cpp in Sources */,
+				FF08F6DF15D442A700A8A646 /* CAVectorUnit.cpp in Sources */,
+				FF08F6DB15D4428B00A8A646 /* CAAudioChannelLayout.cpp in Sources */,
+				FF08F6DA15D4425900A8A646 /* audio.cpp in Sources */,
+				FF08F6D615D4423300A8A646 /* AUInputElement.cpp in Sources */,
+				FF08F6D715D4423300A8A646 /* AUOutputElement.cpp in Sources */,
+				FF08F6D815D4423300A8A646 /* AUScopeElement.cpp in Sources */,
+				FF08F6D915D4423300A8A646 /* ComponentBase.cpp in Sources */,
+				FF08F6D015D441F600A8A646 /* AUBaseHelper.cpp in Sources */,
+				FF08F6D115D441F600A8A646 /* AUBuffer.cpp in Sources */,
+				FF08F6D215D441F600A8A646 /* AUDebugDispatcher.cpp in Sources */,
+				FF08F6D315D441F600A8A646 /* AUTimestampGenerator.cpp in Sources */,
+				FF08F6D415D441F600A8A646 /* AUBase.cpp in Sources */,
+				FF08F6D515D441F600A8A646 /* AUDispatch.cpp in Sources */,
+				FF08F6CF15D441AF00A8A646 /* CAXException.cpp in Sources */,
+				FF08F69115D4348600A8A646 /* main.mm in Sources */,
+				FF08F69815D4348600A8A646 /* #PROJNAMEAppDelegate.mm in Sources */,
+				FFF2F56F15D5C28200CEA715 /* CARingBuffer.cpp in Sources */,
+				FFF2F57015D5C2D500CEA715 /* CAPlayThrough.cpp in Sources */,
+				FFF2F57315D5C34100CEA715 /* AudioDevice.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFC1A2B41515302800D447CC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -670,6 +896,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		FF08F68D15D4348600A8A646 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF08F68E15D4348600A8A646 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FF08F69915D4348700A8A646 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF08F69A15D4348700A8A646 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
 		FF7644651579538A00E41F35 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -689,6 +931,37 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FF08F69C15D4348700A8A646 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JSAU Source/#PROJNAMEstandalone/#PROJNAMEstandalone-Prefix.pch";
+				INFOPLIST_FILE = "JSAU Source/#PROJNAMEstandalone/#PROJNAMEstandalone-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/JSAU Source/libcef/lib\"",
+				);
+				PRODUCT_NAME = "#NAME";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FF08F69D15D4348700A8A646 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JSAU Source/#PROJNAMEstandalone/#PROJNAMEstandalone-Prefix.pch";
+				INFOPLIST_FILE = "JSAU Source/#PROJNAMEstandalone/#PROJNAMEstandalone-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/JSAU Source/libcef/lib\"",
+				);
+				PRODUCT_NAME = "#NAME";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		FFC1A2C21515302800D447CC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -733,7 +1006,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -759,8 +1032,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				COPY_PHASE_STRIP = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -823,6 +1096,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FF08F69E15D4348700A8A646 /* Build configuration list for PBXNativeTarget "#PROJNAMEstandalone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF08F69C15D4348700A8A646 /* Debug */,
+				FF08F69D15D4348700A8A646 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FFC1A2C11515302800D447CC /* Build configuration list for PBXNativeTarget "CocoaUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -1,46 +1,24 @@
+<!DOCTYPE html>
 <html>
-  <head>
-		<link type="text/css" href="css/dark-hive/jquery-ui-1.8.19.custom.css" rel="stylesheet" />
-		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-		<script type="text/javascript" src="js/jquery-ui-1.8.19.custom.min.js"></script>
-		<script type="text/javascript">
-			$(function(){
-
-				// Slider
-				$('#slider').slider({
-                  start: function(event, ui) {
-                     AudioUnit.Trigger.BeginGesture();
-                  },
-                  stop: function(event, ui) {
-                     AudioUnit.Trigger.EndGesture();
-                  },
-                  slide: function(event, ui) {
-                     AudioUnit.Trigger.Set(ui.value / 100);
-                  }
-                });
-                
-                AudioUnit.ScopeData.OnPropertyChange = function() {
-                    var scopeData = AudioUnit.ScopeData.Get();
-                    var canvas = $('#canvas')[0];
-                    var ctx = canvas.getContext('2d');
-                    ctx.fillStyle = "white";
-                    ctx.fillRect(0,0,400,200);
-                    
-                    ctx.strokeStyle = "black";
-                    
-                    ctx.moveTo(0, 200 * scopeData[0]);
-                    ctx.beginPath();
-                    for(var i = 1; i < 400; ++i) {
-                        ctx.lineTo(i, 100 - 100 * scopeData[i]);
-                    }
-                    ctx.stroke();
-                }
-			});
-		</script>
-  </head>
-  <body>
-    <H1> AUDIO UNIT </H1>
-    <div width="50%" id="slider"></div>    
-    <canvas id="canvas" width="400" height="200"></canvas>
-  </body>
+<head>
+    <link href='app.css' rel='stylesheet' type='text/css'/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script src="jquery.kontrol.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+<div id=scope>
+  <canvas id="scopeData" height=450 width=450></canvas>
+</div>
+<div id=params>
+  <div class="dialdiv">
+    <input class="dial" id="trigger" data-width="60" data-height="60" data-min=0 data-max=100 data-angleOffset="-125" data-angleArc="250" data-flatMouse="1" value="0"/>
+    <div class="label">  Trigger </div>
+  </div>
+  <div class="dialdiv" id="gridDial">
+    <input class="dial" id="grid" data-width="60" data-height="60" data-min=0 data-max=100 data-angleOffset="-125" data-angleArc="250" data-flatMouse="1" value="10"/>
+    <div class="label">  Grid </div>    
+  </div>
+</div>
+</body>
 </html>

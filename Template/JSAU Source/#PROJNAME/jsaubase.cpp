@@ -35,7 +35,7 @@ OSStatus JSAudioUnitBase::GetProperty(AudioUnitPropertyID id, AudioUnitScope sco
             case kAudioUnitProperty_CocoaUI:
             {
 
-                CFBundleRef bundle= CFBundleGetBundleWithIdentifier(CFSTR("com.#COMPANY.#PROJNAME"));
+                CFBundleRef bundle= CFBundleGetBundleWithIdentifier(CFSTR("com.#COMPANY_UNDERSCORED.#PROJNAME"));
                 
                 if(!bundle) return fnfErr;
                 

@@ -4,7 +4,6 @@
 
 #include "audioprops.h"
 
-
 // base class that eliminates some boilerplate for javascript-based AUs
 class JSAudioUnitBase : public AUEffectBase
 {
@@ -24,5 +23,6 @@ class JSAudioUnitBase : public AUEffectBase
         virtual std::vector<JSPropDesc> GetPropertyDescriptionList() { return std::vector<JSPropDesc>(); }
 };
 
+void DoRegister(OSType Type, OSType Subtype, OSType Manufacturer);
 
 #endif
