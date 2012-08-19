@@ -3,13 +3,14 @@
 // PARAMETERS GO HERE
 enum
 {
-	kParam_TriggerLevel
+	kParam_VolumeLevel
 };
 
 // PROPERTIES GO HERE
+// see oscilloscope example for how to use these - this
+// simple volume example has none.
 enum
 {
-    kProp_ScopeData = kFirstAudioProp
 };
 
 class Audio;
@@ -48,9 +49,6 @@ public:
     
     virtual std::vector<JSPropDesc> GetPropertyDescriptionList();
 private:
-    double scopeData[400];
-    int currScopeInd;
-    bool triggered;
     friend class AudioKernel;
 };
 
@@ -63,54 +61,25 @@ void DoRegister(OSType Type, OSType Subtype, OSType Manufacturer)
 
 AudioKernel::AudioKernel(Audio * inAudioUnit ) : AUKernelBase(inAudioUnit), mAudio(inAudioUnit) {}
 
-Audio::Audio(AudioUnit component) : JSAudioUnitBase(component),
-    currScopeInd(0),
-    triggered(0)
+Audio::Audio(AudioUnit component) : JSAudioUnitBase(component)
 {
-    memset(scopeData, 0, sizeof(scopeData));
-    SetParameter(kParam_TriggerLevel, 0.0);
+    SetParameter(kParam_VolumeLevel, 0.5);
 }
 
 
 // Processing stuff.
 void AudioKernel::Process(Float32 const* sourceP, Float32 * destP, UInt32 framesToProcess, UInt32 numChannels, bool & ioSilence){
     // This is usually where you want to process data to produce an effect.
-    // currently, we're just passing through audio and recording it in the scope.
-	
-    double trigger = GetParameter(kParam_TriggerLevel);
     
-    // bind trigger to 1.0
-    trigger = fmin(fmax(trigger, 0.0), 1.0);
+    // Get the current value of "volume"
+    double volume = GetParameter(kParam_VolumeLevel);
+    
+    // bind volume from 0.0 to 1.0
+    volume = fmin(fmax(volume, 0.0), 1.0);
     
     for(int i = 0; i < framesToProcess; ++i)
     {
-        if(mAudio->triggered)
-        {
-            // write to scope data.
-            mAudio->scopeData[mAudio->currScopeInd++] = *sourceP;
-            
-            if(mAudio->currScopeInd >= 400)
-            {
-                mAudio->triggered = false;
-                mAudio->PropertyChanged(kProp_ScopeData, kAudioUnitScope_Global, 0);
-            }
-        }
-        else
-        {
-            if(*sourceP > trigger)
-            {
-                mAudio->triggered = true;
-                mAudio->scopeData[0] = *sourceP;
-                mAudio->currScopeInd = 1;
-            }
-        }
-        
-        #ifdef STANDALONE
-            // don't feed back in standalone.
-            *destP = 0;
-        #else
-            *destP = *sourceP;
-        #endif
+        *destP = volume * (*sourceP);
         destP++;
         sourceP++;
     }
@@ -134,8 +103,8 @@ OSStatus Audio::GetParameterInfo(	AudioUnitScope			inScope,
 		
 		switch(inParameterID)
 		{
-			case kParam_TriggerLevel:
-				AUBase::FillInParameterName (outParameterInfo, CFSTR("Trigger"), false);
+			case kParam_VolumeLevel:
+				AUBase::FillInParameterName (outParameterInfo, CFSTR("Volume"), false);
 				outParameterInfo.unit = kAudioUnitParameterUnit_LinearGain;
 				outParameterInfo.minValue = 0.0;
 				outParameterInfo.maxValue = 1.0;
@@ -162,8 +131,7 @@ std::vector<JSPropDesc>
 Audio::GetPropertyDescriptionList()
 {
     std::vector<JSPropDesc> propList;
-    JSPropDesc prop = {JSPropDesc::kJSNumberArray, "ScopeData"};
-    propList.push_back(prop);
+    // currently no properties
     return propList;
 }
 
@@ -177,16 +145,9 @@ OSStatus Audio::GetPropertyInfo (AudioUnitPropertyID	id,
 {
     if(scope == kAudioUnitScope_Global)
     {
-        switch(id)
-        {
-            case kProp_ScopeData:
-                writable = false;
-                size = sizeof(scopeData);
-                return noErr;
-        }
+        // you'd fill in property information here.
     }
     return JSAudioUnitBase::GetPropertyInfo(id, scope, elem, size, writable);
-    
 }
 
 // this actually gets the properties
@@ -195,13 +156,8 @@ OSStatus Audio::GetProperty(AudioUnitPropertyID id, AudioUnitScope scope,
 {
     if (scope == kAudioUnitScope_Global)
     {
-        switch (id)
-        {
-            case kProp_ScopeData:
-                memcpy(data, scopeData, sizeof(scopeData));
-                return noErr;
-                break;
-        }
+        // you'd fill in the property here - see the oscilloscope example 
+        // for information on how.
     }
     return JSAudioUnitBase::GetProperty(id, scope, elem, data);
 }
