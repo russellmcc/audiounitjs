@@ -1,16 +1,15 @@
 {
-  "notes" : "this is an example project JSON to get you started.  Please change each field to match your project.",
-  "project" : "example",
-  "type" : "aufx",
+    "project" : "volume",
+    "type" : "aufx",
 
-  "plugin_id" : "Exam",
-  "manufacturer_id": "Test",
+    "plugin_id" : "Volu",
+    "manufacturer_id": "Test",
 
-  "name" : "example plug in",
-  "description" : "Description goes here",
+    "name" : "Volume Changer",
+    "description" : "An incredibly advanced hi fidelity volume changing effect.",
 
-  "company" : "Russell McClellan",
+    "company" : "Blinkbit",
   
-  "height" : "500",
-  "width" : "500"
+    "height" : "100",
+    "width" : "80"
 }
