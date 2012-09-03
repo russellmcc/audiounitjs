@@ -54,8 +54,8 @@
     
     AudioComponentDescription effectDesc = {0};
     effectDesc.componentType = '#AUTYPE';
-	effectDesc.componentSubType = 'Volu';
-	effectDesc.componentManufacturer = 'Test';
+	effectDesc.componentSubType = '#TYPECODE';
+	effectDesc.componentManufacturer = '#MANUCODE';
     
     AUNode effectNode, ioNode;
     AUGraphAddNode(mGraph, &ioDesc, &ioNode);
