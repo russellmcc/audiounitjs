@@ -12,6 +12,6 @@
 {
     JSPropDesc::JSType mType;
 }
--(id)initWithAU:(AudioUnit)au withID:(UInt32)id withContext:(JSGlobalContextRef)context withType:(JSPropDesc::JSType)type;
+-(id)initWithAU:(AudioUnit)au withID:(UInt32)id withType:(JSPropDesc::JSType)type;
 -(id)Get;
 @end

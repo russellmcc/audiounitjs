@@ -17,7 +17,7 @@
 @property (retain) id OnEndGesture;
 
 
--(id)initWithAU:(AudioUnit)au withID:(UInt32)id withContext:(JSGlobalContextRef)context;
+-(id)initWithAU:(AudioUnit)au withID:(UInt32)id;
 
 -(id)Get;
 -(void)Set:(id)val;

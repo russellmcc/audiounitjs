@@ -7,7 +7,7 @@
 - (void)webView:(WebView *)sender didClearWindowObject:(WebScriptObject *)window forFrame:(WebFrame *)frame
 {
     // set up the "AudioUnit" javascript object.
-    mJSObj = CreateAudioUnitObject(mAU, [[sender mainFrame] globalContext]);
+    mJSObj = CreateAudioUnitObject(mAU);
     
     [window setValue:mJSObj forKey:@"AudioUnit"];
 }
@@ -41,7 +41,9 @@
 
 -(void) dealloc
 {
-    [mJSObj release];
+    if(mJSObj)
+        [mJSObj release];
+    [super dealloc];
 }
 
 - (WebView*) webView

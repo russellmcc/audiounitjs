@@ -16,7 +16,7 @@ namespace LowLevelCocoaUtils
 {
     using namespace std;
     
-    inline void throwErr() { throw static_cast<OSStatus>(paramErr); }
+    inline void throwErr() { throw static_cast<OSStatus>(-9); }
     
     template<class T>
     void doSet (id self, const char* name, const T& t)

@@ -26,10 +26,12 @@
 	<string></string>
 	<key>AudioComponent</key>
 	<dict>
+		<key>sandboxSafe</key>
+		<true/>
 		<key>manufacturer</key>
 		<string>#MANUCODE</string>
 		<key>factoryFunction</key>
-		<string>#PROJNAMEFactory</string>
+		<string>AudioFactory</string>
 		<key>subtype</key>
 		<string>#TYPECODE</string>
 		<key>description</key>

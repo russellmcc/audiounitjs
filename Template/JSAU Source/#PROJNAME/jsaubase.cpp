@@ -10,10 +10,12 @@ OSStatus JSAudioUnitBase::GetPropertyInfo (AudioUnitPropertyID	id,
     {
         switch(id)
         {
+#if !CA_NO_AU_UI_FEATURES
 			case kAudioUnitProperty_CocoaUI:
                 writable = false;
                 size = sizeof(AudioUnitCocoaViewInfo);
                 return noErr;
+#endif
             case kAudioProp_JSPropList:
                 writable = false;
                 size = sizeof(JSPropDesc) * GetPropertyDescriptionList().size();
@@ -32,6 +34,7 @@ OSStatus JSAudioUnitBase::GetProperty(AudioUnitPropertyID id, AudioUnitScope sco
     {
         switch (id)
         {
+#if !CA_NO_AU_UI_FEATURES
             case kAudioUnitProperty_CocoaUI:
             {
 
@@ -52,6 +55,7 @@ OSStatus JSAudioUnitBase::GetProperty(AudioUnitPropertyID id, AudioUnitScope sco
                 return noErr;
             }
             break;
+#endif
             case kAudioProp_JSPropList:
             {
                 std::vector<JSPropDesc> descs = GetPropertyDescriptionList();

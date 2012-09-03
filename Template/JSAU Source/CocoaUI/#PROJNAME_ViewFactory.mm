@@ -17,7 +17,7 @@
 }
 
 - (NSString *) description {
-    return [NSString stringWithString: @"Cocoa View"];
+    return @"Cocoa View";
 }
 
 - (unsigned)interfaceVersion {

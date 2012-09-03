@@ -9,9 +9,8 @@
 #define #PROJNAME_AUWrapper_h
 
 #include <AudioUnit/AudioUnit.h>
-#import <WebKit/WebKit.h>
 
 // follows the "Create rule"
-extern id CreateAudioUnitObject(AudioUnit au, JSGlobalContextRef context);
+extern id CreateAudioUnitObject(AudioUnit au);
 
 #endif

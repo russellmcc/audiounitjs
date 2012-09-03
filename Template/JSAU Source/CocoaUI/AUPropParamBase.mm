@@ -6,9 +6,9 @@
 //
 
 #import "AUPropParamBase.h"
-#import <JavaScriptCore/JavaScriptCore.h>
 #include "audioprops.h"
 #include "LowLevelCocoaUtils.h"
+#include "obsfu.h"
 
 using namespace LowLevelCocoaUtils;
 
@@ -22,15 +22,13 @@ namespace
 }
 
 @implementation #PROJNAME_AUPropParamBase
-@synthesize OnChange, context=mContext;
--(id)initWithAU:(AudioUnit)au withID:(UInt32)id withContext:(JSGlobalContextRef)context
+@synthesize OnChange;
+-(id)initWithAU:(AudioUnit)au withID:(UInt32)id
 {
     self = [super init];
     
     mAU = au;
     mID = id;
-    mContext = context;
-    JSGlobalContextRetain(mContext);
     
     OnChange = 0;
     
@@ -46,7 +44,6 @@ namespace
 -(void)dealloc
 {
     AUListenerDispose(mListener);
-    JSGlobalContextRelease(mContext);
     [super dealloc];
 }
 
@@ -122,7 +119,9 @@ namespace
                 NSMutableArray* args = [[NSMutableArray alloc] initWithCapacity:2];
                 [args addObject:[NSNull null]];
                 [args addObject:[NSNumber numberWithDouble: value]];
-                [jsObj callWebScriptMethod:@"call" withArguments:args];
+                obsfuLock();
+                obsfuCall(jsObj, args);
+                obsfuUnlock();
                 [args release];
             }
         }

@@ -56,7 +56,7 @@ namespace
     // follows the "create rule" - that id, the objective-C objects returned are owned by the caller.
     typedef vector<pair<string, id> > NamedObjectList;
     NamedObjectList
-    CreatePropertyObjectsForAU(AudioUnit au, JSGlobalContextRef context)
+    CreatePropertyObjectsForAU(AudioUnit au)
     {
         NamedObjectList properties;
         UInt32 dataSize = 0;
@@ -74,14 +74,14 @@ namespace
             JSPropDesc& prop = propInfoData[i];
             
             // set-up class.
-            properties.push_back(make_pair<string, id>(prop.name, [[#PROJNAME_AUProp alloc] initWithAU:au withID:i withContext:context withType:prop.type]));
+            properties.push_back(make_pair<string, id>(prop.name, [[#PROJNAME_AUProp alloc] initWithAU:au withID:i withType:prop.type]));
         }
         
         return properties;
     }
     
     NamedObjectList
-    CreateParamObjectsForAU(AudioUnit au, JSGlobalContextRef context)
+    CreateParamObjectsForAU(AudioUnit au)
     {
         NamedObjectList params;
         
@@ -103,7 +103,7 @@ namespace
             UInt32 infoSize = sizeof(info);
             status = AudioUnitGetProperty(au, kAudioUnitProperty_ParameterInfo, kAudioUnitScope_Global, paramID, reinterpret_cast<void*>(&info), &infoSize);
             if(status != noErr) continue;
-            params.push_back(make_pair<string, id>(info.name, [[#PROJNAME_AUParam alloc] initWithAU:au withID:paramID withContext:context]));
+            params.push_back(make_pair<string, id>(info.name, [[#PROJNAME_AUParam alloc] initWithAU:au withID:paramID]));
         }
         return params;
     }
@@ -123,19 +123,19 @@ namespace
             doSet<id>(o, i->first.c_str(), i->second);
     }
     
-    NamedObjectList GetAllPropsAndParams(AudioUnit au, JSGlobalContextRef context)
+    NamedObjectList GetAllPropsAndParams(AudioUnit au)
     {
-        NamedObjectList props = CreatePropertyObjectsForAU(au, context);
-        NamedObjectList params = CreateParamObjectsForAU(au, context);
+        NamedObjectList props = CreatePropertyObjectsForAU(au);
+        NamedObjectList params = CreateParamObjectsForAU(au);
         props.insert(props.end(), params.begin(), params.end());
         return props;
     }
 }
 
 // follows the "Create rule"
-id CreateAudioUnitObject(AudioUnit au, JSGlobalContextRef context)
+id CreateAudioUnitObject(AudioUnit au)
 {
-    NamedObjectList propsAndParams = GetAllPropsAndParams(au, context);
+    NamedObjectList propsAndParams = GetAllPropsAndParams(au);
     Class auClass = AllocateAndInitWebScriptClass("AudioUnit");
     AddObjectsToClass(auClass, propsAndParams);
     objc_registerClassPair(auClass);

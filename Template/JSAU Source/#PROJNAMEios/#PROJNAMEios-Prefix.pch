@@ -1,0 +1,23 @@
+//
+// Prefix header for all source files of the '#PROJNAMEios' target in the '#PROJNAMEios' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+#define CA_PREFER_FIXED_POINT 0 // we have a float AU.
+#define CA_USE_AUDIO_PLUGIN_ONLY 1
+#define CA_NO_AU_UI_FEATURES 1
+
+#define IPHONE_VER 1
+
+#include "AUEffectBase.h"
+#import <CoreFoundation/CoreFoundation.h>

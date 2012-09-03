@@ -14,7 +14,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    DoRegister('#AUTYPE', '#TYPECODE', '#MANUCODE');
+    DoRegister('#AUTYPE', '#TYPECODE', '#MANUCODE', CFSTR("#NAME"), 0x00000001);
     host = new CAPlayThroughHost;
     host->Start();
     [uiViewInstance setAU:host->GetEffectAU()];

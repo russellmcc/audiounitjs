@@ -15,7 +15,6 @@
 		FF08F6CF15D441AF00A8A646 /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB859C15141DDE004BA672 /* CAXException.cpp */; };
 		FF08F6D015D441F600A8A646 /* AUBaseHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB857615141B92004BA672 /* AUBaseHelper.cpp */; };
 		FF08F6D115D441F600A8A646 /* AUBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB857815141B92004BA672 /* AUBuffer.cpp */; };
-		FF08F6D215D441F600A8A646 /* AUDebugDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB857A15141B92004BA672 /* AUDebugDispatcher.cpp */; };
 		FF08F6D315D441F600A8A646 /* AUTimestampGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB857E15141B92004BA672 /* AUTimestampGenerator.cpp */; };
 		FF08F6D415D441F600A8A646 /* AUBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB855E15141B6E004BA672 /* AUBase.cpp */; };
 		FF08F6D515D441F600A8A646 /* AUDispatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB856015141B6E004BA672 /* AUDispatch.cpp */; };
@@ -37,10 +36,39 @@
 		FF08F6F015D45C5500A8A646 /* ui in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF6A97F8152F8BF700C8ED05 /* ui */; };
 		FF08F6F215D474B500A8A646 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF08F6F115D474B500A8A646 /* CoreAudio.framework */; };
 		FF17DFDF1516D05E00A85EB4 /* CocoaUI.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = FFC1A2B81515302800D447CC /* CocoaUI.bundle */; };
+		FF1C162A15F120D7003D9B0B /* AUPlugInDispatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF1C162815F120D7003D9B0B /* AUPlugInDispatch.cpp */; };
+		FF1C162B15F12118003D9B0B /* AUPlugInDispatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF1C162815F120D7003D9B0B /* AUPlugInDispatch.cpp */; };
 		FF234F2715CC6EB8003C97AA /* jsaubase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF234F2615CC6EB8003C97AA /* jsaubase.cpp */; };
 		FF41350415E1A46C001ACF64 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF41350315E1A46C001ACF64 /* WebKit.framework */; };
+		FF45E62615F12B4A00280886 /* AUEffectBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB857215141B83004BA672 /* AUEffectBase.cpp */; };
+		FF45E62715F12B4F00280886 /* AUPlugInDispatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF1C162815F120D7003D9B0B /* AUPlugInDispatch.cpp */; };
+		FF45E62815F12B5500280886 /* AUBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB855E15141B6E004BA672 /* AUBase.cpp */; };
+		FF45E62B15F12B6000280886 /* AUOutputElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB856415141B6E004BA672 /* AUOutputElement.cpp */; };
+		FF45E62C15F12B6400280886 /* AUScopeElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB856715141B6E004BA672 /* AUScopeElement.cpp */; };
+		FF45E62D15F12B6700280886 /* ComponentBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB856915141B6E004BA672 /* ComponentBase.cpp */; };
+		FF45E62F15F12D5500280886 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF45E62E15F12D5500280886 /* CoreFoundation.framework */; };
+		FF45E63315F12E9200280886 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF45E63015F12E9100280886 /* AudioToolbox.framework */; };
+		FF45E63515F12E9200280886 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF45E63215F12E9200280886 /* CoreAudio.framework */; };
+		FF45E63615F12EB400280886 /* CAVectorUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB859015141D05004BA672 /* CAVectorUnit.cpp */; };
+		FF45E63715F12EB800280886 /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB859915141D9D004BA672 /* CAStreamBasicDescription.cpp */; };
+		FF45E63815F12EC700280886 /* AUBaseHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB857615141B92004BA672 /* AUBaseHelper.cpp */; };
+		FF45E63915F12ECB00280886 /* AUBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB857815141B92004BA672 /* AUBuffer.cpp */; };
+		FF45E63A15F12ECE00280886 /* AUTimestampGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB857E15141B92004BA672 /* AUTimestampGenerator.cpp */; };
+		FF45E63B15F12EF500280886 /* jsaubase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF234F2615CC6EB8003C97AA /* jsaubase.cpp */; };
+		FF45E63C15F12EFC00280886 /* AUInputElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB856215141B6E004BA672 /* AUInputElement.cpp */; };
+		FF45E63D15F12F4B00280886 /* CAAudioChannelLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB858415141D04004BA672 /* CAAudioChannelLayout.cpp */; };
+		FF45E63E15F12F5100280886 /* CAHostTimeBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB858A15141D04004BA672 /* CAHostTimeBase.cpp */; };
 		FF567EE315DE9BC5005090B3 /* #PROJNAME.icns in Resources */ = {isa = PBXBuildFile; fileRef = FF567EE215DE9BC5005090B3 /* #PROJNAME.icns */; };
 		FF567EE415DE9BC5005090B3 /* #PROJNAME.icns in Resources */ = {isa = PBXBuildFile; fileRef = FF567EE215DE9BC5005090B3 /* #PROJNAME.icns */; };
+		FF5C463615F1CEF8002FF019 /* AUWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = FFAB983215E68603008D97F1 /* AUWrapper.mm */; };
+		FF5C463815F1CEFC002FF019 /* AUPropParamBase.mm in Sources */ = {isa = PBXBuildFile; fileRef = FFAB983C15E92EDF008D97F1 /* AUPropParamBase.mm */; };
+		FF5C463915F1CEFF002FF019 /* AUProp.mm in Sources */ = {isa = PBXBuildFile; fileRef = FFAB984015E9307F008D97F1 /* AUProp.mm */; };
+		FF5C463A15F1CF03002FF019 /* AUParam.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF72865715E9406C0075FC5A /* AUParam.mm */; };
+		FF5C463E15F50AEB002FF019 /* iosAUEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF5C463D15F50AEB002FF019 /* iosAUEvents.cpp */; };
+		FF5C464015F5104C002FF019 /* ui in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF6A97F8152F8BF700C8ED05 /* ui */; };
+		FF5C464315F55ECD002FF019 /* obsfu.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF5C464115F55ECD002FF019 /* obsfu.mm */; };
+		FF5C464415F55ECD002FF019 /* obsfu.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF5C464115F55ECD002FF019 /* obsfu.mm */; };
+		FF5C464515F55ECD002FF019 /* obsfu.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF5C464115F55ECD002FF019 /* obsfu.mm */; };
 		FF72865815E9406C0075FC5A /* AUParam.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF72865715E9406C0075FC5A /* AUParam.mm */; };
 		FF72865915E9406C0075FC5A /* AUParam.mm in Sources */ = {isa = PBXBuildFile; fileRef = FF72865715E9406C0075FC5A /* AUParam.mm */; };
 		FF7644671579538A00E41F35 /* #PROJNAME-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF7644601579538A00E41F35 /* #PROJNAME-Info.plist */; };
@@ -67,6 +95,16 @@
 		FFC1A2C91515345900D447CC /* webview.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFC1A2C81515345900D447CC /* webview.xib */; };
 		FFC1A2D0151535C100D447CC /* #PROJNAME_ViewFactory.mm in Sources */ = {isa = PBXBuildFile; fileRef = FFC1A2CF151535C100D447CC /* #PROJNAME_ViewFactory.mm */; };
 		FFC1A2D31515404A00D447CC /* #PROJNAME_WebView.mm in Sources */ = {isa = PBXBuildFile; fileRef = FFC1A2D21515404A00D447CC /* #PROJNAME_WebView.mm */; };
+		FFCF843315EA8C0000333567 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCF843215EA8C0000333567 /* UIKit.framework */; };
+		FFCF843515EA8C0000333567 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCF843415EA8C0000333567 /* Foundation.framework */; };
+		FFCF843715EA8C0000333567 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCF843615EA8C0000333567 /* CoreGraphics.framework */; };
+		FFCF843D15EA8C0000333567 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFCF843B15EA8C0000333567 /* InfoPlist.strings */; };
+		FFCF843F15EA8C0000333567 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = FFCF843E15EA8C0000333567 /* main.mm */; };
+		FFCF844315EA8C0100333567 /* #PROJNAMEAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = FFCF844215EA8C0100333567 /* #PROJNAMEAppDelegate.mm */; };
+		FFCF844615EA8C0100333567 /* #PROJNAMEViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = FFCF844515EA8C0100333567 /* #PROJNAMEViewController.mm */; };
+		FFCF844915EA8C0100333567 /* #PROJNAMEViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFCF844715EA8C0100333567 /* #PROJNAMEViewController_iPhone.xib */; };
+		FFCF844C15EA8C0100333567 /* #PROJNAMEViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFCF844A15EA8C0100333567 /* #PROJNAMEViewController_iPad.xib */; };
+		FFCF845115EA8D1E00333567 /* audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB859715141D23004BA672 /* audio.cpp */; };
 		FFDB855315141990004BA672 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDB855215141990004BA672 /* AudioToolbox.framework */; };
 		FFDB85551514199A004BA672 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDB85541514199A004BA672 /* CoreServices.framework */; };
 		FFDB8557151419A3004BA672 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDB8556151419A3004BA672 /* AudioUnit.framework */; };
@@ -79,7 +117,6 @@
 		FFDB857415141B83004BA672 /* AUEffectBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB857215141B83004BA672 /* AUEffectBase.cpp */; };
 		FFDB858015141B92004BA672 /* AUBaseHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB857615141B92004BA672 /* AUBaseHelper.cpp */; };
 		FFDB858115141B92004BA672 /* AUBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB857815141B92004BA672 /* AUBuffer.cpp */; };
-		FFDB858215141B92004BA672 /* AUDebugDispatcher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB857A15141B92004BA672 /* AUDebugDispatcher.cpp */; };
 		FFDB858315141B92004BA672 /* AUTimestampGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB857E15141B92004BA672 /* AUTimestampGenerator.cpp */; };
 		FFDB859215141D05004BA672 /* CAAudioChannelLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB858415141D04004BA672 /* CAAudioChannelLayout.cpp */; };
 		FFDB859315141D05004BA672 /* CADebugMacros.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB858715141D04004BA672 /* CADebugMacros.cpp */; };
@@ -132,6 +169,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FF5C463F15F51037002FF019 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				FF5C464015F5104C002FF019 /* ui in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFECCC70151BDE37003D3564 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -157,10 +204,20 @@
 		FF08F69715D4348600A8A646 /* #PROJNAMEAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = #PROJNAMEAppDelegate.mm; sourceTree = "<group>"; };
 		FF08F69A15D4348700A8A646 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		FF08F6F115D474B500A8A646 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		FF1C162815F120D7003D9B0B /* AUPlugInDispatch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AUPlugInDispatch.cpp; sourceTree = "<group>"; };
+		FF1C162915F120D7003D9B0B /* AUPlugInDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUPlugInDispatch.h; sourceTree = "<group>"; };
 		FF234F2615CC6EB8003C97AA /* jsaubase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jsaubase.cpp; sourceTree = "<group>"; };
 		FF234F2915CC6EC9003C97AA /* jsaubase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jsaubase.h; sourceTree = "<group>"; };
 		FF41350315E1A46C001ACF64 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		FF45E62E15F12D5500280886 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		FF45E63015F12E9100280886 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		FF45E63115F12E9200280886 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/AudioUnit.framework; sourceTree = DEVELOPER_DIR; };
+		FF45E63215F12E9200280886 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/CoreAudio.framework; sourceTree = DEVELOPER_DIR; };
 		FF567EE215DE9BC5005090B3 /* #PROJNAME.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = #PROJNAME.icns; sourceTree = SOURCE_ROOT; };
+		FF5C463C15F50864002FF019 /* iosAUEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = iosAUEvents.h; path = "JSAU Source/CocoaUI/iosAUEvents.h"; sourceTree = SOURCE_ROOT; };
+		FF5C463D15F50AEB002FF019 /* iosAUEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = iosAUEvents.cpp; path = "JSAU Source/CocoaUI/iosAUEvents.cpp"; sourceTree = SOURCE_ROOT; };
+		FF5C464115F55ECD002FF019 /* obsfu.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = obsfu.mm; path = "JSAU Source/CocoaUI/obsfu.mm"; sourceTree = SOURCE_ROOT; };
+		FF5C464215F55ECD002FF019 /* obsfu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = obsfu.h; path = "JSAU Source/CocoaUI/obsfu.h"; sourceTree = SOURCE_ROOT; };
 		FF6A97F8152F8BF700C8ED05 /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ui; sourceTree = "<group>"; };
 		FF72865615E9406C0075FC5A /* AUParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUParam.h; path = "JSAU Source/CocoaUI/AUParam.h"; sourceTree = SOURCE_ROOT; };
 		FF72865715E9406C0075FC5A /* AUParam.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AUParam.mm; path = "JSAU Source/CocoaUI/AUParam.mm"; sourceTree = SOURCE_ROOT; };
@@ -187,6 +244,20 @@
 		FFC1A2CF151535C100D447CC /* #PROJNAME_ViewFactory.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = #PROJNAME_ViewFactory.mm; sourceTree = "<group>"; };
 		FFC1A2D11515404A00D447CC /* #PROJNAME_WebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = #PROJNAME_WebView.h; sourceTree = "<group>"; };
 		FFC1A2D21515404A00D447CC /* #PROJNAME_WebView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = #PROJNAME_WebView.mm; sourceTree = "<group>"; };
+		FFCF843015EA8C0000333567 /* #NAME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "#NAME.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFCF843215EA8C0000333567 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		FFCF843415EA8C0000333567 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		FFCF843615EA8C0000333567 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		FFCF843A15EA8C0000333567 /* #PROJNAMEios-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "#PROJNAMEios-Info.plist"; sourceTree = "<group>"; };
+		FFCF843C15EA8C0000333567 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FFCF843E15EA8C0000333567 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		FFCF844015EA8C0100333567 /* #PROJNAMEios-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "#PROJNAMEios-Prefix.pch"; sourceTree = "<group>"; };
+		FFCF844115EA8C0100333567 /* #PROJNAMEAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = #PROJNAMEAppDelegate.h; sourceTree = "<group>"; };
+		FFCF844215EA8C0100333567 /* #PROJNAMEAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = #PROJNAMEAppDelegate.mm; sourceTree = "<group>"; };
+		FFCF844415EA8C0100333567 /* #PROJNAMEViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = #PROJNAMEViewController.h; sourceTree = "<group>"; };
+		FFCF844515EA8C0100333567 /* #PROJNAMEViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = #PROJNAMEViewController.mm; sourceTree = "<group>"; };
+		FFCF844815EA8C0100333567 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/#PROJNAMEViewController_iPhone.xib; sourceTree = "<group>"; };
+		FFCF844B15EA8C0100333567 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/#PROJNAMEViewController_iPad.xib; sourceTree = "<group>"; };
 		FFDB853B15141284004BA672 /* #PROJNAME.component */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = #PROJNAME.component; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDB853E15141284004BA672 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		FFDB854115141284004BA672 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -208,39 +279,37 @@
 		FFDB856815141B6E004BA672 /* AUScopeElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUScopeElement.h; sourceTree = "<group>"; };
 		FFDB856915141B6E004BA672 /* ComponentBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ComponentBase.cpp; sourceTree = "<group>"; };
 		FFDB856A15141B6E004BA672 /* ComponentBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentBase.h; sourceTree = "<group>"; };
-		FFDB857215141B83004BA672 /* AUEffectBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUEffectBase.cpp; path = Extras/CoreAudio/AudioUnits/AUPublic/OtherBases/AUEffectBase.cpp; sourceTree = DEVELOPER_DIR; };
-		FFDB857315141B83004BA672 /* AUEffectBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUEffectBase.h; path = Extras/CoreAudio/AudioUnits/AUPublic/OtherBases/AUEffectBase.h; sourceTree = DEVELOPER_DIR; };
+		FFDB857215141B83004BA672 /* AUEffectBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUEffectBase.cpp; path = AudioUnits/AUPublic/OtherBases/AUEffectBase.cpp; sourceTree = "<group>"; };
+		FFDB857315141B83004BA672 /* AUEffectBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUEffectBase.h; path = AudioUnits/AUPublic/OtherBases/AUEffectBase.h; sourceTree = "<group>"; };
 		FFDB857615141B92004BA672 /* AUBaseHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AUBaseHelper.cpp; sourceTree = "<group>"; };
 		FFDB857715141B92004BA672 /* AUBaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUBaseHelper.h; sourceTree = "<group>"; };
 		FFDB857815141B92004BA672 /* AUBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AUBuffer.cpp; sourceTree = "<group>"; };
 		FFDB857915141B92004BA672 /* AUBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUBuffer.h; sourceTree = "<group>"; };
-		FFDB857A15141B92004BA672 /* AUDebugDispatcher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AUDebugDispatcher.cpp; sourceTree = "<group>"; };
-		FFDB857B15141B92004BA672 /* AUDebugDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUDebugDispatcher.h; sourceTree = "<group>"; };
 		FFDB857C15141B92004BA672 /* AUInputFormatConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUInputFormatConverter.h; sourceTree = "<group>"; };
 		FFDB857D15141B92004BA672 /* AUSilentTimeout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUSilentTimeout.h; sourceTree = "<group>"; };
 		FFDB857E15141B92004BA672 /* AUTimestampGenerator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AUTimestampGenerator.cpp; sourceTree = "<group>"; };
 		FFDB857F15141B92004BA672 /* AUTimestampGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUTimestampGenerator.h; sourceTree = "<group>"; };
-		FFDB858415141D04004BA672 /* CAAudioChannelLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CAAudioChannelLayout.cpp; path = Extras/CoreAudio/PublicUtility/CAAudioChannelLayout.cpp; sourceTree = DEVELOPER_DIR; };
-		FFDB858515141D04004BA672 /* CAAudioChannelLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAAudioChannelLayout.h; path = Extras/CoreAudio/PublicUtility/CAAudioChannelLayout.h; sourceTree = DEVELOPER_DIR; };
-		FFDB858615141D04004BA672 /* CAAutoDisposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAAutoDisposer.h; path = Extras/CoreAudio/PublicUtility/CAAutoDisposer.h; sourceTree = DEVELOPER_DIR; };
-		FFDB858715141D04004BA672 /* CADebugMacros.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CADebugMacros.cpp; path = Extras/CoreAudio/PublicUtility/CADebugMacros.cpp; sourceTree = DEVELOPER_DIR; };
-		FFDB858815141D04004BA672 /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADebugMacros.h; path = Extras/CoreAudio/PublicUtility/CADebugMacros.h; sourceTree = DEVELOPER_DIR; };
-		FFDB858915141D04004BA672 /* CAException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAException.h; path = Extras/CoreAudio/PublicUtility/CAException.h; sourceTree = DEVELOPER_DIR; };
-		FFDB858A15141D04004BA672 /* CAHostTimeBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CAHostTimeBase.cpp; path = Extras/CoreAudio/PublicUtility/CAHostTimeBase.cpp; sourceTree = DEVELOPER_DIR; };
-		FFDB858B15141D04004BA672 /* CAHostTimeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAHostTimeBase.h; path = Extras/CoreAudio/PublicUtility/CAHostTimeBase.h; sourceTree = DEVELOPER_DIR; };
-		FFDB858C15141D05004BA672 /* CAMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAMath.h; path = Extras/CoreAudio/PublicUtility/CAMath.h; sourceTree = DEVELOPER_DIR; };
-		FFDB858F15141D05004BA672 /* CAThreadSafeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAThreadSafeList.h; path = Extras/CoreAudio/PublicUtility/CAThreadSafeList.h; sourceTree = DEVELOPER_DIR; };
-		FFDB859015141D05004BA672 /* CAVectorUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CAVectorUnit.cpp; path = Extras/CoreAudio/PublicUtility/CAVectorUnit.cpp; sourceTree = DEVELOPER_DIR; };
-		FFDB859115141D05004BA672 /* CAVectorUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAVectorUnit.h; path = Extras/CoreAudio/PublicUtility/CAVectorUnit.h; sourceTree = DEVELOPER_DIR; };
+		FFDB858415141D04004BA672 /* CAAudioChannelLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CAAudioChannelLayout.cpp; path = PublicUtility/CAAudioChannelLayout.cpp; sourceTree = "<group>"; };
+		FFDB858515141D04004BA672 /* CAAudioChannelLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAAudioChannelLayout.h; path = PublicUtility/CAAudioChannelLayout.h; sourceTree = "<group>"; };
+		FFDB858615141D04004BA672 /* CAAutoDisposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAAutoDisposer.h; path = PublicUtility/CAAutoDisposer.h; sourceTree = "<group>"; };
+		FFDB858715141D04004BA672 /* CADebugMacros.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CADebugMacros.cpp; path = PublicUtility/CADebugMacros.cpp; sourceTree = "<group>"; };
+		FFDB858815141D04004BA672 /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CADebugMacros.h; path = PublicUtility/CADebugMacros.h; sourceTree = "<group>"; };
+		FFDB858915141D04004BA672 /* CAException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAException.h; path = PublicUtility/CAException.h; sourceTree = "<group>"; };
+		FFDB858A15141D04004BA672 /* CAHostTimeBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CAHostTimeBase.cpp; path = PublicUtility/CAHostTimeBase.cpp; sourceTree = "<group>"; };
+		FFDB858B15141D04004BA672 /* CAHostTimeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAHostTimeBase.h; path = PublicUtility/CAHostTimeBase.h; sourceTree = "<group>"; };
+		FFDB858C15141D05004BA672 /* CAMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAMath.h; path = PublicUtility/CAMath.h; sourceTree = "<group>"; };
+		FFDB858F15141D05004BA672 /* CAThreadSafeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAThreadSafeList.h; path = PublicUtility/CAThreadSafeList.h; sourceTree = "<group>"; };
+		FFDB859015141D05004BA672 /* CAVectorUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CAVectorUnit.cpp; path = PublicUtility/CAVectorUnit.cpp; sourceTree = "<group>"; };
+		FFDB859115141D05004BA672 /* CAVectorUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAVectorUnit.h; path = PublicUtility/CAVectorUnit.h; sourceTree = "<group>"; };
 		FFDB859715141D23004BA672 /* audio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = audio.cpp; sourceTree = "<group>"; };
-		FFDB859915141D9D004BA672 /* CAStreamBasicDescription.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CAStreamBasicDescription.cpp; path = Extras/CoreAudio/PublicUtility/CAStreamBasicDescription.cpp; sourceTree = DEVELOPER_DIR; };
-		FFDB859A15141D9D004BA672 /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAStreamBasicDescription.h; path = Extras/CoreAudio/PublicUtility/CAStreamBasicDescription.h; sourceTree = DEVELOPER_DIR; };
-		FFDB859C15141DDE004BA672 /* CAXException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CAXException.cpp; path = Extras/CoreAudio/PublicUtility/CAXException.cpp; sourceTree = DEVELOPER_DIR; };
-		FFDB859E15141DFF004BA672 /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAXException.h; path = Extras/CoreAudio/PublicUtility/CAXException.h; sourceTree = DEVELOPER_DIR; };
+		FFDB859915141D9D004BA672 /* CAStreamBasicDescription.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CAStreamBasicDescription.cpp; path = PublicUtility/CAStreamBasicDescription.cpp; sourceTree = "<group>"; };
+		FFDB859A15141D9D004BA672 /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAStreamBasicDescription.h; path = PublicUtility/CAStreamBasicDescription.h; sourceTree = "<group>"; };
+		FFDB859C15141DDE004BA672 /* CAXException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CAXException.cpp; path = PublicUtility/CAXException.cpp; sourceTree = "<group>"; };
+		FFDB859E15141DFF004BA672 /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAXException.h; path = PublicUtility/CAXException.h; sourceTree = "<group>"; };
 		FFF2F56915D5BE2B00CEA715 /* CAPlayThrough.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAPlayThrough.cpp; sourceTree = "<group>"; };
 		FFF2F56A15D5BE2B00CEA715 /* CAPlayThrough.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAPlayThrough.h; sourceTree = "<group>"; };
-		FFF2F56D15D5C28100CEA715 /* CARingBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CARingBuffer.cpp; path = Extras/CoreAudio/PublicUtility/CARingBuffer.cpp; sourceTree = DEVELOPER_DIR; };
-		FFF2F56E15D5C28200CEA715 /* CARingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CARingBuffer.h; path = Extras/CoreAudio/PublicUtility/CARingBuffer.h; sourceTree = DEVELOPER_DIR; };
+		FFF2F56D15D5C28100CEA715 /* CARingBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CARingBuffer.cpp; path = PublicUtility/CARingBuffer.cpp; sourceTree = "<group>"; };
+		FFF2F56E15D5C28200CEA715 /* CARingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CARingBuffer.h; path = PublicUtility/CARingBuffer.h; sourceTree = "<group>"; };
 		FFF2F57115D5C34000CEA715 /* AudioDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioDevice.cpp; sourceTree = "<group>"; };
 		FFF2F57215D5C34100CEA715 /* AudioDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioDevice.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -273,6 +342,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FFCF842D15EA8C0000333567 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF45E63315F12E9200280886 /* AudioToolbox.framework in Frameworks */,
+				FF45E63515F12E9200280886 /* CoreAudio.framework in Frameworks */,
+				FF45E62F15F12D5500280886 /* CoreFoundation.framework in Frameworks */,
+				FFCF843315EA8C0000333567 /* UIKit.framework in Frameworks */,
+				FFCF843515EA8C0000333567 /* Foundation.framework in Frameworks */,
+				FFCF843715EA8C0000333567 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFDB853815141284004BA672 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -290,6 +372,9 @@
 			isa = PBXGroup;
 			children = (
 				FF08F68415D4348600A8A646 /* Cocoa.framework */,
+				FFCF843215EA8C0000333567 /* UIKit.framework */,
+				FFCF843415EA8C0000333567 /* Foundation.framework */,
+				FFCF843615EA8C0000333567 /* CoreGraphics.framework */,
 				FF08F68615D4348600A8A646 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -332,6 +417,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FF5C463B15F50829002FF019 /* iOS helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FF5C463C15F50864002FF019 /* iosAUEvents.h */,
+				FF5C463D15F50AEB002FF019 /* iosAUEvents.cpp */,
+				FF5C464115F55ECD002FF019 /* obsfu.mm */,
+				FF5C464215F55ECD002FF019 /* obsfu.h */,
+			);
+			name = "iOS helpers";
+			sourceTree = "<group>";
+		};
 		FF76445F1579538A00E41F35 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +448,14 @@
 		FF9E2D9C15CCBB15009026AE /* Framework Sources */ = {
 			isa = PBXGroup;
 			children = (
+				FF45E63015F12E9100280886 /* AudioToolbox.framework */,
+				FF45E63115F12E9200280886 /* AudioUnit.framework */,
+				FF45E63215F12E9200280886 /* CoreAudio.framework */,
+				FF45E62E15F12D5500280886 /* CoreFoundation.framework */,
+				FFAB983515E9183E008D97F1 /* JavaScriptCore.framework */,
+				FF41350315E1A46C001ACF64 /* WebKit.framework */,
+				FF08F6F115D474B500A8A646 /* CoreAudio.framework */,
+				FFCF843815EA8C0000333567 /* #PROJNAMEios */,
 				FF08F68A15D4348600A8A646 /* #PROJNAMEstandalone */,
 				FFDB8556151419A3004BA672 /* AudioUnit.framework */,
 				FFDB85541514199A004BA672 /* CoreServices.framework */,
@@ -382,6 +486,8 @@
 		FFAB983915E92DCC008D97F1 /* Wrappers */ = {
 			isa = PBXGroup;
 			children = (
+				FFAB983015E68558008D97F1 /* AUWrapper.h */,
+				FFAB983215E68603008D97F1 /* AUWrapper.mm */,
 				FFAB983A15E92DF1008D97F1 /* LowLevelCocoaUtils.h */,
 				FFAB983B15E92EDF008D97F1 /* AUPropParamBase.h */,
 				FFAB983C15E92EDF008D97F1 /* AUPropParamBase.mm */,
@@ -416,24 +522,46 @@
 		FFC1A2CC1515357B00D447CC /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				FF5C463B15F50829002FF019 /* iOS helpers */,
 				FFAB983915E92DCC008D97F1 /* Wrappers */,
 				FFC1A2CE151535C100D447CC /* #PROJNAME_ViewFactory.h */,
 				FFC1A2CF151535C100D447CC /* #PROJNAME_ViewFactory.mm */,
 				FFC1A2D11515404A00D447CC /* #PROJNAME_WebView.h */,
 				FFC1A2D21515404A00D447CC /* #PROJNAME_WebView.mm */,
-				FFAB983015E68558008D97F1 /* AUWrapper.h */,
-				FFAB983215E68603008D97F1 /* AUWrapper.mm */,
 			);
 			name = Source;
 			path = "JSAU source/CocoaUI";
 			sourceTree = "<group>";
 		};
+		FFCF843815EA8C0000333567 /* #PROJNAMEios */ = {
+			isa = PBXGroup;
+			children = (
+				FFCF844115EA8C0100333567 /* #PROJNAMEAppDelegate.h */,
+				FFCF844215EA8C0100333567 /* #PROJNAMEAppDelegate.mm */,
+				FFCF844415EA8C0100333567 /* #PROJNAMEViewController.h */,
+				FFCF844515EA8C0100333567 /* #PROJNAMEViewController.mm */,
+				FFCF844715EA8C0100333567 /* #PROJNAMEViewController_iPhone.xib */,
+				FFCF844A15EA8C0100333567 /* #PROJNAMEViewController_iPad.xib */,
+				FFCF843915EA8C0000333567 /* Supporting Files */,
+			);
+			name = #PROJNAMEios;
+			path = "JSAU Source/#PROJNAMEios";
+			sourceTree = "<group>";
+		};
+		FFCF843915EA8C0000333567 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FFCF843A15EA8C0000333567 /* #PROJNAMEios-Info.plist */,
+				FFCF843B15EA8C0000333567 /* InfoPlist.strings */,
+				FFCF843E15EA8C0000333567 /* main.mm */,
+				FFCF844015EA8C0100333567 /* #PROJNAMEios-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		FFDB853015141283004BA672 = {
 			isa = PBXGroup;
 			children = (
-				FFAB983515E9183E008D97F1 /* JavaScriptCore.framework */,
-				FF41350315E1A46C001ACF64 /* WebKit.framework */,
-				FF08F6F115D474B500A8A646 /* CoreAudio.framework */,
 				FF08F68315D4348600A8A646 /* Frameworks */,
 				FFDB853C15141284004BA672 /* Products */,
 				FF9E2D9D15CCBB37009026AE /* Audio Processing Source */,
@@ -447,6 +575,7 @@
 				FFDB853B15141284004BA672 /* #PROJNAME.component */,
 				FFC1A2B81515302800D447CC /* CocoaUI.bundle */,
 				FF08F68115D4348600A8A646 /* #NAME.app */,
+				FFCF843015EA8C0000333567 /* #NAME.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -510,12 +639,14 @@
 				FFDB855D15141B6E004BA672 /* AUBase */,
 			);
 			name = "AU SDK";
-			path = #PROJNAME;
+			path = "JSAU Source/CoreAudio";
 			sourceTree = "<group>";
 		};
 		FFDB855D15141B6E004BA672 /* AUBase */ = {
 			isa = PBXGroup;
 			children = (
+				FF1C162815F120D7003D9B0B /* AUPlugInDispatch.cpp */,
+				FF1C162915F120D7003D9B0B /* AUPlugInDispatch.h */,
 				FFDB855E15141B6E004BA672 /* AUBase.cpp */,
 				FFDB855F15141B6E004BA672 /* AUBase.h */,
 				FFDB856015141B6E004BA672 /* AUDispatch.cpp */,
@@ -531,8 +662,8 @@
 				FFDB856A15141B6E004BA672 /* ComponentBase.h */,
 			);
 			name = AUBase;
-			path = Extras/CoreAudio/AudioUnits/AUPublic/AUBase;
-			sourceTree = DEVELOPER_DIR;
+			path = AudioUnits/AUPublic/AUBase;
+			sourceTree = "<group>";
 		};
 		FFDB857515141B92004BA672 /* Utility */ = {
 			isa = PBXGroup;
@@ -541,16 +672,14 @@
 				FFDB857715141B92004BA672 /* AUBaseHelper.h */,
 				FFDB857815141B92004BA672 /* AUBuffer.cpp */,
 				FFDB857915141B92004BA672 /* AUBuffer.h */,
-				FFDB857A15141B92004BA672 /* AUDebugDispatcher.cpp */,
-				FFDB857B15141B92004BA672 /* AUDebugDispatcher.h */,
 				FFDB857C15141B92004BA672 /* AUInputFormatConverter.h */,
 				FFDB857D15141B92004BA672 /* AUSilentTimeout.h */,
 				FFDB857E15141B92004BA672 /* AUTimestampGenerator.cpp */,
 				FFDB857F15141B92004BA672 /* AUTimestampGenerator.h */,
 			);
 			name = Utility;
-			path = Extras/CoreAudio/AudioUnits/AUPublic/Utility;
-			sourceTree = DEVELOPER_DIR;
+			path = AudioUnits/AUPublic/Utility;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -591,6 +720,24 @@
 			productName = CocoaUI;
 			productReference = FFC1A2B81515302800D447CC /* CocoaUI.bundle */;
 			productType = "com.apple.product-type.bundle";
+		};
+		FFCF842F15EA8C0000333567 /* #PROJNAMEios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFCF844F15EA8C0100333567 /* Build configuration list for PBXNativeTarget "#PROJNAMEios" */;
+			buildPhases = (
+				FFCF842C15EA8C0000333567 /* Sources */,
+				FFCF842D15EA8C0000333567 /* Frameworks */,
+				FFCF842E15EA8C0000333567 /* Resources */,
+				FF5C463F15F51037002FF019 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = #PROJNAMEios;
+			productName = #PROJNAMEios;
+			productReference = FFCF843015EA8C0000333567 /* #NAME.app */;
+			productType = "com.apple.product-type.application";
 		};
 		FFDB853A15141284004BA672 /* #PROJNAME */ = {
 			isa = PBXNativeTarget;
@@ -686,6 +833,7 @@
 				FFDB853A15141284004BA672 /* #PROJNAME */,
 				FFC1A2B71515302800D447CC /* CocoaUI */,
 				FF08F68015D4348600A8A646 /* #PROJNAMEstandalone */,
+				FFCF842F15EA8C0000333567 /* #PROJNAMEios */,
 			);
 		};
 /* End PBXProject section */
@@ -708,6 +856,16 @@
 				FFC1A2C91515345900D447CC /* webview.xib in Resources */,
 				FFC1A2BF1515302800D447CC /* InfoPlist.strings in Resources */,
 				FF9E2D9B15CCB13E009026AE /* ui in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFCF842E15EA8C0000333567 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFCF843D15EA8C0000333567 /* InfoPlist.strings in Resources */,
+				FFCF844915EA8C0100333567 /* #PROJNAMEViewController_iPhone.xib in Resources */,
+				FFCF844C15EA8C0100333567 /* #PROJNAMEViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -754,7 +912,6 @@
 				FF08F6D915D4423300A8A646 /* ComponentBase.cpp in Sources */,
 				FF08F6D015D441F600A8A646 /* AUBaseHelper.cpp in Sources */,
 				FF08F6D115D441F600A8A646 /* AUBuffer.cpp in Sources */,
-				FF08F6D215D441F600A8A646 /* AUDebugDispatcher.cpp in Sources */,
 				FF08F6D315D441F600A8A646 /* AUTimestampGenerator.cpp in Sources */,
 				FF08F6D415D441F600A8A646 /* AUBase.cpp in Sources */,
 				FF08F6D515D441F600A8A646 /* AUDispatch.cpp in Sources */,
@@ -768,6 +925,8 @@
 				FFAB983E15E92EDF008D97F1 /* AUPropParamBase.mm in Sources */,
 				FFAB984215E93080008D97F1 /* AUProp.mm in Sources */,
 				FF72865915E9406C0075FC5A /* AUParam.mm in Sources */,
+				FF1C162B15F12118003D9B0B /* AUPlugInDispatch.cpp in Sources */,
+				FF5C464415F55ECD002FF019 /* obsfu.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -781,6 +940,39 @@
 				FFAB983D15E92EDF008D97F1 /* AUPropParamBase.mm in Sources */,
 				FFAB984115E93080008D97F1 /* AUProp.mm in Sources */,
 				FF72865815E9406C0075FC5A /* AUParam.mm in Sources */,
+				FF5C464315F55ECD002FF019 /* obsfu.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFCF842C15EA8C0000333567 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFCF845115EA8D1E00333567 /* audio.cpp in Sources */,
+				FFCF843F15EA8C0000333567 /* main.mm in Sources */,
+				FFCF844315EA8C0100333567 /* #PROJNAMEAppDelegate.mm in Sources */,
+				FFCF844615EA8C0100333567 /* #PROJNAMEViewController.mm in Sources */,
+				FF45E62615F12B4A00280886 /* AUEffectBase.cpp in Sources */,
+				FF45E62715F12B4F00280886 /* AUPlugInDispatch.cpp in Sources */,
+				FF45E62815F12B5500280886 /* AUBase.cpp in Sources */,
+				FF45E62B15F12B6000280886 /* AUOutputElement.cpp in Sources */,
+				FF45E62C15F12B6400280886 /* AUScopeElement.cpp in Sources */,
+				FF45E62D15F12B6700280886 /* ComponentBase.cpp in Sources */,
+				FF45E63615F12EB400280886 /* CAVectorUnit.cpp in Sources */,
+				FF45E63715F12EB800280886 /* CAStreamBasicDescription.cpp in Sources */,
+				FF45E63815F12EC700280886 /* AUBaseHelper.cpp in Sources */,
+				FF45E63915F12ECB00280886 /* AUBuffer.cpp in Sources */,
+				FF45E63A15F12ECE00280886 /* AUTimestampGenerator.cpp in Sources */,
+				FF45E63B15F12EF500280886 /* jsaubase.cpp in Sources */,
+				FF45E63C15F12EFC00280886 /* AUInputElement.cpp in Sources */,
+				FF45E63D15F12F4B00280886 /* CAAudioChannelLayout.cpp in Sources */,
+				FF45E63E15F12F5100280886 /* CAHostTimeBase.cpp in Sources */,
+				FF5C463615F1CEF8002FF019 /* AUWrapper.mm in Sources */,
+				FF5C463815F1CEFC002FF019 /* AUPropParamBase.mm in Sources */,
+				FF5C463915F1CEFF002FF019 /* AUProp.mm in Sources */,
+				FF5C463A15F1CF03002FF019 /* AUParam.mm in Sources */,
+				FF5C463E15F50AEB002FF019 /* iosAUEvents.cpp in Sources */,
+				FF5C464515F55ECD002FF019 /* obsfu.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -797,7 +989,6 @@
 				FFDB857415141B83004BA672 /* AUEffectBase.cpp in Sources */,
 				FFDB858015141B92004BA672 /* AUBaseHelper.cpp in Sources */,
 				FFDB858115141B92004BA672 /* AUBuffer.cpp in Sources */,
-				FFDB858215141B92004BA672 /* AUDebugDispatcher.cpp in Sources */,
 				FFDB858315141B92004BA672 /* AUTimestampGenerator.cpp in Sources */,
 				FFDB859215141D05004BA672 /* CAAudioChannelLayout.cpp in Sources */,
 				FFDB859315141D05004BA672 /* CADebugMacros.cpp in Sources */,
@@ -808,6 +999,7 @@
 				FF7644681579538A00E41F35 /* #PROJNAME.exp in Sources */,
 				FF234F2715CC6EB8003C97AA /* jsaubase.cpp in Sources */,
 				FF9E2D9A15CCB095009026AE /* audio.cpp in Sources */,
+				FF1C162A15F120D7003D9B0B /* AUPlugInDispatch.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -854,6 +1046,30 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
+		FFCF843B15EA8C0000333567 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFCF843C15EA8C0000333567 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FFCF844715EA8C0100333567 /* #PROJNAMEViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFCF844815EA8C0100333567 /* en */,
+			);
+			name = #PROJNAMEViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		FFCF844A15EA8C0100333567 /* #PROJNAMEViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFCF844B15EA8C0100333567 /* en */,
+			);
+			name = #PROJNAMEViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -863,10 +1079,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JSAU Source/#PROJNAMEstandalone/#PROJNAMEstandalone-Prefix.pch";
 				INFOPLIST_FILE = "JSAU Source/#PROJNAMEstandalone/#PROJNAMEstandalone-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/JSAU Source/libcef/lib\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "#NAME";
 				WRAPPER_EXTENSION = app;
 			};
@@ -879,10 +1092,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JSAU Source/#PROJNAMEstandalone/#PROJNAMEstandalone-Prefix.pch";
 				INFOPLIST_FILE = "JSAU Source/#PROJNAMEstandalone/#PROJNAMEstandalone-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/JSAU Source/libcef/lib\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "#NAME";
 				WRAPPER_EXTENSION = app;
 			};
@@ -899,10 +1109,7 @@
 				INFOPLIST_FILE = "JSAU Source/CocoaUI/CocoaUI-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path .";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/JSAU Source/libcef/lib\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = bundle;
 			};
@@ -919,12 +1126,52 @@
 				INFOPLIST_FILE = "JSAU Source/CocoaUI/CocoaUI-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path .";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/JSAU Source/libcef/lib\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		FFCF844D15EA8C0100333567 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JSAU Source/#PROJNAMEios/#PROJNAMEios-Prefix.pch";
+				INFOPLIST_FILE = "JSAU Source/#PROJNAMEios/#PROJNAMEios-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "#NAME";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FFCF844E15EA8C0100333567 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JSAU Source/#PROJNAMEios/#PROJNAMEios-Prefix.pch";
+				INFOPLIST_FILE = "JSAU Source/#PROJNAMEios/#PROJNAMEios-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_NAME = "#NAME";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
@@ -1038,6 +1285,15 @@
 			buildConfigurations = (
 				FFC1A2C21515302800D447CC /* Debug */,
 				FFC1A2C31515302800D447CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFCF844F15EA8C0100333567 /* Build configuration list for PBXNativeTarget "#PROJNAMEios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFCF844D15EA8C0100333567 /* Debug */,
+				FFCF844E15EA8C0100333567 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

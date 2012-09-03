@@ -11,9 +11,9 @@
 
 @synthesize OnBeginGesture, OnEndGesture;
 
--(id)initWithAU:(AudioUnit)au withID:(UInt32)id withContext:(JSGlobalContextRef)context
+-(id)initWithAU:(AudioUnit)au withID:(UInt32)id
 {
-    self = [super initWithAU:au withID:id withContext:context];
+    self = [super initWithAU:au withID:id];
     [self initListenerType:kAudioUnitEvent_ParameterValueChange];
     [self initListenerType:kAudioUnitEvent_BeginParameterChangeGesture];
     [self initListenerType:kAudioUnitEvent_EndParameterChangeGesture];

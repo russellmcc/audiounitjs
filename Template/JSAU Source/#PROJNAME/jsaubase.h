@@ -23,6 +23,6 @@ class JSAudioUnitBase : public AUEffectBase
         virtual std::vector<JSPropDesc> GetPropertyDescriptionList() { return std::vector<JSPropDesc>(); }
 };
 
-void DoRegister(OSType Type, OSType Subtype, OSType Manufacturer);
+void DoRegister(OSType Type, OSType Subtype, OSType Manufacturer, CFStringRef name, UInt32 vers);
 
 #endif

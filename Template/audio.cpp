@@ -52,10 +52,10 @@ private:
     friend class AudioKernel;
 };
 
-COMPONENT_ENTRY(Audio)
-void DoRegister(OSType Type, OSType Subtype, OSType Manufacturer)
+AUDIOCOMPONENT_ENTRY(AUBaseFactory, Audio)
+void DoRegister(OSType Type, OSType Subtype, OSType Manufacturer, CFStringRef name, UInt32 vers)
 {
-    ComponentEntryPoint<Audio>::Register(Type, Subtype, Manufacturer);
+    AUBaseFactory<Audio>::Register(Type, Subtype, Manufacturer, name, vers, 0);
 }
 
 
