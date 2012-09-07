@@ -28,11 +28,11 @@ key_help =
   'width' : 'the height of the user interface'
   'height' : 'the width of the user interface'
   
-transform_file = (src, project, target) ->
+transform_file = (src, project, target, next) ->
 
   # copy the file.
   proc = child_process.spawn 'cp', [src, target], {'stdio' : 'ignore'}
-  await proc.on 'exit', defer code
+  await proc.on 'exit', defer()
 
   # replace each key with each replacement using sed
   args = ['-i', '']
@@ -40,11 +40,11 @@ transform_file = (src, project, target) ->
     args = args.concat ['-e', "s/#{key}/#{project[rep]}/g"]
   args = args.concat [target]
 
-  proc = child_process.spawn 'sed', args, {'stdio' : ['ignore', 'ignore', 2]}
-  await proc.on 'exit', defer code
+  proc = child_process.spawn 'sed', args, {'stdio' : 'ignore'}
+  proc.on 'exit', next
 
 
-transform_dir = (dir, project, target) ->
+transform_dir = (dir, project, target, next) ->
 
   # create the destination
   await fs.mkdir target, defer err
@@ -67,10 +67,13 @@ transform_dir = (dir, project, target) ->
     throw err if err?
 
     # if it's a file, transform the file
-    if stats.isFile()
-      transform_file src_path, project, target_path
-    else if stats.isDirectory()
-      transform_dir src_path, project, target_path
+    await
+      if stats.isFile()
+        transform_file src_path, project, target_path, defer()
+      else if stats.isDirectory()
+        transform_dir src_path, project, target_path, defer()
+
+  next()
 
 module.exports = (json_file) ->
 
@@ -87,4 +90,4 @@ module.exports = (json_file) ->
   throw err if err?
   target = (path.join process.cwd(), project.project)
 
-  transform_dir fullpath, project, target
+  await transform_dir fullpath, project, target, defer()
