@@ -52,6 +52,8 @@ private:
     friend class AudioKernel;
 };
 
+// this boilerplate has to be here so that the system can know about the 
+// class we just made.
 AUDIOCOMPONENT_ENTRY(AUBaseFactory, Audio)
 void DoRegister(OSType Type, OSType Subtype, OSType Manufacturer, CFStringRef name, UInt32 vers)
 {
