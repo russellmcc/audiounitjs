@@ -11,6 +11,54 @@
 #import "jsaubase.h"
 #include "CAStreamBasicDescription.h"
 
+namespace {
+    void SetPreferredOutput() {
+        if(strcmp("#OUTPUT", "Speaker") == 0) {
+            
+            // since we prefer the speaker over the receiver, use that if
+            // we're currently on the receiver.
+            UInt32 routeSize = sizeof (NSString*);
+            NSString* route;
+            AudioSessionGetProperty (kAudioSessionProperty_AudioRoute,
+                                              &routeSize,
+                                              &route);
+            NSRange headphoneRange = [route rangeOfString : @"Receiver"];
+            if (headphoneRange.location != NSNotFound)
+            {
+                UInt32 audioRouteOverride = kAudioSessionOverrideAudioRoute_Speaker;
+                AudioSessionSetProperty (kAudioSessionProperty_OverrideAudioRoute,
+                    sizeof (audioRouteOverride),
+                    &audioRouteOverride);
+            }
+        }
+    }
+    void sessionPropertyListener(void *                  inClientData,
+                                 AudioSessionPropertyID  inID,
+                                 UInt32                  inDataSize,
+                                 const void *            inData){
+
+        
+        if (inID == kAudioSessionProperty_AudioRouteChange)
+        {
+            CFDictionaryRef routeChangeDictionary = (CFDictionaryRef)inData;
+            CFNumberRef routeChangeReasonRef = (CFNumberRef)CFDictionaryGetValue (
+                        routeChangeDictionary,
+                        CFSTR (kAudioSession_AudioRouteChangeKey_Reason)
+                    );
+     
+            SInt32 routeChangeReason;
+            CFNumberGetValue (
+                routeChangeReasonRef, kCFNumberSInt32Type, &routeChangeReason
+            );
+     
+            if (routeChangeReason ==
+                    kAudioSessionRouteChangeReason_OldDeviceUnavailable) {
+                SetPreferredOutput();
+            }
+        }
+    }
+}
+
 @implementation #PROJNAMEAppDelegate
 
 @synthesize window = _window;
@@ -92,6 +140,16 @@
 	
     // initialize.
 	AUGraphInitialize(mGraph);
+    
+    OSStatus status = AudioSessionInitialize(NULL, NULL, NULL, 0);
+    UInt32 sessionCategory = kAudioSessionCategory_PlayAndRecord;
+    AudioSessionSetProperty (kAudioSessionProperty_AudioCategory,
+                                         sizeof (sessionCategory),
+                                         &sessionCategory);
+    
+    status = AudioSessionAddPropertyListener(kAudioSessionProperty_AudioRouteChange, sessionPropertyListener, 0);
+    
+    SetPreferredOutput();
     
     // run!
     AUGraphStart(mGraph);

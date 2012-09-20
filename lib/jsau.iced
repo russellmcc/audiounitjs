@@ -14,7 +14,7 @@ keys =
   '#UIWIDTH' : 'width'
   '#COMPANY_UNDERSCORED' : 'company_underscore'
   '#COMPANY' : 'company'
-
+  '#OUTPUT' : 'preferred_iPhone_output'
 
 # help for each required key (keep synced with
 key_help =
@@ -27,6 +27,7 @@ key_help =
   'company' : "the user-visible company."
   'width' : 'the height of the user interface'
   'height' : 'the width of the user interface'
+  'preferred_iPhone_output' : 'the preferred output on the iphone with no headphones plugged in.  can be \'Speaker\' or \'Receiver\''
   
 transform_file = (src, project, target, next) ->
 

@@ -11,5 +11,7 @@
     "company" : "Blinkbit",
   
     "height" : "100",
-    "width" : "80"
+    "width" : "80",
+
+    "preferred_iPhone_output" : "Receiver"
 }
