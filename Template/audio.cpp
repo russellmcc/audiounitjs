@@ -89,7 +89,6 @@ void AudioKernel::Process(Float32 const* sourceP, Float32 * destP, UInt32 frames
 
 // Parameter stuff
 
-// TODO - setup parameter info.
 OSStatus Audio::GetParameterInfo(	AudioUnitScope			inScope,
                             AudioUnitParameterID	inParameterID,
                             AudioUnitParameterInfo	&outParameterInfo )
