@@ -32,6 +32,8 @@ public:
                                         AudioUnitParameterID	inParameterID,
                                         AudioUnitParameterInfo	&outParameterInfo );
     
+    virtual UInt32   SupportedNumChannels (const AUChannelInfo** outInfo);
+    
     virtual OSStatus	Reset(		AudioUnitScope 				inScope,
                                     AudioUnitElement 			inElement);
     
@@ -58,6 +60,19 @@ Audio::Audio(AudioUnit component) : JSAudioUnitBase(component)
 
 
 // Processing stuff.
+
+// this lets the host know how many channels are allowed.
+// return 0 to indicate that this is an N-to-N effect.
+UInt32 Audio::SupportedNumChannels (const AUChannelInfo** outInfo)
+{
+/* //this is how you would indicate that this is a stereo-in/stereo-out effect:
+    static const AUChannelInfo channelConfigs[] = {{2,2}};
+    if(outInfo) *outInfo = channelConfigs;
+    return sizeof(channelConfigs)/sizeof(AUChannelInfo); */
+    
+    // this indicates we are an N-to-N effect.
+    return 0;
+}
 
 // Reset the state of any reverb tails, etc.
 OSStatus Audio::Reset(		AudioUnitScope 				inScope,
