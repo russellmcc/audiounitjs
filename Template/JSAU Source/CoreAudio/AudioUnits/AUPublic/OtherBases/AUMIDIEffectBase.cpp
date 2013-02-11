@@ -150,7 +150,7 @@ static OSStatus		AUMIDIEffectBaseMIDIEvent(void *				inComponentStorage,
 	OSStatus result = noErr;
 	try {
 		AUMIDIBase *This = static_cast<AUMIDIBase *>(inComponentStorage);
-		if (This == NULL) return paramErr;
+		if (This == NULL) return -50;
 		result = This->MIDIEvent(inStatus, inData1, inData2, inOffsetSampleFrame);
 	}
 	COMPONENT_CATCH

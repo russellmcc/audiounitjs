@@ -3,6 +3,7 @@
 #define example_jsaubase_h
 
 #include "audioprops.h"
+#include "AUMIDIEffectBase.h"
 
 // base class that eliminates some boilerplate for javascript-based AUs
 class JSAudioUnitBase : public AUMIDIEffectBase
