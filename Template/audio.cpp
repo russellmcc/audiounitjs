@@ -15,26 +15,11 @@ enum
 
 class Audio;
 
-// This is the class that does the actually processing.
-class AudioKernel : public AUKernelBase {
-public:
-	AudioKernel(Audio* inAudioUnit);
-	virtual void Process(Float32 const* inSourceP,
-                         Float32 * inDestP,
-                         UInt32 inFramesToProcess,
-                         UInt32 inNumChannels,
-                         bool & ioSilence);
-private:
-    Audio* mAudio;
-
-};
-
-// This takes care of all parameters and properties
+// This is the main plug in class.
 class Audio : public JSAudioUnitBase {
 public:
 	Audio(AudioUnit component);
 	virtual OSStatus Version() { return 0xFFFFFF; }
-	virtual AUKernelBase * NewKernel() { return new AudioKernel(this); }
     
     virtual OSStatus GetProperty(AudioUnitPropertyID id, AudioUnitScope scope, 
                                  AudioUnitElement elem, void* data);
@@ -47,9 +32,15 @@ public:
                                         AudioUnitParameterID	inParameterID,
                                         AudioUnitParameterInfo	&outParameterInfo );
     
+    virtual OSStatus	Reset(		AudioUnitScope 				inScope,
+                                    AudioUnitElement 			inElement);
+    
+    virtual OSStatus    ProcessBufferLists (AudioUnitRenderActionFlags& ioActionFlags,
+                           const AudioBufferList& inBuffer,
+                           AudioBufferList& outBuffer,
+                           UInt32 numSamples);
+    
     virtual std::vector<JSPropDesc> GetPropertyDescriptionList();
-private:
-    friend class AudioKernel;
 };
 
 // this boilerplate has to be here so that the system can know about the 
@@ -60,9 +51,6 @@ void DoRegister(OSType Type, OSType Subtype, OSType Manufacturer, CFStringRef na
     AUBaseFactory<Audio>::Register(Type, Subtype, Manufacturer, name, vers, 0);
 }
 
-
-AudioKernel::AudioKernel(Audio * inAudioUnit ) : AUKernelBase(inAudioUnit), mAudio(inAudioUnit) {}
-
 Audio::Audio(AudioUnit component) : JSAudioUnitBase(component)
 {
     SetParameter(kParam_VolumeLevel, 0.5);
@@ -70,21 +58,56 @@ Audio::Audio(AudioUnit component) : JSAudioUnitBase(component)
 
 
 // Processing stuff.
-void AudioKernel::Process(Float32 const* sourceP, Float32 * destP, UInt32 framesToProcess, UInt32 numChannels, bool & ioSilence){
-    // This is usually where you want to process data to produce an effect.
+
+// Reset the state of any reverb tails, etc.
+OSStatus Audio::Reset(		AudioUnitScope 				inScope,
+                            AudioUnitElement 			inElement)
+{
+    // this #PROJNAME-changer doesn't store any state, so there's nothing
+    // to reset.
+    return noErr;
+};
+
+OSStatus
+Audio::ProcessBufferLists (AudioUnitRenderActionFlags& ioActionFlags,
+                           const AudioBufferList& inBuffer,
+                           AudioBufferList& outBuffer,
+                           UInt32 numSamples)
+{
+    // watch out!  buffers could be interleaved or not interleaved!
+	SInt16 channels = GetOutput(0)->GetStreamFormat().mChannelsPerFrame;
     
-    // Get the current value of "volume"
-    double volume = GetParameter(kParam_VolumeLevel);
-    
-    // bind volume from 0.0 to 1.0
-    volume = fmin(fmax(volume, 0.0), 1.0);
-    
-    for(int i = 0; i < framesToProcess; ++i)
-    {
-        *destP = volume * (*sourceP);
-        destP++;
-        sourceP++;
+    // check for silence
+    bool silentInput = IsInputSilent (ioActionFlags, numSamples);
+    if(silentInput) {
+        ioActionFlags |= kAudioUnitRenderAction_OutputIsSilence;
+        return noErr;
     }
+    
+    // Gather per-buffer parameters here
+    double v = GetParameter(kParam_VolumeLevel);
+    // bind v to 1.0
+    v = fmin(fmax(v, 0.0), 1.0);
+    
+    // do processing here.
+    for(int b = 0; b < inBuffer.mNumberBuffers; ++b) {
+        UInt32 numChans = inBuffer.mBuffers[b].mNumberChannels;
+        for(int c = 0; c < numChans; ++c) {
+            UInt32 chan = (b*numChans) + c;
+            for(int s = 0; s < numSamples; ++s) {
+                // Per-sample processing here
+                Float32& inSamp = reinterpret_cast<Float32*>(inBuffer.mBuffers[b].mData)[s*numChans + c];
+                Float32& outSamp = reinterpret_cast<Float32*>(outBuffer.mBuffers[b].mData)[s*numChans + c];
+                
+                outSamp = inSamp * v;
+            
+                outSamp = inSamp;
+                //end per-sample processing
+            }
+        }
+    }
+    
+    return noErr;
 }
 
 // Parameter stuff

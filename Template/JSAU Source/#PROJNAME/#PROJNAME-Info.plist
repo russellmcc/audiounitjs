@@ -24,8 +24,11 @@
 	<string>1</string>
 	<key>NSPrincipalClass</key>
 	<string></string>
-	<key>AudioComponent</key>
+	<key>AudioComponents</key>
+    <array>
 	<dict>
+		<key>type</key>
+		<string>#AUTYPE</string>
 		<key>sandboxSafe</key>
 		<true/>
 		<key>manufacturer</key>
@@ -39,7 +42,8 @@
 		<key>name</key>
 		<string>#COMPANY_UNDERSCORED: #NAME</string>
 		<key>version</key>
-		<string>0x00000001</string>
+		<integer>1</integer>
 	</dict>
+    </array>
 </dict>
 </plist>

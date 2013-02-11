@@ -10,5 +10,5 @@
 #include <CoreFoundation.h>
 #endif
 
-#include "AUEffectBase.h"
+#include "AUMIDIEffectBase.h"
 #include <AudioToolbox/AudioUnitUtilities.h>

@@ -5,10 +5,10 @@
 #include "audioprops.h"
 
 // base class that eliminates some boilerplate for javascript-based AUs
-class JSAudioUnitBase : public AUEffectBase
+class JSAudioUnitBase : public AUMIDIEffectBase
 {
     public:
-        JSAudioUnitBase(AudioUnit unit) : AUEffectBase(unit) {}
+        JSAudioUnitBase(AudioUnit unit) : AUMIDIEffectBase(unit) {}
         ~JSAudioUnitBase() {}
         
         virtual OSStatus GetProperty(AudioUnitPropertyID id, AudioUnitScope scope, 
