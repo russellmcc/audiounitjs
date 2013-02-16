@@ -78,7 +78,7 @@ UInt32 Audio::SupportedNumChannels (const AUChannelInfo** outInfo)
 OSStatus Audio::Reset(		AudioUnitScope 				inScope,
                             AudioUnitElement 			inElement)
 {
-    // this #PROJNAME-changer doesn't store any state, so there's nothing
+    // this volume-changer doesn't store any state, so there's nothing
     // to reset.
     return noErr;
 };
