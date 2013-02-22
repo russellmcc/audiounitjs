@@ -1276,7 +1276,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JSAU Source/#PROJNAME/#PROJNAME-Prefix.pch";
 				INFOPLIST_FILE = "JSAU Source/#PROJNAME/#PROJNAME-Info.plist";
-				INSTALL_PATH = "$(USERLIBRARY_DIR)/Audio/Plug-Ins/Components/";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Audio/Plug-Ins/Components/";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_REZFLAGS = "-d i386_$i386 -I /System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers -I /Developer/Extras/CoreAudio/AudioUnits/AUPublic/AUBase";
 				PRODUCT_NAME = #PROJNAME;
