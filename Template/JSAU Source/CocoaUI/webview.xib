@@ -40,7 +40,7 @@
 				<string key="NSFrameSize">{#UIWIDTH, #UIHEIGHT}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSNextKeyView"/>
-				<string key="NSClassName">WebView</string>
+				<string key="NSClassName">#PROJNAME_WebView</string>
 			</object>
 			<object class="NSCustomObject" id="996714548">
 				<string key="NSClassName">#PROJNAME_WebController</string>

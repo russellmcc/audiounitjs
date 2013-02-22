@@ -20,3 +20,10 @@
 - (WebView*) webView;
 
 @end
+
+@interface #PROJNAME_WebView : WebView
+- (void)setFrameOrigin:(NSPoint)newOrigin;
+- (void)setBoundsOrigin:(NSPoint)newOrigin;
+- (void)setFrame:(NSRect)frameRect;
+- (void)setBounds:(NSRect)aRect;
+@end

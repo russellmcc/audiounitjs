@@ -52,3 +52,18 @@
 }
 
 @end
+
+// workaround for ableton live.  I dont know what's going on here.
+@implementation #PROJNAME_WebView
+- (void)setFrameOrigin:(NSPoint)newOrigin {
+}
+- (void)setBoundsOrigin:(NSPoint)newOrigin{
+    [super setBoundsOrigin:newOrigin];
+}
+- (void)setFrame:(NSRect)frameRect{
+    [super setFrame:frameRect];
+}
+- (void)setBounds:(NSRect)aRect{
+    [super setBounds:aRect];
+}
+@end
