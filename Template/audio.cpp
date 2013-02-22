@@ -42,15 +42,25 @@ public:
                            AudioBufferList& outBuffer,
                            UInt32 numSamples);
     
+    virtual OSStatus	HandleNoteOn(UInt8 	inChannel,
+                                     UInt8 	inNoteNumber,
+                                     UInt8 	inVelocity,
+                                     UInt32 	inStartFrame);
+    
+    virtual OSStatus	HandleNoteOff(UInt8 	inChannel,
+                                     UInt8 	inNoteNumber,
+                                     UInt8 	inVelocity,
+                                     UInt32 	inStartFrame);
+    
     virtual std::vector<JSPropDesc> GetPropertyDescriptionList();
 };
 
 // this boilerplate has to be here so that the system can know about the 
 // class we just made.
-AUDIOCOMPONENT_ENTRY(AUBaseFactory, Audio)
+AUDIOCOMPONENT_ENTRY(AUMIDIEffectFactory, Audio)
 void DoRegister(OSType Type, OSType Subtype, OSType Manufacturer, CFStringRef name, UInt32 vers)
 {
-    AUBaseFactory<Audio>::Register(Type, Subtype, Manufacturer, name, vers, 0);
+    AUMIDIEffectFactory<Audio>::Register(Type, Subtype, Manufacturer, name, vers, 0);
 }
 
 Audio::Audio(AudioUnit component) : JSAudioUnitBase(component)
@@ -122,6 +132,32 @@ Audio::ProcessBufferLists (AudioUnitRenderActionFlags& ioActionFlags,
         }
     }
     
+    return noErr;
+}
+
+OSStatus
+Audio::HandleNoteOn(UInt8 	inChannel,
+                    UInt8 	inNoteNumber,
+                    UInt8 	inVelocity,
+                    UInt32  inStartFrame)
+{
+    // This is where you handle note-on events.
+    // it's best not to change parameters directly here - 
+    // you should process this only after handling inStartFrame
+    // events.
+    return noErr;
+}
+
+OSStatus
+Audio::HandleNoteOff(UInt8 	inChannel,
+                     UInt8 	inNoteNumber,
+                     UInt8 	inVelocity,
+                     UInt32 inStartFrame)
+{
+    // This is where you handle note-off events.
+    // it's best not to change parameters directly here - 
+    // you should process this only after handling inStartFrame
+    // events.
     return noErr;
 }
 

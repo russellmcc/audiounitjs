@@ -156,6 +156,8 @@ namespace {
     
     // initialize GUI
     [_viewController setAU: mEffect];
+    mReceiver = new MIDIReceiver(mEffect);
+    
     
     return YES;
 }

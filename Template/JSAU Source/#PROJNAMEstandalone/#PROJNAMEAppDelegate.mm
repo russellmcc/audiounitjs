@@ -9,6 +9,7 @@
 
 - (void)dealloc
 {
+    delete receiver;
     [super dealloc];
 }
 
@@ -18,6 +19,7 @@
     host = new CAPlayThroughHost;
     host->Start();
     [uiViewInstance setAU:host->GetEffectAU()];
+    receiver = new MIDIReceiver(host->GetEffectAU());
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification

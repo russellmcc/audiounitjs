@@ -22,7 +22,7 @@ OSStatus JSAudioUnitBase::GetPropertyInfo (AudioUnitPropertyID	id,
                 return noErr;
         }
     }
-    return AUEffectBase::GetPropertyInfo(id, scope, elem, size, writable);
+    return AUMIDIEffectBase::GetPropertyInfo(id, scope, elem, size, writable);
 }
 
 
@@ -65,5 +65,5 @@ OSStatus JSAudioUnitBase::GetProperty(AudioUnitPropertyID id, AudioUnitScope sco
             break;
         }
     }
-    return AUEffectBase::GetProperty(id, scope, elem, data);
+    return AUMIDIEffectBase::GetProperty(id, scope, elem, data);
 }

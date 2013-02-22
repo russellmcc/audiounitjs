@@ -26,6 +26,8 @@
 #include "AUPropParamBase.h"
 #include "AUProp.h"
 #include "AUParam.h"
+#import <AudioToolbox/AudioToolbox.h>
+#import <AudioUnit/AudioUnit.h>
 
 #include <cmath>
 #include "LowLevelCocoaUtils.h"
@@ -38,6 +40,37 @@ using namespace std;
 
 namespace
 {
+    void noteOnImp(id self, SEL _cmd, uint8_t note, uint8_t velocity)
+    {
+        ::MusicDeviceMIDIEvent(doGet<AudioUnit>(self, "mAudioUnit"),
+                               0x90,
+                               note, velocity, 0);
+    }
+    void noteOffImp(id self, SEL _cmd, uint8_t note, uint8_t velocity)
+    {
+        ::MusicDeviceMIDIEvent(doGet<AudioUnit>(self, "mAudioUnit"),
+                               0x80,
+                               note, velocity, 0);
+    }
+    void midiImp(id self, SEL _cmd, uint8_t midiOne, uint8_t midiTwo, uint8_t midiThree)
+    {
+        ::MusicDeviceMIDIEvent(doGet<AudioUnit>(self, "mAudioUnit"),
+                               midiOne,
+                               midiTwo, midiThree, 0);
+    }
+
+    NSString* translatorImp(id self, SEL _cmd, SEL cmd)
+    {
+        if(cmd == @selector(noteOn:v:))
+            return @"NoteOn";
+        if(cmd == @selector(noteOff:v:))
+            return @"NoteOff";
+        if(cmd == @selector(midi:o:t:))
+            return @"SendMIDI";
+        
+        return nil;
+    }
+
     Class AllocateAndInitWebScriptClass(const char* name)
     {
         // qualify the name with the prefix.
@@ -49,6 +82,17 @@ namespace
         
         CopyMethodFromBase(c, [#PROJNAME_AUPropParamBase class], @selector(isSelectorExcludedFromWebScript:), "c@::");
         CopyMethodFromBase(c, [#PROJNAME_AUPropParamBase class], @selector(isKeyExcludedFromWebScript:), "c@:*");
+        
+        // add an ivar that holds the audio unit.
+        AddIvar<AudioUnit>(c, "mAudioUnit");
+        
+        // add the MIDI verbs.
+        class_addMethod(c, @selector(noteOn:v:),  (IMP)noteOnImp, "v@:cc");
+        class_addMethod(c, @selector(noteOff:v:),  (IMP)noteOffImp, "v@:cc");
+        class_addMethod(c, @selector(midi:o:t:),  (IMP)midiImp, "v@:ccc");
+        
+        // add the MIDI translator
+        class_addMethod(object_getClass(c), @selector(webScriptNameForSelector:),  (IMP)translatorImp, "@@::");
         
         return c;
     }
@@ -135,11 +179,15 @@ namespace
 // follows the "Create rule"
 id CreateAudioUnitObject(AudioUnit au)
 {
+    static Class auClass = 0;
     NamedObjectList propsAndParams = GetAllPropsAndParams(au);
-    Class auClass = AllocateAndInitWebScriptClass("AudioUnit");
-    AddObjectsToClass(auClass, propsAndParams);
-    objc_registerClassPair(auClass);
+    if(not auClass) {
+        auClass = AllocateAndInitWebScriptClass("AudioUnit");
+        AddObjectsToClass(auClass, propsAndParams);
+        objc_registerClassPair(auClass);
+    }
     id auObj = [[auClass alloc] init];
+    doSet<AudioUnit>(auObj, "mAudioUnit", au);
     AssignObjects(auObj, propsAndParams);
     return auObj;
 }

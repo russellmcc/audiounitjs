@@ -45,6 +45,7 @@
 		FF34723416C8CF6A0025B91C /* AUMIDIEffectBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF367A3216C8C59000DBBBE5 /* AUMIDIEffectBase.cpp */; };
 		FF367A3416C8C59000DBBBE5 /* AUMIDIBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF367A3016C8C59000DBBBE5 /* AUMIDIBase.cpp */; };
 		FF367A3516C8C59000DBBBE5 /* AUMIDIEffectBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF367A3216C8C59000DBBBE5 /* AUMIDIEffectBase.cpp */; };
+		FF38EDAF16D1AE1D00FE87B8 /* MusicDeviceBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF38EDAD16D1AE1D00FE87B8 /* MusicDeviceBase.cpp */; };
 		FF41350415E1A46C001ACF64 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF41350315E1A46C001ACF64 /* WebKit.framework */; };
 		FF45E62615F12B4A00280886 /* AUEffectBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB857215141B83004BA672 /* AUEffectBase.cpp */; };
 		FF45E62715F12B4F00280886 /* AUPlugInDispatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF1C162815F120D7003D9B0B /* AUPlugInDispatch.cpp */; };
@@ -81,6 +82,12 @@
 		FF7644681579538A00E41F35 /* #PROJNAME.exp in Sources */ = {isa = PBXBuildFile; fileRef = FF7644621579538A00E41F35 /* #PROJNAME.exp */; };
 		FF7644691579538A00E41F35 /* #PROJNAME.r in Rez */ = {isa = PBXBuildFile; fileRef = FF7644631579538A00E41F35 /* #PROJNAME.r */; };
 		FF76446B1579538A00E41F35 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF7644651579538A00E41F35 /* InfoPlist.strings */; };
+		FF8FFB1F16D2FB30001FC912 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDB855215141990004BA672 /* AudioToolbox.framework */; };
+		FF8FFB2016D2FB30001FC912 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDB8556151419A3004BA672 /* AudioUnit.framework */; };
+		FF93E17416D496AE008E51E6 /* MIDIReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF93E17216D496AE008E51E6 /* MIDIReceiver.cpp */; };
+		FF93E17516D496AE008E51E6 /* MIDIReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF93E17216D496AE008E51E6 /* MIDIReceiver.cpp */; };
+		FF93E17716D49D4A008E51E6 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF93E17616D49D4A008E51E6 /* CoreMIDI.framework */; };
+		FF93E17916D4A4C7008E51E6 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF93E17816D4A4C7008E51E6 /* CoreMIDI.framework */; };
 		FF9BA09015E95A5000E2E2BB /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF41350315E1A46C001ACF64 /* WebKit.framework */; };
 		FF9E2D9A15CCB095009026AE /* audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFDB859715141D23004BA672 /* audio.cpp */; };
 		FF9E2D9B15CCB13E009026AE /* ui in Resources */ = {isa = PBXBuildFile; fileRef = FF6A97F8152F8BF700C8ED05 /* ui */; };
@@ -92,8 +99,6 @@
 		FFAB983E15E92EDF008D97F1 /* AUPropParamBase.mm in Sources */ = {isa = PBXBuildFile; fileRef = FFAB983C15E92EDF008D97F1 /* AUPropParamBase.mm */; };
 		FFAB984115E93080008D97F1 /* AUProp.mm in Sources */ = {isa = PBXBuildFile; fileRef = FFAB984015E9307F008D97F1 /* AUProp.mm */; };
 		FFAB984215E93080008D97F1 /* AUProp.mm in Sources */ = {isa = PBXBuildFile; fileRef = FFAB984015E9307F008D97F1 /* AUProp.mm */; };
-		FFB5DFC5152E18AF00E975D2 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDB8556151419A3004BA672 /* AudioUnit.framework */; };
-		FFB5DFC7152E18B500E975D2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDB855215141990004BA672 /* AudioToolbox.framework */; };
 		FFC1A2B91515302800D447CC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDB853E15141284004BA672 /* Cocoa.framework */; };
 		FFC1A2BF1515302800D447CC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFC1A2BD1515302800D447CC /* InfoPlist.strings */; };
 		FFC1A2C41515306300D447CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDB854315141284004BA672 /* Foundation.framework */; };
@@ -218,6 +223,8 @@
 		FF367A3116C8C59000DBBBE5 /* AUMIDIBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUMIDIBase.h; path = "JSAU Source/CoreAudio/AudioUnits/AUPublic/OtherBases/AUMIDIBase.h"; sourceTree = SOURCE_ROOT; };
 		FF367A3216C8C59000DBBBE5 /* AUMIDIEffectBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUMIDIEffectBase.cpp; path = "JSAU Source/CoreAudio/AudioUnits/AUPublic/OtherBases/AUMIDIEffectBase.cpp"; sourceTree = SOURCE_ROOT; };
 		FF367A3316C8C59000DBBBE5 /* AUMIDIEffectBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUMIDIEffectBase.h; path = "JSAU Source/CoreAudio/AudioUnits/AUPublic/OtherBases/AUMIDIEffectBase.h"; sourceTree = SOURCE_ROOT; };
+		FF38EDAD16D1AE1D00FE87B8 /* MusicDeviceBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MusicDeviceBase.cpp; path = "JSAU Source/CoreAudio/AudioUnits/AUPublic/OtherBases/MusicDeviceBase.cpp"; sourceTree = SOURCE_ROOT; };
+		FF38EDAE16D1AE1D00FE87B8 /* MusicDeviceBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicDeviceBase.h; path = "JSAU Source/CoreAudio/AudioUnits/AUPublic/OtherBases/MusicDeviceBase.h"; sourceTree = SOURCE_ROOT; };
 		FF41350315E1A46C001ACF64 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		FF45E62E15F12D5500280886 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		FF45E63015F12E9100280886 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
@@ -237,6 +244,10 @@
 		FF7644631579538A00E41F35 /* #PROJNAME.r */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.rez; path = #PROJNAME.r; sourceTree = "<group>"; };
 		FF7644661579538A00E41F35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FF857DE815CA1E03005D0614 /* audioprops.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = audioprops.h; sourceTree = "<group>"; };
+		FF93E17216D496AE008E51E6 /* MIDIReceiver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MIDIReceiver.cpp; path = "JSAU Source/CocoaUI/MIDIReceiver.cpp"; sourceTree = SOURCE_ROOT; };
+		FF93E17316D496AE008E51E6 /* MIDIReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIDIReceiver.h; path = "JSAU Source/CocoaUI/MIDIReceiver.h"; sourceTree = SOURCE_ROOT; };
+		FF93E17616D49D4A008E51E6 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
+		FF93E17816D4A4C7008E51E6 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/CoreMIDI.framework; sourceTree = DEVELOPER_DIR; };
 		FFAB983015E68558008D97F1 /* AUWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUWrapper.h; path = "JSAU Source/CocoaUI/AUWrapper.h"; sourceTree = SOURCE_ROOT; };
 		FFAB983215E68603008D97F1 /* AUWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AUWrapper.mm; path = "JSAU Source/CocoaUI/AUWrapper.mm"; sourceTree = SOURCE_ROOT; };
 		FFAB983515E9183E008D97F1 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -329,6 +340,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF93E17716D49D4A008E51E6 /* CoreMIDI.framework in Frameworks */,
 				FFAB983815E91850008D97F1 /* JavaScriptCore.framework in Frameworks */,
 				FF41350415E1A46C001ACF64 /* WebKit.framework in Frameworks */,
 				FF08F6F215D474B500A8A646 /* CoreAudio.framework in Frameworks */,
@@ -342,10 +354,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF8FFB1F16D2FB30001FC912 /* AudioToolbox.framework in Frameworks */,
+				FF8FFB2016D2FB30001FC912 /* AudioUnit.framework in Frameworks */,
 				FF9BA09015E95A5000E2E2BB /* WebKit.framework in Frameworks */,
 				FFAB983715E91849008D97F1 /* JavaScriptCore.framework in Frameworks */,
-				FFB5DFC7152E18B500E975D2 /* AudioToolbox.framework in Frameworks */,
-				FFB5DFC5152E18AF00E975D2 /* AudioUnit.framework in Frameworks */,
 				FFC1A2C51515307200D447CC /* AppKit.framework in Frameworks */,
 				FFC1A2C41515306300D447CC /* Foundation.framework in Frameworks */,
 				FFC1A2B91515302800D447CC /* Cocoa.framework in Frameworks */,
@@ -356,6 +368,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF93E17916D4A4C7008E51E6 /* CoreMIDI.framework in Frameworks */,
 				FF45E63315F12E9200280886 /* AudioToolbox.framework in Frameworks */,
 				FF45E63515F12E9200280886 /* CoreAudio.framework in Frameworks */,
 				FF45E62F15F12D5500280886 /* CoreFoundation.framework in Frameworks */,
@@ -538,6 +551,8 @@
 				FFC1A2CF151535C100D447CC /* #PROJNAME_ViewFactory.mm */,
 				FFC1A2D11515404A00D447CC /* #PROJNAME_WebView.h */,
 				FFC1A2D21515404A00D447CC /* #PROJNAME_WebView.mm */,
+				FF93E17216D496AE008E51E6 /* MIDIReceiver.cpp */,
+				FF93E17316D496AE008E51E6 /* MIDIReceiver.h */,
 			);
 			name = Source;
 			path = "JSAU source/CocoaUI";
@@ -572,6 +587,8 @@
 		FFDB853015141283004BA672 = {
 			isa = PBXGroup;
 			children = (
+				FF93E17816D4A4C7008E51E6 /* CoreMIDI.framework */,
+				FF93E17616D49D4A008E51E6 /* CoreMIDI.framework */,
 				FF08F68315D4348600A8A646 /* Frameworks */,
 				FFDB853C15141284004BA672 /* Products */,
 				FF9E2D9D15CCBB37009026AE /* Audio Processing Source */,
@@ -655,6 +672,8 @@
 		FFDB855D15141B6E004BA672 /* AUBase */ = {
 			isa = PBXGroup;
 			children = (
+				FF38EDAD16D1AE1D00FE87B8 /* MusicDeviceBase.cpp */,
+				FF38EDAE16D1AE1D00FE87B8 /* MusicDeviceBase.h */,
 				FF367A3016C8C59000DBBBE5 /* AUMIDIBase.cpp */,
 				FF367A3116C8C59000DBBBE5 /* AUMIDIBase.h */,
 				FF367A3216C8C59000DBBBE5 /* AUMIDIEffectBase.cpp */,
@@ -943,6 +962,7 @@
 				FF5C464415F55ECD002FF019 /* obsfu.mm in Sources */,
 				FF34723116C8CF690025B91C /* AUMIDIBase.cpp in Sources */,
 				FF34723216C8CF690025B91C /* AUMIDIEffectBase.cpp in Sources */,
+				FF93E17416D496AE008E51E6 /* MIDIReceiver.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -991,6 +1011,7 @@
 				FF5C464515F55ECD002FF019 /* obsfu.mm in Sources */,
 				FF34723316C8CF6A0025B91C /* AUMIDIBase.cpp in Sources */,
 				FF34723416C8CF6A0025B91C /* AUMIDIEffectBase.cpp in Sources */,
+				FF93E17516D496AE008E51E6 /* MIDIReceiver.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1020,6 +1041,7 @@
 				FF1C162A15F120D7003D9B0B /* AUPlugInDispatch.cpp in Sources */,
 				FF367A3416C8C59000DBBBE5 /* AUMIDIBase.cpp in Sources */,
 				FF367A3516C8C59000DBBBE5 /* AUMIDIEffectBase.cpp in Sources */,
+				FF38EDAF16D1AE1D00FE87B8 /* MusicDeviceBase.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

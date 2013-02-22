@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioToolbox.h>
+#include "MIDIReceiver.h"
 
 @class #PROJNAMEViewController;
 
@@ -14,6 +15,7 @@
 {
     AUGraph mGraph;
     AudioUnit mEffect;
+    MIDIReceiver* mReceiver;
 }
 
 @property (strong, nonatomic) UIWindow *window;

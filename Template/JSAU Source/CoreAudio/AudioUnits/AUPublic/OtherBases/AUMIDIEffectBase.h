@@ -78,6 +78,14 @@ public:
 	static OSStatus			ComponentEntryDispatch(	ComponentParameters *			params,
 														AUMIDIEffectBase *				This);
 #endif
+
+    // oh, apple.... why don't you understand multiple inheritance?
+    // this needs to be here or else dispatch to MIDIEvent won't work, since it goes to
+    // AUBase::MIDIEvent.
+    virtual OSStatus	MIDIEvent(		UInt32 						inStatus, 
+                                    UInt32 						inData1, 
+                                    UInt32 						inData2, 
+                                    UInt32 						inOffsetSampleFrame) { return AUMIDIBase::MIDIEvent(inStatus, inData1, inData2, inOffsetSampleFrame); }
 };
 
 #endif // __AUMIDIEffectBase_h__
