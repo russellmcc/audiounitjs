@@ -2,7 +2,7 @@
   "name": "aujs",
   "version": "0.0.1",
   "main": "lib/aujs",
-  "bin": { "aujs": "./bin/jsau" },
+  "bin": { "aujs": "./bin/aujs" },
   "author": {
     "name": "Russell McClellan",
     "email": "russell.mcclellan@gmail.com",
