@@ -23,7 +23,7 @@ $(function(){
   var syncDial = function() {
     $("#volume").val(~~(AudioUnit.Volume.Get() * 100)).trigger("change");
   };
-  AudioUnit.Volume.OnParameterChange = syncDial;
+  AudioUnit.Volume.OnChange = syncDial;
   syncDial();
 });
 </script>
