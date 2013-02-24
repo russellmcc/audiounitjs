@@ -2,3 +2,4 @@
 *.xcworkspace*
 *build/
 *.!*
+*.DS_Store

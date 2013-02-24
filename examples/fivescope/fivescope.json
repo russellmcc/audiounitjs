@@ -1,0 +1,17 @@
+{
+    "project" : "fivescope",
+    "type" : "aufx",
+
+    "plugin_id" : "SCoP",
+    "manufacturer_id": "Test",
+
+    "name" : "Five-Scope",
+    "description" : "A vintage-style oscilloscope",
+
+    "company" : "Test Company",
+  
+    "height" : "500",
+    "width" : "600",
+
+    "preferred_iPhone_output" : "Receiver"
+}
