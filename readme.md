@@ -21,6 +21,8 @@ Because Xcode templates are difficult to write and seem to change with every ver
 sudo npm install -g audiounitjs
 ```
 
+if you're still confused, there's a [quick screencast](http://youtu.be/tqxOLf8EmdU) on the install process.
+        
 # How do I use it?
 
 First, create a configuration json file as described below.  Then, run `audiounitjs myfile.json`, which will create a project scaffold for you.  Then it's a simple matter of programming - edit the `audio.cpp` file to write the audio source, and edit the `ui` folder to create your beautiful UI.
