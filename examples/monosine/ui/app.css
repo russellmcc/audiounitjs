@@ -1,0 +1,23 @@
+.dialdiv{
+    float: left;
+    width: 60px;
+    height: 80px;
+    margin-right: 50px;
+}
+
+.label {
+    font-family: "Futura";
+    text-align: center;
+}
+
+.key {
+    background-color: rgb(0,0,0);
+    height:40px;
+    width:40px;
+    display: inline-block;
+    margin-top:20px;
+}
+
+body {
+    -webkit-user-select:none;
+}

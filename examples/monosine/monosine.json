@@ -1,0 +1,17 @@
+{
+    "project" : "monosine",
+    "type" : "aumu",
+
+    "plugin_id" : "MSin",
+    "manufacturer_id": "Test",
+
+    "name" : "Mono Sine",
+    "description" : "A monophonic sine wave",
+
+    "company" : "Test Company",
+
+    "width" : "500",
+    "height" : "100",
+
+    "preferred_iPhone_output" : "Receiver"
+}

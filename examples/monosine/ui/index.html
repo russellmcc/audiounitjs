@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='app.css' rel='stylesheet' type='text/css'/>
+    <script src="jquery.min.js"></script>
+    <script src="jquery.kontrol.js"></script>
+</head>
+<body>
+<div id=params>
+  <div class="dialdiv" id="volumeDial">
+    <input class="dial" id="volume" data-width="60" data-height="60" data-min=0 data-max=100 data-angleOffset="-125" data-angleArc="250" data-flatMouse="1" value="10"/>
+    <div class="label">  Volume </div>
+  </div>
+  <div class="key" id="60"></div>
+  <div class="key" id="62"></div>
+  <div class="key" id="64"></div>
+  <div class="key" id="65"></div>
+  <div class="key" id="67"></div>
+  <div class="key" id="69"></div>
+  <div class="key" id="71"></div>
+  <div class="key" id="72"></div>
+</div>
+<script>
+$(function(){
+  $('#volume').dial({
+    start: function() {AudioUnit.Volume.BeginGesture();},
+    stop: function() {AudioUnit.Volume.EndGesture();},
+    change: function(v) {AudioUnit.Volume.Set(v/100);},
+    flatMouse: true
+  });
+  var syncDial = function() {
+    $("#volume").val(~~(AudioUnit.Volume.Get() * 100)).trigger("change");
+  };
+  var noteOn = function(e){
+    console.log(parseInt(e.target.id));
+    AudioUnit.NoteOn(parseInt(e.target.id), 127);
+  };
+
+  var noteOff = function(e){
+    AudioUnit.NoteOff(parseInt(e.target.id), 127);
+  };
+
+  $('.key').on('mousedown', noteOn);
+  $('.key').on('mouseleave', noteOff);
+  $('.key').on('mouseup', noteOff);
+  $('.key').on('touchstart', noteOn);
+  $('.key').on('touchend', noteOff);
+
+  AudioUnit.Volume.OnChange = syncDial;
+  syncDial();
+  
+
+});
+</script>
+</body>
+</html>
