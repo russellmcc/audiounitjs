@@ -138,7 +138,7 @@ $ ->
   syncDial = ->
     ($ '#trigger').val(~~(AudioUnit.Trigger.Get() * 100)).trigger('change')
       
-  AudioUnit.Trigger.OnParameterChange = (v) ->
+  AudioUnit.Trigger.OnChange = (v) ->
     doDrawScope()
     syncDial()
 
