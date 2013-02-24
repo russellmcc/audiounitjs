@@ -110,16 +110,6 @@ Audio::ProcessBufferLists (AudioUnitRenderActionFlags& ioActionFlags,
                            AudioBufferList& outBuffer,
                            UInt32 numSamples)
 {
-    // watch out!  buffers could be interleaved or not interleaved!
-	SInt16 channels = GetOutput(0)->GetStreamFormat().mChannelsPerFrame;
-    
-    // check for silence
-    bool silentInput = IsInputSilent (ioActionFlags, numSamples);
-    if(silentInput) {
-        ioActionFlags |= kAudioUnitRenderAction_OutputIsSilence;
-        return noErr;
-    }
-    
     // Gather per-buffer parameters here
     double v = GetParameter(kParam_VolumeLevel);
     // bind v to 1.0
@@ -152,20 +142,15 @@ Audio::ProcessBufferLists (AudioUnitRenderActionFlags& ioActionFlags,
         if(mPhase > 1)
             mPhase -= 1;
         for(int b = 0; b < inBuffer.mNumberBuffers; ++b) {
-            UInt32 numChans = inBuffer.mBuffers[b].mNumberChannels;
-            for(int c = 0; c < numChans; ++c) {
-                UInt32 chan = (b*numChans) + c;
+            // Per-sample processing here
+            Float32& inSamp = reinterpret_cast<Float32*>(inBuffer.mBuffers[b].mData)[s];
+            Float32& outSamp = reinterpret_cast<Float32*>(outBuffer.mBuffers[b].mData)[s];
                 
-                // Per-sample processing here
-                Float32& inSamp = reinterpret_cast<Float32*>(inBuffer.mBuffers[b].mData)[s*numChans + c];
-                Float32& outSamp = reinterpret_cast<Float32*>(outBuffer.mBuffers[b].mData)[s*numChans + c];
-                
-                if(mPhaseIncr > 0)
-                    outSamp = sin(mPhase * 2 * 3.145159) * v;
-                else
-                    outSamp = 0;
-                //end per-sample processing
-            }
+            if(mPhaseIncr > 0)
+                outSamp = sin(mPhase * 2 * 3.145159) * v;
+            else
+                outSamp = 0;
+            //end per-sample processing
         }
     }
     mNoteEventsToHandle.clear();
