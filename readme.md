@@ -18,12 +18,12 @@ Unfortunately, audiounit.js does not make the actual signal processing code any 
 Because Xcode templates are difficult to write and seem to change with every version, audiounit.js is distributed as a node.js script.  To install, first install node from the [official website](http://nodejs.org).  Then, install audiounit.js with
 
 ```bash
-sudo npm install -g aujs
+sudo npm install -g audiounitjs
 ```
 
 # How do I use it?
 
-First, create a configuration json file as described below.  Then, run `aujs myfile.json`, which will create a project scaffold for you.  Then it's a simple matter of programming - edit the `audio.cpp` file to write the audio source, and edit the `ui` folder to create your beautiful UI.
+First, create a configuration json file as described below.  Then, run `audiounitjs myfile.json`, which will create a project scaffold for you.  Then it's a simple matter of programming - edit the `audio.cpp` file to write the audio source, and edit the `ui` folder to create your beautiful UI.
 
 # What exactly does it give me?
 

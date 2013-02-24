@@ -1,8 +1,8 @@
 {
-  "name": "aujs",
+  "name": "audiounitjs",
   "version": "0.0.1",
   "main": "lib/aujs",
-  "bin": { "aujs": "./bin/aujs" },
+  "bin": { "audiounitjs": "./bin/audiounitjs" },
   "author": {
     "name": "Russell McClellan",
     "email": "russell.mcclellan@gmail.com",
