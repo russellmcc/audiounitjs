@@ -219,43 +219,43 @@
 		FF1C162915F120D7003D9B0B /* AUPlugInDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUPlugInDispatch.h; sourceTree = "<group>"; };
 		FF234F2615CC6EB8003C97AA /* jsaubase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jsaubase.cpp; sourceTree = "<group>"; };
 		FF234F2915CC6EC9003C97AA /* jsaubase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jsaubase.h; sourceTree = "<group>"; };
-		FF367A3016C8C59000DBBBE5 /* AUMIDIBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUMIDIBase.cpp; path = "JSAU Source/CoreAudio/AudioUnits/AUPublic/OtherBases/AUMIDIBase.cpp"; sourceTree = SOURCE_ROOT; };
-		FF367A3116C8C59000DBBBE5 /* AUMIDIBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUMIDIBase.h; path = "JSAU Source/CoreAudio/AudioUnits/AUPublic/OtherBases/AUMIDIBase.h"; sourceTree = SOURCE_ROOT; };
-		FF367A3216C8C59000DBBBE5 /* AUMIDIEffectBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUMIDIEffectBase.cpp; path = "JSAU Source/CoreAudio/AudioUnits/AUPublic/OtherBases/AUMIDIEffectBase.cpp"; sourceTree = SOURCE_ROOT; };
-		FF367A3316C8C59000DBBBE5 /* AUMIDIEffectBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUMIDIEffectBase.h; path = "JSAU Source/CoreAudio/AudioUnits/AUPublic/OtherBases/AUMIDIEffectBase.h"; sourceTree = SOURCE_ROOT; };
-		FF38EDAD16D1AE1D00FE87B8 /* MusicDeviceBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MusicDeviceBase.cpp; path = "JSAU Source/CoreAudio/AudioUnits/AUPublic/OtherBases/MusicDeviceBase.cpp"; sourceTree = SOURCE_ROOT; };
-		FF38EDAE16D1AE1D00FE87B8 /* MusicDeviceBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicDeviceBase.h; path = "JSAU Source/CoreAudio/AudioUnits/AUPublic/OtherBases/MusicDeviceBase.h"; sourceTree = SOURCE_ROOT; };
+		FF367A3016C8C59000DBBBE5 /* AUMIDIBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUMIDIBase.cpp; path = "AUJS Source/CoreAudio/AudioUnits/AUPublic/OtherBases/AUMIDIBase.cpp"; sourceTree = SOURCE_ROOT; };
+		FF367A3116C8C59000DBBBE5 /* AUMIDIBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUMIDIBase.h; path = "AUJS Source/CoreAudio/AudioUnits/AUPublic/OtherBases/AUMIDIBase.h"; sourceTree = SOURCE_ROOT; };
+		FF367A3216C8C59000DBBBE5 /* AUMIDIEffectBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AUMIDIEffectBase.cpp; path = "AUJS Source/CoreAudio/AudioUnits/AUPublic/OtherBases/AUMIDIEffectBase.cpp"; sourceTree = SOURCE_ROOT; };
+		FF367A3316C8C59000DBBBE5 /* AUMIDIEffectBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUMIDIEffectBase.h; path = "AUJS Source/CoreAudio/AudioUnits/AUPublic/OtherBases/AUMIDIEffectBase.h"; sourceTree = SOURCE_ROOT; };
+		FF38EDAD16D1AE1D00FE87B8 /* MusicDeviceBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MusicDeviceBase.cpp; path = "AUJS Source/CoreAudio/AudioUnits/AUPublic/OtherBases/MusicDeviceBase.cpp"; sourceTree = SOURCE_ROOT; };
+		FF38EDAE16D1AE1D00FE87B8 /* MusicDeviceBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicDeviceBase.h; path = "AUJS Source/CoreAudio/AudioUnits/AUPublic/OtherBases/MusicDeviceBase.h"; sourceTree = SOURCE_ROOT; };
 		FF41350315E1A46C001ACF64 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		FF45E62E15F12D5500280886 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		FF45E63015F12E9100280886 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
 		FF45E63115F12E9200280886 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/AudioUnit.framework; sourceTree = DEVELOPER_DIR; };
 		FF45E63215F12E9200280886 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/CoreAudio.framework; sourceTree = DEVELOPER_DIR; };
 		FF567EE215DE9BC5005090B3 /* #PROJNAME.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = #PROJNAME.icns; sourceTree = SOURCE_ROOT; };
-		FF5C463C15F50864002FF019 /* iosAUEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = iosAUEvents.h; path = "JSAU Source/CocoaUI/iosAUEvents.h"; sourceTree = SOURCE_ROOT; };
-		FF5C463D15F50AEB002FF019 /* iosAUEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = iosAUEvents.cpp; path = "JSAU Source/CocoaUI/iosAUEvents.cpp"; sourceTree = SOURCE_ROOT; };
-		FF5C464115F55ECD002FF019 /* obsfu.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = obsfu.mm; path = "JSAU Source/CocoaUI/obsfu.mm"; sourceTree = SOURCE_ROOT; };
-		FF5C464215F55ECD002FF019 /* obsfu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = obsfu.h; path = "JSAU Source/CocoaUI/obsfu.h"; sourceTree = SOURCE_ROOT; };
+		FF5C463C15F50864002FF019 /* iosAUEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = iosAUEvents.h; path = "AUJS Source/CocoaUI/iosAUEvents.h"; sourceTree = SOURCE_ROOT; };
+		FF5C463D15F50AEB002FF019 /* iosAUEvents.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = iosAUEvents.cpp; path = "AUJS Source/CocoaUI/iosAUEvents.cpp"; sourceTree = SOURCE_ROOT; };
+		FF5C464115F55ECD002FF019 /* obsfu.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = obsfu.mm; path = "AUJS Source/CocoaUI/obsfu.mm"; sourceTree = SOURCE_ROOT; };
+		FF5C464215F55ECD002FF019 /* obsfu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = obsfu.h; path = "AUJS Source/CocoaUI/obsfu.h"; sourceTree = SOURCE_ROOT; };
 		FF6A97F8152F8BF700C8ED05 /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ui; sourceTree = "<group>"; };
-		FF72865615E9406C0075FC5A /* AUParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUParam.h; path = "JSAU Source/CocoaUI/AUParam.h"; sourceTree = SOURCE_ROOT; };
-		FF72865715E9406C0075FC5A /* AUParam.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AUParam.mm; path = "JSAU Source/CocoaUI/AUParam.mm"; sourceTree = SOURCE_ROOT; };
+		FF72865615E9406C0075FC5A /* AUParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUParam.h; path = "AUJS Source/CocoaUI/AUParam.h"; sourceTree = SOURCE_ROOT; };
+		FF72865715E9406C0075FC5A /* AUParam.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AUParam.mm; path = "AUJS Source/CocoaUI/AUParam.mm"; sourceTree = SOURCE_ROOT; };
 		FF7644601579538A00E41F35 /* #PROJNAME-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "#PROJNAME-Info.plist"; sourceTree = "<group>"; };
 		FF7644611579538A00E41F35 /* #PROJNAME-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "#PROJNAME-Prefix.pch"; sourceTree = "<group>"; };
 		FF7644621579538A00E41F35 /* #PROJNAME.exp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.exports; path = #PROJNAME.exp; sourceTree = "<group>"; };
 		FF7644631579538A00E41F35 /* #PROJNAME.r */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.rez; path = #PROJNAME.r; sourceTree = "<group>"; };
 		FF7644661579538A00E41F35 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FF857DE815CA1E03005D0614 /* audioprops.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = audioprops.h; sourceTree = "<group>"; };
-		FF93E17216D496AE008E51E6 /* MIDIReceiver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MIDIReceiver.cpp; path = "JSAU Source/CocoaUI/MIDIReceiver.cpp"; sourceTree = SOURCE_ROOT; };
-		FF93E17316D496AE008E51E6 /* MIDIReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIDIReceiver.h; path = "JSAU Source/CocoaUI/MIDIReceiver.h"; sourceTree = SOURCE_ROOT; };
+		FF93E17216D496AE008E51E6 /* MIDIReceiver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MIDIReceiver.cpp; path = "AUJS Source/CocoaUI/MIDIReceiver.cpp"; sourceTree = SOURCE_ROOT; };
+		FF93E17316D496AE008E51E6 /* MIDIReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIDIReceiver.h; path = "AUJS Source/CocoaUI/MIDIReceiver.h"; sourceTree = SOURCE_ROOT; };
 		FF93E17616D49D4A008E51E6 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		FF93E17816D4A4C7008E51E6 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/CoreMIDI.framework; sourceTree = DEVELOPER_DIR; };
-		FFAB983015E68558008D97F1 /* AUWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUWrapper.h; path = "JSAU Source/CocoaUI/AUWrapper.h"; sourceTree = SOURCE_ROOT; };
-		FFAB983215E68603008D97F1 /* AUWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AUWrapper.mm; path = "JSAU Source/CocoaUI/AUWrapper.mm"; sourceTree = SOURCE_ROOT; };
+		FFAB983015E68558008D97F1 /* AUWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUWrapper.h; path = "AUJS Source/CocoaUI/AUWrapper.h"; sourceTree = SOURCE_ROOT; };
+		FFAB983215E68603008D97F1 /* AUWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AUWrapper.mm; path = "AUJS Source/CocoaUI/AUWrapper.mm"; sourceTree = SOURCE_ROOT; };
 		FFAB983515E9183E008D97F1 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		FFAB983A15E92DF1008D97F1 /* LowLevelCocoaUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LowLevelCocoaUtils.h; path = "JSAU Source/CocoaUI/LowLevelCocoaUtils.h"; sourceTree = SOURCE_ROOT; };
-		FFAB983B15E92EDF008D97F1 /* AUPropParamBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUPropParamBase.h; path = "JSAU Source/CocoaUI/AUPropParamBase.h"; sourceTree = SOURCE_ROOT; };
-		FFAB983C15E92EDF008D97F1 /* AUPropParamBase.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AUPropParamBase.mm; path = "JSAU Source/CocoaUI/AUPropParamBase.mm"; sourceTree = SOURCE_ROOT; };
-		FFAB983F15E9307F008D97F1 /* AUProp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUProp.h; path = "JSAU Source/CocoaUI/AUProp.h"; sourceTree = SOURCE_ROOT; };
-		FFAB984015E9307F008D97F1 /* AUProp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AUProp.mm; path = "JSAU Source/CocoaUI/AUProp.mm"; sourceTree = SOURCE_ROOT; };
+		FFAB983A15E92DF1008D97F1 /* LowLevelCocoaUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LowLevelCocoaUtils.h; path = "AUJS Source/CocoaUI/LowLevelCocoaUtils.h"; sourceTree = SOURCE_ROOT; };
+		FFAB983B15E92EDF008D97F1 /* AUPropParamBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUPropParamBase.h; path = "AUJS Source/CocoaUI/AUPropParamBase.h"; sourceTree = SOURCE_ROOT; };
+		FFAB983C15E92EDF008D97F1 /* AUPropParamBase.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AUPropParamBase.mm; path = "AUJS Source/CocoaUI/AUPropParamBase.mm"; sourceTree = SOURCE_ROOT; };
+		FFAB983F15E9307F008D97F1 /* AUProp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUProp.h; path = "AUJS Source/CocoaUI/AUProp.h"; sourceTree = SOURCE_ROOT; };
+		FFAB984015E9307F008D97F1 /* AUProp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AUProp.mm; path = "AUJS Source/CocoaUI/AUProp.mm"; sourceTree = SOURCE_ROOT; };
 		FFC1A2B81515302800D447CC /* CocoaUI.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaUI.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC1A2BC1515302800D447CC /* CocoaUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaUI-Info.plist"; sourceTree = "<group>"; };
 		FFC1A2BE1515302800D447CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -394,26 +394,34 @@
 		FF08F68315D4348600A8A646 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FFDB854315141284004BA672 /* Foundation.framework */,
+				FFDB854215141284004BA672 /* CoreData.framework */,
+				FFDB853E15141284004BA672 /* Cocoa.framework */,
+				FFDB855215141990004BA672 /* AudioToolbox.framework */,
+				FFDB85541514199A004BA672 /* CoreServices.framework */,
+				FF93E17616D49D4A008E51E6 /* CoreMIDI.framework */,
+				FF93E17816D4A4C7008E51E6 /* CoreMIDI.framework */,
+				FFDB8556151419A3004BA672 /* AudioUnit.framework */,
+				FF45E63015F12E9100280886 /* AudioToolbox.framework */,
+				FF45E63115F12E9200280886 /* AudioUnit.framework */,
+				FF45E63215F12E9200280886 /* CoreAudio.framework */,
+				FF45E62E15F12D5500280886 /* CoreFoundation.framework */,
+				FFAB983515E9183E008D97F1 /* JavaScriptCore.framework */,
+				FF41350315E1A46C001ACF64 /* WebKit.framework */,
+				FF08F6F115D474B500A8A646 /* CoreAudio.framework */,
 				FF08F68415D4348600A8A646 /* Cocoa.framework */,
 				FFCF843215EA8C0000333567 /* UIKit.framework */,
 				FFCF843415EA8C0000333567 /* Foundation.framework */,
 				FFCF843615EA8C0000333567 /* CoreGraphics.framework */,
-				FF08F68615D4348600A8A646 /* Other Frameworks */,
+				FF08F68915D4348600A8A646 /* Foundation.framework */,
+				FF08F68815D4348600A8A646 /* CoreData.framework */,
+				FF08F68715D4348600A8A646 /* AppKit.framework */,
+				FFDB854115141284004BA672 /* AppKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FF08F68615D4348600A8A646 /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FF08F68715D4348600A8A646 /* AppKit.framework */,
-				FF08F68815D4348600A8A646 /* CoreData.framework */,
-				FF08F68915D4348600A8A646 /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
-			sourceTree = "<group>";
-		};
-		FF08F68A15D4348600A8A646 /* #PROJNAMEstandalone */ = {
+		FF08F68A15D4348600A8A646 /* Mac OS X Standalone */ = {
 			isa = PBXGroup;
 			children = (
 				FFF2F57115D5C34000CEA715 /* AudioDevice.cpp */,
@@ -425,8 +433,8 @@
 				FF08F69915D4348700A8A646 /* MainMenu.xib */,
 				FF08F68B15D4348600A8A646 /* Supporting Files */,
 			);
-			name = #PROJNAMEstandalone;
-			path = "JSAU Source/#PROJNAMEstandalone";
+			name = "Mac OS X Standalone";
+			path = "AUJS Source/Mac";
 			sourceTree = "<group>";
 		};
 		FF08F68B15D4348600A8A646 /* Supporting Files */ = {
@@ -451,51 +459,28 @@
 			name = "iOS helpers";
 			sourceTree = "<group>";
 		};
-		FF76445F1579538A00E41F35 /* Supporting Files */ = {
+		FF76445F1579538A00E41F35 /* Plugin */ = {
 			isa = PBXGroup;
 			children = (
-				FF567EE215DE9BC5005090B3 /* #PROJNAME.icns */,
-				FF7644601579538A00E41F35 /* #PROJNAME-Info.plist */,
-				FF7644611579538A00E41F35 /* #PROJNAME-Prefix.pch */,
-				FF7644621579538A00E41F35 /* #PROJNAME.exp */,
-				FF7644631579538A00E41F35 /* #PROJNAME.r */,
-				FF7644651579538A00E41F35 /* InfoPlist.strings */,
 				FF857DE815CA1E03005D0614 /* audioprops.h */,
 				FF234F2615CC6EB8003C97AA /* jsaubase.cpp */,
 				FF234F2915CC6EC9003C97AA /* jsaubase.h */,
+				FFE5050216DA641D002F55CD /* Supporting Files */,
 			);
-			name = "Supporting Files";
-			path = "JSAU source/#PROJNAME";
+			name = Plugin;
+			path = "AUJS Source/Plugin";
 			sourceTree = SOURCE_ROOT;
 		};
-		FF9E2D9C15CCBB15009026AE /* Framework Sources */ = {
+		FF9E2D9C15CCBB15009026AE /* AUJS Boilerplate */ = {
 			isa = PBXGroup;
 			children = (
-				FF45E63015F12E9100280886 /* AudioToolbox.framework */,
-				FF45E63115F12E9200280886 /* AudioUnit.framework */,
-				FF45E63215F12E9200280886 /* CoreAudio.framework */,
-				FF45E62E15F12D5500280886 /* CoreFoundation.framework */,
-				FFAB983515E9183E008D97F1 /* JavaScriptCore.framework */,
-				FF41350315E1A46C001ACF64 /* WebKit.framework */,
-				FF08F6F115D474B500A8A646 /* CoreAudio.framework */,
-				FFCF843815EA8C0000333567 /* #PROJNAMEios */,
-				FF08F68A15D4348600A8A646 /* #PROJNAMEstandalone */,
-				FFDB8556151419A3004BA672 /* AudioUnit.framework */,
-				FFDB85541514199A004BA672 /* CoreServices.framework */,
-				FFDB855215141990004BA672 /* AudioToolbox.framework */,
-				FFDB854415141284004BA672 /* Audio */,
-				FF76445F1579538A00E41F35 /* Supporting Files */,
+				FFCF843815EA8C0000333567 /* iOS */,
+				FF08F68A15D4348600A8A646 /* Mac OS X Standalone */,
+				FF76445F1579538A00E41F35 /* Plugin */,
 				FFDB85511514136D004BA672 /* AU SDK */,
-				FFDB85501514135C004BA672 /* AU Source */,
-				FFC1A2BA1515302800D447CC /* CocoaUI */,
-				FF6A97F8152F8BF700C8ED05 /* ui */,
-				FFC1A2CC1515357B00D447CC /* Source */,
-				FFC1A2BB1515302800D447CC /* Supporting Files */,
-				FFDB853D15141284004BA672 /* Frameworks */,
-				FFDB853E15141284004BA672 /* Cocoa.framework */,
-				FFDB854015141284004BA672 /* Other Frameworks */,
+				FFC1A2CC1515357B00D447CC /* Cocoa UI */,
 			);
-			name = "Framework Sources";
+			name = "AUJS Boilerplate";
 			sourceTree = "<group>";
 		};
 		FF9E2D9D15CCBB37009026AE /* Audio Processing Source */ = {
@@ -522,14 +507,6 @@
 			name = Wrappers;
 			sourceTree = "<group>";
 		};
-		FFC1A2BA1515302800D447CC /* CocoaUI */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = CocoaUI;
-			path = "JSAU source/CocoaUI";
-			sourceTree = "<group>";
-		};
 		FFC1A2BB1515302800D447CC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -539,10 +516,9 @@
 				FFC1A2C81515345900D447CC /* webview.xib */,
 			);
 			name = "Supporting Files";
-			path = "JSAU source/CocoaUI";
 			sourceTree = "<group>";
 		};
-		FFC1A2CC1515357B00D447CC /* Source */ = {
+		FFC1A2CC1515357B00D447CC /* Cocoa UI */ = {
 			isa = PBXGroup;
 			children = (
 				FF5C463B15F50829002FF019 /* iOS helpers */,
@@ -553,12 +529,13 @@
 				FFC1A2D21515404A00D447CC /* #PROJNAME_WebView.mm */,
 				FF93E17216D496AE008E51E6 /* MIDIReceiver.cpp */,
 				FF93E17316D496AE008E51E6 /* MIDIReceiver.h */,
+				FFC1A2BB1515302800D447CC /* Supporting Files */,
 			);
-			name = Source;
-			path = "JSAU source/CocoaUI";
+			name = "Cocoa UI";
+			path = "AUJS Source/CocoaUI";
 			sourceTree = "<group>";
 		};
-		FFCF843815EA8C0000333567 /* #PROJNAMEios */ = {
+		FFCF843815EA8C0000333567 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				FFCF844115EA8C0100333567 /* #PROJNAMEAppDelegate.h */,
@@ -569,8 +546,8 @@
 				FFCF844A15EA8C0100333567 /* #PROJNAMEViewController_iPad.xib */,
 				FFCF843915EA8C0000333567 /* Supporting Files */,
 			);
-			name = #PROJNAMEios;
-			path = "JSAU Source/#PROJNAMEios";
+			name = iOS;
+			path = "AUJS Source/iOS";
 			sourceTree = "<group>";
 		};
 		FFCF843915EA8C0000333567 /* Supporting Files */ = {
@@ -587,12 +564,12 @@
 		FFDB853015141283004BA672 = {
 			isa = PBXGroup;
 			children = (
-				FF93E17816D4A4C7008E51E6 /* CoreMIDI.framework */,
-				FF93E17616D49D4A008E51E6 /* CoreMIDI.framework */,
 				FF08F68315D4348600A8A646 /* Frameworks */,
 				FFDB853C15141284004BA672 /* Products */,
+				FF567EE215DE9BC5005090B3 /* #PROJNAME.icns */,
 				FF9E2D9D15CCBB37009026AE /* Audio Processing Source */,
-				FF9E2D9C15CCBB15009026AE /* Framework Sources */,
+				FF6A97F8152F8BF700C8ED05 /* ui */,
+				FF9E2D9C15CCBB15009026AE /* AUJS Boilerplate */,
 			);
 			sourceTree = "<group>";
 		};
@@ -606,38 +583,6 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
-		};
-		FFDB853D15141284004BA672 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FFDB854015141284004BA672 /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FFDB854115141284004BA672 /* AppKit.framework */,
-				FFDB854215141284004BA672 /* CoreData.framework */,
-				FFDB854315141284004BA672 /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
-			sourceTree = "<group>";
-		};
-		FFDB854415141284004BA672 /* Audio */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Audio;
-			path = #PROJNAME;
-			sourceTree = "<group>";
-		};
-		FFDB85501514135C004BA672 /* AU Source */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "AU Source";
-			sourceTree = SOURCE_ROOT;
 		};
 		FFDB85511514136D004BA672 /* AU SDK */ = {
 			isa = PBXGroup;
@@ -666,7 +611,7 @@
 				FFDB855D15141B6E004BA672 /* AUBase */,
 			);
 			name = "AU SDK";
-			path = "JSAU Source/CoreAudio";
+			path = "AUJS Source/CoreAudio";
 			sourceTree = "<group>";
 		};
 		FFDB855D15141B6E004BA672 /* AUBase */ = {
@@ -712,6 +657,18 @@
 			);
 			name = Utility;
 			path = AudioUnits/AUPublic/Utility;
+			sourceTree = "<group>";
+		};
+		FFE5050216DA641D002F55CD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FF7644601579538A00E41F35 /* #PROJNAME-Info.plist */,
+				FF7644611579538A00E41F35 /* #PROJNAME-Prefix.pch */,
+				FF7644621579538A00E41F35 /* #PROJNAME.exp */,
+				FF7644631579538A00E41F35 /* #PROJNAME.r */,
+				FF7644651579538A00E41F35 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1119,8 +1076,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JSAU Source/#PROJNAMEstandalone/#PROJNAMEstandalone-Prefix.pch";
-				INFOPLIST_FILE = "JSAU Source/#PROJNAMEstandalone/#PROJNAMEstandalone-Info.plist";
+				GCC_PREFIX_HEADER = "AUJS Source/Mac/#PROJNAMEstandalone-Prefix.pch";
+				INFOPLIST_FILE = "AUJS Source/Mac/#PROJNAMEstandalone-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "#NAME";
 				WRAPPER_EXTENSION = app;
@@ -1132,8 +1089,8 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JSAU Source/#PROJNAMEstandalone/#PROJNAMEstandalone-Prefix.pch";
-				INFOPLIST_FILE = "JSAU Source/#PROJNAMEstandalone/#PROJNAMEstandalone-Info.plist";
+				GCC_PREFIX_HEADER = "AUJS Source/Mac/#PROJNAMEstandalone-Prefix.pch";
+				INFOPLIST_FILE = "AUJS Source/Mac/#PROJNAMEstandalone-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "#NAME";
 				WRAPPER_EXTENSION = app;
@@ -1147,8 +1104,8 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JSAU Source/CocoaUI/CocoaUI-Prefix.pch";
-				INFOPLIST_FILE = "JSAU Source/CocoaUI/CocoaUI-Info.plist";
+				GCC_PREFIX_HEADER = "AUJS Source/CocoaUI/CocoaUI-Prefix.pch";
+				INFOPLIST_FILE = "AUJS Source/CocoaUI/CocoaUI-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path .";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
@@ -1164,8 +1121,8 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JSAU Source/CocoaUI/CocoaUI-Prefix.pch";
-				INFOPLIST_FILE = "JSAU Source/CocoaUI/CocoaUI-Info.plist";
+				GCC_PREFIX_HEADER = "AUJS Source/CocoaUI/CocoaUI-Prefix.pch";
+				INFOPLIST_FILE = "AUJS Source/CocoaUI/CocoaUI-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path .";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
@@ -1184,8 +1141,8 @@
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JSAU Source/#PROJNAMEios/#PROJNAMEios-Prefix.pch";
-				INFOPLIST_FILE = "JSAU Source/#PROJNAMEios/#PROJNAMEios-Info.plist";
+				GCC_PREFIX_HEADER = "AUJS Source/iOS/#PROJNAMEios-Prefix.pch";
+				INFOPLIST_FILE = "AUJS Source/iOS/#PROJNAMEios-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "#NAME";
 				SDKROOT = iphoneos;
@@ -1205,8 +1162,8 @@
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JSAU Source/#PROJNAMEios/#PROJNAMEios-Prefix.pch";
-				INFOPLIST_FILE = "JSAU Source/#PROJNAMEios/#PROJNAMEios-Info.plist";
+				GCC_PREFIX_HEADER = "AUJS Source/iOS/#PROJNAMEios-Prefix.pch";
+				INFOPLIST_FILE = "AUJS Source/iOS/#PROJNAMEios-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PRODUCT_NAME = "#NAME";
@@ -1272,10 +1229,10 @@
 				DEPLOYMENT_LOCATION = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DSTROOT = /;
-				EXPORTED_SYMBOLS_FILE = "JSAU Source/#PROJNAME/#PROJNAME.exp";
+				EXPORTED_SYMBOLS_FILE = "AUJS Source/Plugin/#PROJNAME.exp";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JSAU Source/#PROJNAME/#PROJNAME-Prefix.pch";
-				INFOPLIST_FILE = "JSAU Source/#PROJNAME/#PROJNAME-Info.plist";
+				GCC_PREFIX_HEADER = "AUJS Source/plugin/#PROJNAME-Prefix.pch";
+				INFOPLIST_FILE = "AUJS Source/Plugin/#PROJNAME-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Audio/Plug-Ins/Components/";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_REZFLAGS = "-d i386_$i386 -I /System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers -I /Developer/Extras/CoreAudio/AudioUnits/AUPublic/AUBase";
@@ -1295,10 +1252,10 @@
 				DEPLOYMENT_LOCATION = YES;
 				DEPLOYMENT_POSTPROCESSING = YES;
 				DSTROOT = /;
-				EXPORTED_SYMBOLS_FILE = "JSAU Source/#PROJNAME/#PROJNAME.exp";
+				EXPORTED_SYMBOLS_FILE = "AUJS Source/Plugin/#PROJNAME.exp";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "JSAU Source/#PROJNAME/#PROJNAME-Prefix.pch";
-				INFOPLIST_FILE = "JSAU Source/#PROJNAME/#PROJNAME-Info.plist";
+				GCC_PREFIX_HEADER = "AUJS Source/plugin/#PROJNAME-Prefix.pch";
+				INFOPLIST_FILE = "AUJS Source/Plugin/#PROJNAME-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Audio/Plug-Ins/Components/";
 				OTHER_REZFLAGS = "-d i386_$i386 -I /System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers -I /Developer/Extras/CoreAudio/AudioUnits/AUPublic/AUBase";
 				PRODUCT_NAME = #PROJNAME;
