@@ -10,8 +10,8 @@
 
     "company" : "Test Company",
   
-    "height" : "100",
     "width" : "80",
+    "height" : "100",
 
     "preferred_iPhone_output" : "Receiver"
 }

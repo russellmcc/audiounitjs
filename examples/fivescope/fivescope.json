@@ -9,9 +9,9 @@
     "description" : "A vintage-style oscilloscope",
 
     "company" : "Test Company",
-  
-    "height" : "500",
-    "width" : "600",
+
+    "width" : "500",
+    "height" : "600",
 
     "preferred_iPhone_output" : "Receiver"
 }
