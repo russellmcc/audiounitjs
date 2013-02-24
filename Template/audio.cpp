@@ -99,9 +99,6 @@ Audio::ProcessBufferLists (AudioUnitRenderActionFlags& ioActionFlags,
                            AudioBufferList& outBuffer,
                            UInt32 numSamples)
 {
-    // watch out!  buffers could be interleaved or not interleaved!
-	SInt16 channels = GetOutput(0)->GetStreamFormat().mChannelsPerFrame;
-    
     // check for silence
     bool silentInput = IsInputSilent (ioActionFlags, numSamples);
     if(silentInput) {
@@ -116,19 +113,15 @@ Audio::ProcessBufferLists (AudioUnitRenderActionFlags& ioActionFlags,
     
     // do processing here.
     for(int b = 0; b < inBuffer.mNumberBuffers; ++b) {
-        UInt32 numChans = inBuffer.mBuffers[b].mNumberChannels;
-        for(int c = 0; c < numChans; ++c) {
-            UInt32 chan = (b*numChans) + c;
-            for(int s = 0; s < numSamples; ++s) {
-                // Per-sample processing here
-                Float32& inSamp = reinterpret_cast<Float32*>(inBuffer.mBuffers[b].mData)[s*numChans + c];
-                Float32& outSamp = reinterpret_cast<Float32*>(outBuffer.mBuffers[b].mData)[s*numChans + c];
-                
-                outSamp = inSamp * v;
+        // assume non-interleaved buffers (this is the default.)
+        for(int s = 0; s < numSamples; ++s) {
+            // Per-sample processing here
+            Float32& inSamp = reinterpret_cast<Float32*>(inBuffer.mBuffers[b].mData)[s];
+            Float32& outSamp = reinterpret_cast<Float32*>(outBuffer.mBuffers[b].mData)[s];
             
-                outSamp = inSamp;
-                //end per-sample processing
-            }
+            outSamp = inSamp * v;
+            
+            //end per-sample processing
         }
     }
     
