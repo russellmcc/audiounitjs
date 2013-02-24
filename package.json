@@ -1,20 +1,20 @@
 {
-  "name": "js-ui-au",
+  "name": "aujs",
   "version": "0.0.1",
-  "main": "lib/jsau",
-  "bin": { "jsau": "./bin/jsau" },
+  "main": "lib/aujs",
+  "bin": { "aujs": "./bin/jsau" },
   "author": {
     "name": "Russell McClellan",
     "email": "russell.mcclellan@gmail.com",
-    "url": "http://www.ghostfact.com"
+    "url": "http://www.russellmcc.com"
   },
-  "description": "Scaffold script to start an audio unit with a javascript UI",
+  "description": "Scaffold an XCode project for an audio unit with a javascript UI",
   "keywords": [
     "Audio Unit"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/russellmcc/js-au.git"
+    "url": "git://github.com/russellmcc/aujs.git"
   },
   "dependencies": {
     "iced-coffee-script": "*",

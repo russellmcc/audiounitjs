@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+
+var optimist = require('optimist').usage('Create audio unit template with html ui. $0 [project-file]')
+    .check(function(arg){
+        if(!(arg._.length === 1))
+            throw "You must provide the project configuration file.";
+    });
+    
+require('iced-coffee-script');
+
+try {
+  require('../lib/aujs')(optimist.argv._[0]);
+} catch (err) {
+  console.error(err.toString());
+}
