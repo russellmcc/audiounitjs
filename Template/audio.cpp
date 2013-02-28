@@ -60,11 +60,12 @@ public:
 AUDIOCOMPONENT_ENTRY(AUMIDIEffectFactory, Audio)
 void DoRegister(OSType Type, OSType Subtype, OSType Manufacturer, CFStringRef name, UInt32 vers)
 {
-#if SNOW_LEOPARD_PLUGS_ONLY
-    ComponentEntryPoint<Audio>::Register(Type, Subtype, Manufacturer);
-#else
-    AUMIDIEffectFactory<Audio>::Register(Type, Subtype, Manufacturer, name, vers, 0);
+#if !SNOW_LEOPARD_PLUGS_ONLY
+    if(AudioComponentRegister)
+        AUMIDIEffectFactory<Audio>::Register(Type, Subtype, Manufacturer, name, vers, 0);
+    else
 #endif
+        ComponentEntryPoint<Audio>::Register(Type, Subtype, Manufacturer);
 }
 
 // Processing stuff.
