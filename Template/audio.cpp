@@ -60,14 +60,12 @@ public:
 AUDIOCOMPONENT_ENTRY(AUMIDIEffectFactory, Audio)
 void DoRegister(OSType Type, OSType Subtype, OSType Manufacturer, CFStringRef name, UInt32 vers)
 {
+#if SNOW_LEOPARD_PLUGS_ONLY
+    ComponentEntryPoint<Audio>::Register(Type, Subtype, Manufacturer);
+#else
     AUMIDIEffectFactory<Audio>::Register(Type, Subtype, Manufacturer, name, vers, 0);
+#endif
 }
-
-Audio::Audio(AudioUnit component) : JSAudioUnitBase(component)
-{
-    SetParameter(kParam_VolumeLevel, 0.5);
-}
-
 
 // Processing stuff.
 

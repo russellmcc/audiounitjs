@@ -353,12 +353,13 @@ OSStatus			AUBase::DispatchGetPropertyInfo(AudioUnitPropertyID				inID,
 		outWritable = false;
 		validateElement = false;
 		break;
-
+#ifndef SNOW_LEOPARD_PLUGS_ONLY
 	case kAudioUnitProperty_ParameterHistoryInfo:
 		outDataSize = sizeof(AudioUnitParameterHistoryInfo);
 		outWritable = false;
 		validateElement = false;
 		break;
+#endif
 
 	case kAudioUnitProperty_ElementCount:
 		outDataSize = sizeof(UInt32);
@@ -556,12 +557,14 @@ OSStatus			AUBase::DispatchGetProperty(	AudioUnitPropertyID 			inID,
 		result = GetParameterInfo(inScope, inElement, *(AudioUnitParameterInfo *)outData);
 		break;
 
+#ifndef SNOW_LEOPARD_PLUGS_ONLY
 	case kAudioUnitProperty_ParameterHistoryInfo:
 		{
 			AudioUnitParameterHistoryInfo* info = (AudioUnitParameterHistoryInfo*)outData;
 			result = GetParameterHistoryInfo(inScope, inElement, info->updatesPerSecond, info->historyDurationInSeconds);
 		}
 		break;
+#endif
 
 	case kAudioUnitProperty_ClassInfo:
 		{

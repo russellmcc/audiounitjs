@@ -192,6 +192,28 @@ private:
 	ComponentBase::EInstanceType	mPreviousNewInstanceType;
 };
 
+#ifndef AudioComponentPlugInInterface
+
+#define SNOW_LEOPARD_PLUGS_ONLY 1
+
+typedef OSStatus (*AudioComponentMethod) (void *self,...);
+
+typedef struct AudioComponentPlugInInterface {
+    OSStatus                        (*Open)(void *self, AudioComponentInstance mInstance);
+    OSStatus                        (*Close)(void *self);
+    AudioComponentMethod            (*Lookup) (SInt16 selector);
+    void *                          reserved; // set to NULL
+} AudioComponentPlugInInterface;
+
+enum 
+{
+    kAudio_UnimplementedError   = -4,
+    kAudio_FileNotFoundError    = -43,
+    kAudio_ParamError           = -50,
+    kAudio_MemFullError         = -108
+};
+#endif
+
 /*! @class AudioComponentPlugInInstance */ 
 struct AudioComponentPlugInInstance {
 	AudioComponentPlugInInterface		mPlugInInterface;
@@ -234,11 +256,13 @@ public:
 	}
 	
 	// This is for runtime registration (not for plug-ins loaded from bundles).
+#ifndef SNOW_LEOPARD_PLUGS_ONLY
 	static AudioComponent Register(UInt32 type, UInt32 subtype, UInt32 manuf, CFStringRef name, UInt32 vers, UInt32 flags=0)
 	{
 		AudioComponentDescription desc = { type, subtype, manuf, flags, 0 };
 		return AudioComponentRegister(&desc, name, vers, Factory); 
 	}
+#endif
 };
 
 #if !CA_USE_AUDIO_PLUGIN_ONLY
@@ -291,6 +315,12 @@ public:
 		extern "C" void * Class##Factory(const AudioComponentDescription *inDesc); \
 		extern "C" void * Class##Factory(const AudioComponentDescription *inDesc) { \
 			return FactoryType<Class>::Factory(inDesc); \
+		}
+#elifndef SNOW_LEOPARD_PLUGS_ONLY
+	#define AUDIOCOMPONENT_ENTRY(FactoryType, Class) \
+		extern "C" OSStatus Class##Entry(ComponentParameters *params, Class *obj); \
+		extern "C" OSStatus Class##Entry(ComponentParameters *params, Class *obj) { \
+			return ComponentEntryPoint<Class>::Dispatch(params, obj); \
 		}
 #else
 		// you should be using this macros as it registers both

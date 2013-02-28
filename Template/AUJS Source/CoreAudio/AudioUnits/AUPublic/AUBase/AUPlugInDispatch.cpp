@@ -528,9 +528,10 @@ AudioComponentMethod AUComplexOutputLookup::Lookup (SInt16 selector)
 	
 	method = AUOutputLookup::Lookup(selector);
 	if (method) return method;
-	
+#ifndef SNOW_LEOPARD_PLUGS_ONLY	
 	if (selector == kAudioUnitComplexRenderSelect)
 		return (AudioComponentMethod)AUMethodComplexRender;
+#endif
 	return NULL;
 }
 
@@ -539,8 +540,10 @@ AudioComponentMethod AUBaseProcessLookup::Lookup (SInt16 selector)
 	AudioComponentMethod method = AUBaseLookup::Lookup(selector);
 	if (method) return method;
 	
+#ifndef SNOW_LEOPARD_PLUGS_ONLY
 	if (selector == kAudioUnitProcessSelect)
 		return (AudioComponentMethod)AUMethodProcess;
+#endif
 	
 	return NULL;
 }
@@ -553,9 +556,11 @@ AudioComponentMethod AUBaseProcessMultipleLookup::Lookup (SInt16 selector)
 	method = AUBaseProcessLookup::Lookup(selector);
 	if (method) return method;
 
+#ifndef SNOW_LEOPARD_PLUGS_ONLY
 	if (selector == kAudioUnitProcessMultipleSelect)
 		return (AudioComponentMethod)AUMethodProcessMultiple;
-	
+#endif
+
 	return NULL;
 }
 
