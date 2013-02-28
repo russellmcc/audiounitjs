@@ -52,10 +52,10 @@ extern "C"
 {
 #endif
 
-// prints the matrix mixer #PROJNAMEs of a specific audio unit to the given file
+// prints the matrix mixer volumes of a specific audio unit to the given file
 void	 PrintMatrixMixerVolumes (FILE* file, AudioUnit au);				
 
-// prints the mixer #PROJNAMEs for the specific scope of the audio unit
+// prints the mixer volumes for the specific scope of the audio unit
 // results will be printed to the speficied file "file" with identifiying string tag "str"		
 OSStatus PrintBuses (FILE* file, char* str, AudioUnit au, AudioUnitScope inScope);
 #if defined(__cplusplus)

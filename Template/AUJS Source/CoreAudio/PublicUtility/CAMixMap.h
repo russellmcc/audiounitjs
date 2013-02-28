@@ -41,7 +41,7 @@
 #ifndef __CAMixMap_h__
 #define __CAMixMap_h__
 
-	// manages the setting of mix map #PROJNAMEs
+	// manages the setting of mix map volumes
 	
 class CAMixMap {
 public:

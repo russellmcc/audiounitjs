@@ -140,7 +140,7 @@ Create a mapping between a parameter and a MIDI message through either:
 	This property is used to both retreive and set the current mapping state between (some/many/all of) its parameters
 	and MIDI messages. When set, it should replace any previous mapped settings the AU had.
 
-	If this property is implemented by a non-MIDI capable AU (such as an '#AUTYPE' type), then the property is
+	If this property is implemented by a non-MIDI capable AU (such as an 'aumu' type), then the property is
 	read only, and recommends a suggested set of mappings for the host to perform. In this case, it is the 
 	host's responsibility to map MIDI message to the AU parameters. As described previously, there are a set
 	of default mappings (see AudioToolbox/AUMIDIController.h) that the host can recommend to the user 
