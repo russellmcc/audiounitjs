@@ -314,12 +314,6 @@ public:
 		extern "C" void * Class##Factory(const AudioComponentDescription *inDesc) { \
 			return FactoryType<Class>::Factory(inDesc); \
 		}
-#elif MAC_OS_X_VERSION_MAX_ALLOWED < 1070
-	#define AUDIOCOMPONENT_ENTRY(FactoryType, Class) \
-		extern "C" OSStatus Class##Entry(ComponentParameters *params, Class *obj); \
-		extern "C" OSStatus Class##Entry(ComponentParameters *params, Class *obj) { \
-			return ComponentEntryPoint<Class>::Dispatch(params, obj); \
-		}
 #else
 		// you should be using this macros as it registers both
 		// a plugin and a component mgr version. this can and should be used 
