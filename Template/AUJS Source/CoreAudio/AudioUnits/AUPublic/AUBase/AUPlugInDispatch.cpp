@@ -528,7 +528,7 @@ AudioComponentMethod AUComplexOutputLookup::Lookup (SInt16 selector)
 	
 	method = AUOutputLookup::Lookup(selector);
 	if (method) return method;
-#ifndef SNOW_LEOPARD_PLUGS_ONLY	
+#if TARGET_OS_IPHONE or (MAC_OS_X_VERSION_MAX_ALLOWED >= 1070)
 	if (selector == kAudioUnitComplexRenderSelect)
 		return (AudioComponentMethod)AUMethodComplexRender;
 #endif
@@ -540,7 +540,7 @@ AudioComponentMethod AUBaseProcessLookup::Lookup (SInt16 selector)
 	AudioComponentMethod method = AUBaseLookup::Lookup(selector);
 	if (method) return method;
 	
-#ifndef SNOW_LEOPARD_PLUGS_ONLY
+#if TARGET_OS_IPHONE or (MAC_OS_X_VERSION_MAX_ALLOWED >= 1070)
 	if (selector == kAudioUnitProcessSelect)
 		return (AudioComponentMethod)AUMethodProcess;
 #endif
@@ -556,7 +556,7 @@ AudioComponentMethod AUBaseProcessMultipleLookup::Lookup (SInt16 selector)
 	method = AUBaseProcessLookup::Lookup(selector);
 	if (method) return method;
 
-#ifndef SNOW_LEOPARD_PLUGS_ONLY
+#if TARGET_OS_IPHONE or (MAC_OS_X_VERSION_MAX_ALLOWED >= 1070)
 	if (selector == kAudioUnitProcessMultipleSelect)
 		return (AudioComponentMethod)AUMethodProcessMultiple;
 #endif

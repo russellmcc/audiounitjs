@@ -192,9 +192,7 @@ private:
 	ComponentBase::EInstanceType	mPreviousNewInstanceType;
 };
 
-#ifndef AudioComponentPlugInInterface
-
-#define SNOW_LEOPARD_PLUGS_ONLY 1
+#if !TARGET_OS_IPHONE and (MAC_OS_X_VERSION_MAX_ALLOWED < 1070)
 
 typedef OSStatus (*AudioComponentMethod) (void *self,...);
 
@@ -256,7 +254,7 @@ public:
 	}
 	
 	// This is for runtime registration (not for plug-ins loaded from bundles).
-#ifndef SNOW_LEOPARD_PLUGS_ONLY
+#if TARGET_OS_IPHONE or (MAC_OS_X_VERSION_MAX_ALLOWED >= 1070)
 	static AudioComponent Register(UInt32 type, UInt32 subtype, UInt32 manuf, CFStringRef name, UInt32 vers, UInt32 flags=0)
 	{
 		AudioComponentDescription desc = { type, subtype, manuf, flags, 0 };
@@ -316,7 +314,7 @@ public:
 		extern "C" void * Class##Factory(const AudioComponentDescription *inDesc) { \
 			return FactoryType<Class>::Factory(inDesc); \
 		}
-#elifndef SNOW_LEOPARD_PLUGS_ONLY
+#elif MAC_OS_X_VERSION_MAX_ALLOWED < 1070
 	#define AUDIOCOMPONENT_ENTRY(FactoryType, Class) \
 		extern "C" OSStatus Class##Entry(ComponentParameters *params, Class *obj); \
 		extern "C" OSStatus Class##Entry(ComponentParameters *params, Class *obj) { \

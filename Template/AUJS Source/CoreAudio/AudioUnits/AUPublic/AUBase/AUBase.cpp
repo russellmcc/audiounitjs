@@ -353,7 +353,7 @@ OSStatus			AUBase::DispatchGetPropertyInfo(AudioUnitPropertyID				inID,
 		outWritable = false;
 		validateElement = false;
 		break;
-#ifndef SNOW_LEOPARD_PLUGS_ONLY
+#if TARGET_OS_IPHONE or (MAC_OS_X_VERSION_MAX_ALLOWED >= 1070)
 	case kAudioUnitProperty_ParameterHistoryInfo:
 		outDataSize = sizeof(AudioUnitParameterHistoryInfo);
 		outWritable = false;
@@ -557,7 +557,7 @@ OSStatus			AUBase::DispatchGetProperty(	AudioUnitPropertyID 			inID,
 		result = GetParameterInfo(inScope, inElement, *(AudioUnitParameterInfo *)outData);
 		break;
 
-#ifndef SNOW_LEOPARD_PLUGS_ONLY
+#if TARGET_OS_IPHONE or (MAC_OS_X_VERSION_MAX_ALLOWED >= 1070)
 	case kAudioUnitProperty_ParameterHistoryInfo:
 		{
 			AudioUnitParameterHistoryInfo* info = (AudioUnitParameterHistoryInfo*)outData;
