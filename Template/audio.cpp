@@ -60,13 +60,23 @@ public:
 AUDIOCOMPONENT_ENTRY(AUMIDIEffectFactory, Audio)
 void DoRegister(OSType Type, OSType Subtype, OSType Manufacturer, CFStringRef name, UInt32 vers)
 {
-#if !SNOW_LEOPARD_PLUGS_ONLY
+#if TARGET_OS_IPHONE or (MAC_OS_X_VERSION_MAX_ALLOWED >= 1070)
     if(AudioComponentRegister)
         AUMIDIEffectFactory<Audio>::Register(Type, Subtype, Manufacturer, name, vers, 0);
+#if !CA_USE_AUDIO_PLUGIN_ONLY
     else
 #endif
+#endif
+#if !CA_USE_AUDIO_PLUGIN_ONLY
         ComponentEntryPoint<Audio>::Register(Type, Subtype, Manufacturer);
+#endif
 }
+
+Audio::Audio(AudioUnit component) : JSAudioUnitBase(component)
+{
+    // one-time init stuff here.
+}
+
 
 // Processing stuff.
 

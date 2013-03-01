@@ -64,24 +64,29 @@ private:
     double mPhaseIncr;
 };
 
+
 // this boilerplate has to be here so that the system can know about the 
 // class we just made.
 AUDIOCOMPONENT_ENTRY(AUMIDIEffectFactory, Audio)
 void DoRegister(OSType Type, OSType Subtype, OSType Manufacturer, CFStringRef name, UInt32 vers)
 {
-#if !SNOW_LEOPARD_PLUGS_ONLY
+#if TARGET_OS_IPHONE or (MAC_OS_X_VERSION_MAX_ALLOWED >= 1070)
     if(AudioComponentRegister)
         AUMIDIEffectFactory<Audio>::Register(Type, Subtype, Manufacturer, name, vers, 0);
+#if !CA_USE_AUDIO_PLUGIN_ONLY
     else
 #endif
+#endif
+#if !CA_USE_AUDIO_PLUGIN_ONLY
         ComponentEntryPoint<Audio>::Register(Type, Subtype, Manufacturer);
+#endif
 }
 
 Audio::Audio(AudioUnit component) : JSAudioUnitBase(component)
 {
-    SetParameter(kParam_VolumeLevel, 0.5);
+    mPhase = 0;
+    mPhaseIncr = 0;
 }
-
 
 // Processing stuff.
 
