@@ -1,3 +1,5 @@
+Version 0.0.3:
+- Better fix for compiling in 10.6
 Version 0.0.2:
 - Should be able to compile plug-ins and standalone apps under Snow Leopard
 - Standalone apps compiles in 10.7 or 10.8 should run in Snow Leopard without crashing.
