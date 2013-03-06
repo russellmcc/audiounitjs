@@ -27,11 +27,11 @@ namespace
         {
             case kMIDIMsgObjectAdded:
                 if (addRemove->childType == kMIDIObjectType_Source)
-                    MIDIPortConnectSource(that->getPort(), reinterpret_cast<MIDIEndpointRef>(addRemove->child), 0);
+                    MIDIPortConnectSource(that->getPort(), (MIDIEndpointRef)(addRemove->child), 0);
                 break;
             case kMIDIMsgObjectRemoved:
                 if (addRemove->childType == kMIDIObjectType_Source)
-                    MIDIPortDisconnectSource(that->getPort(), reinterpret_cast<MIDIEndpointRef>(addRemove->child));
+                    MIDIPortDisconnectSource(that->getPort(), (MIDIEndpointRef)(addRemove->child));
                 break;
         }
     }
