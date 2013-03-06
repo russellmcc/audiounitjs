@@ -1,3 +1,5 @@
+version 0.0.6
+- Fix for crash bug in apple's ring buffer.
 version 0.0.5
 - Fix for builds on older compilers.
 Version 0.0.4:
