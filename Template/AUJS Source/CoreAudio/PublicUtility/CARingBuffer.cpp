@@ -254,7 +254,10 @@ CARingBufferError	CARingBuffer::Fetch(AudioBufferList *abl, UInt32 nFrames, Samp
 	if (err) return err;
 	size = endRead - startRead;
 	
-	SInt32 destStartOffset = startRead - startRead0; 
+	SInt32 destStartOffset = startRead - startRead0;
+    if(destStartOffset > nFrames)
+        return kCARingBufferError_CPUOverload;
+        
 	if (destStartOffset > 0) {
 		ZeroABL(abl, 0, destStartOffset * mBytesPerFrame);
 	}
